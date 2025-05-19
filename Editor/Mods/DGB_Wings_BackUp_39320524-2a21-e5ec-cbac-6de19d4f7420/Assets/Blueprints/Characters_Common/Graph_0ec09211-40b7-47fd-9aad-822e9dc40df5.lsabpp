@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="0ec09211-40b7-47fd-9aad-822e9dc40df5" can_be_deleted="true" type="EventGraph" name="WeaponScaling">
+  <nodes>
+    <node id="78e51ec3-7634-4945-a547-9c594e0f6f77" name="Update Event" x="-2366" y="-195" ZIndex="0" width="130" height="78" type="UpdateAnimationEventNode" full_type="UpdateAnimationEventNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="eccbed5b-51b6-4e05-8c85-c7e8dc189a3c" type="ExecSocket" name="" />
+        <socket role="Duration" full_role="Duration" id="e4509297-486e-49e1-a72a-013f73efa8a1" type="FloatSocket" name="Duration" />
+      </outputs>
+    </node>
+    <node id="6908d368-17f1-4690-9c0e-889b6b5c746b" name="Gameplay Event" x="-819" y="-923" ZIndex="55" width="273" height="104" type="GameplayEventNode" full_type="ParametrizedEventNodeDefinition" Comment="Scale weapon to full size when in hand" is_comment_pinned="true" event_id="f6784347-48f4-4834-819b-922024083774">
+      <inputs />
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="7124f1d7-1e2f-45b6-817f-b73390e3f973" type="ExecSocket" name="" />
+        <socket role="Param 0" full_role="Param 0" id="09373290-04c9-4da5-ac38-f4cbb0aeda48" type="AnimationSetSocket" name="AnimationSubSet" />
+        <socket role="Param 1" full_role="Param 1" id="0c45b6cb-93da-4cf9-abaf-ed939864c36d" type="BooleanSocket" name="bIsInitiative" />
+      </outputs>
+    </node>
+    <node id="24f903f5-e682-4994-a194-feca905a3b2c" name="Gameplay Event" x="-819" y="-663" ZIndex="61" width="234" height="78" type="GameplayEventNode" full_type="ParametrizedEventNodeDefinition" Comment="Scale weapon to SheathScaleDesired when in the back of the character" is_comment_pinned="true" event_id="a3b91881-1de8-40e1-8ef0-c976b308a281">
+      <inputs />
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="7652fe70-033a-4990-ad9e-b613c9c58685" type="ExecSocket" name="" />
+        <socket role="Param 0" full_role="Param 0" id="d76a74ae-6061-4b22-b496-7c016af8121d" type="BooleanSocket" name="bIsVictory" />
+      </outputs>
+    </node>
+    <node id="18399c08-2258-4ac1-af97-92203784b0ed" name="SET" x="455" y="-169" ZIndex="5" width="260" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="c6dd5bb5-2f19-48a8-91cb-7329dd3cccc7">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="c4af0196-62a4-4dde-ab1f-00d6e4b29b25" type="ExecSocket" name="WPN_UnsheathScaleCurrent" />
+        <socket role="Parameter" full_role="Parameter" id="e6b4cf6e-f69b-4eab-b8ed-3711b18f9c63" type="Vector3Socket" name="WPN_UnsheathScaleCurrent" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="92f0ad43-b0d1-4d05-9a3e-a83128d2599f" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="dea1a162-0000-4b76-b9bf-c82a0a6d5361" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="9bc9bd8a-9876-4c95-8586-806d850ce05f" name="Make Vector3" x="182" y="182" ZIndex="24" width="117" height="104" type="MakeVector3Node" full_type="MakeVector3Node" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="XParameter" full_role="XParameter" id="8c43f6c6-4657-4725-a44b-d82f3981fd81" type="FloatSocket" name="X" default="0" />
+        <socket role="YParameter" full_role="YParameter" id="43a8b83c-8e2f-4a44-884b-e5946694f169" type="FloatSocket" name="Y" default="0" />
+        <socket role="ZParameter" full_role="ZParameter" id="621d4da4-f320-4c9c-90ed-dd88da79247a" type="FloatSocket" name="Z" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="b81e4087-eee1-4510-a379-97d8a218abfb" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="2bbe5f93-2a71-4c87-918d-95d00bdb7fe8" name="Float Interpolation" x="-117" y="182" ZIndex="13" width="221" height="104" type="FloatInterpolationNode" full_type="FloatInterpolationNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="ee932163-8d38-4d88-b135-0b8316d07b06" type="FloatSocket" name="Current" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="c18a3377-d1ab-4752-a377-c0958c1d2261" type="FloatSocket" name="Target" default="0" />
+        <socket role="Parameter" full_role="Parameter" id="93544cf8-4a84-4e37-a5b0-18334d5aa0d5" type="FloatSocket" name="Interpolation speed" default="5" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="b9c26057-ff69-488d-a32b-1166c11481a6" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="91ca9eb7-44a7-42e5-9ada-50c1719293ed" name="Float Interpolation" x="-117" y="286" ZIndex="22" width="221" height="104" type="FloatInterpolationNode" full_type="FloatInterpolationNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="dfc2a296-50d1-475f-805c-e065069618b0" type="FloatSocket" name="Current" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="f3e77487-338b-42b6-95cb-d0a9feefc1e7" type="FloatSocket" name="Target" default="0" />
+        <socket role="Parameter" full_role="Parameter" id="10864590-165a-42ff-bb8d-b815e12391cd" type="FloatSocket" name="Interpolation speed" default="5" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="a38d31a4-6e98-48a4-a943-d4158d9a589b" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="3d4bacef-2a49-453d-889b-4bfc077aac87" name="Float Interpolation" x="-117" y="390" ZIndex="19" width="221" height="104" type="FloatInterpolationNode" full_type="FloatInterpolationNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="4499f100-603f-463f-b82d-6bf0eff7be76" type="FloatSocket" name="Current" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="669f1a40-874e-4566-87cd-03e84aeeb67e" type="FloatSocket" name="Target" default="0" />
+        <socket role="Parameter" full_role="Parameter" id="b9612b7f-e660-4e77-8f9f-7e5a64f55b87" type="FloatSocket" name="Interpolation speed" default="5" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="56e758f0-595a-4944-a075-7b44fe896fde" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="3329c13d-ec22-477b-84b1-34ec33df7c9b" name="GetVariableNode" x="-767" y="338" ZIndex="16" width="234" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="c6dd5bb5-2f19-48a8-91cb-7329dd3cccc7">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="10ba6ef9-f725-43f8-8f4a-adfcf7358280" type="Vector3Socket" name="WPN_UnsheathScaleCurrent" />
+      </outputs>
+    </node>
+    <node id="96adb5ba-ceac-4910-a7fd-bb730fe5696d" name="Break Vector3" x="-429" y="338" ZIndex="25" width="117" height="104" type="BreakVector3Node" full_type="BreakVector3Node" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter" full_role="Parameter" id="7743f27a-2434-47e0-a721-560a50061ae8" type="Vector3Socket" name="" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="XResult" full_role="XResult" id="81e67c38-46f6-47be-872e-d80cc2578edc" type="FloatSocket" name="X" />
+        <socket role="YResult" full_role="YResult" id="bc418c8c-fad0-4937-a21e-12b47a072d24" type="FloatSocket" name="Y" />
+        <socket role="ZResult" full_role="ZResult" id="02c65f42-e765-49b3-a5c9-52d2da42ef6a" type="FloatSocket" name="Z" />
+      </outputs>
+    </node>
+    <node id="8f059806-75b7-43a7-ab88-375e313eded6" name="GetVariableNode" x="-767" y="221" ZIndex="11" width="234" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="319093ea-7700-4b4e-99d1-ae6410c73aa2">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="22472313-4d84-4908-93d5-57557477838c" type="Vector3Socket" name="WPN_UnsheathScaleDesired" />
+      </outputs>
+    </node>
+    <node id="9e544307-6348-4d6a-921d-af60d6573fd5" name="Break Vector3" x="-429" y="221" ZIndex="26" width="117" height="104" type="BreakVector3Node" full_type="BreakVector3Node" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter" full_role="Parameter" id="3dedd154-d119-4ecc-a0c6-8b9f226b2054" type="Vector3Socket" name="" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="XResult" full_role="XResult" id="33b0b92f-1b7c-4e88-b01c-7f9bc7354b4e" type="FloatSocket" name="X" />
+        <socket role="YResult" full_role="YResult" id="dd28e8b9-3a38-494e-80b2-473461c87d6f" type="FloatSocket" name="Y" />
+        <socket role="ZResult" full_role="ZResult" id="4f66f391-31d6-4e7e-97b3-79526e632f27" type="FloatSocket" name="Z" />
+      </outputs>
+    </node>
+    <node id="7cd14c79-14f8-4591-b9ab-fde4c83aea7e" name="SET" x="39" y="-923" ZIndex="35" width="377" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="319093ea-7700-4b4e-99d1-ae6410c73aa2">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="d4c21e1f-c276-4449-99a5-ef8b70ebf22c" type="ExecSocket" name="WPN_UnsheathScaleDesired" />
+        <socket role="Parameter" full_role="Parameter" id="24085701-ca50-4069-ab35-66f444a6c80d" type="Vector3Socket" name="WPN_UnsheathScaleDesired" default="1,1,1" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="f2b095d3-406e-4ac0-9b6c-81891445b92c" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="57af812a-1621-44e5-a53e-12b321b803ed" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="f4ee2337-468f-465b-a753-02c51c415456" name="SET" x="26" y="-663" ZIndex="33" width="273" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="319093ea-7700-4b4e-99d1-ae6410c73aa2">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="9b0cd7eb-87c9-4de8-ac8b-787d54a4ae26" type="ExecSocket" name="WPN_UnsheathScaleDesired" />
+        <socket role="Parameter" full_role="Parameter" id="00358ca0-ed91-4b78-a72a-2f7d4dedbf99" type="Vector3Socket" name="WPN_UnsheathScaleDesired" default="1,1,1" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="075f1326-026b-4d4d-9f84-04d6efbed97d" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="5190c73d-a171-494a-9c44-aabb21be7db1" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="a59d5b1d-13ca-4a4d-afcd-cf5730c2d472" name="GetVariableNode" x="-221" y="-533" ZIndex="45" width="221" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="a5c359de-e683-4209-b1bf-b398c59d18c2">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="72d72eb8-8cf0-494f-93c9-b5fe53c6054e" type="Vector3Socket" name="WPN_SheathScaleDesired" />
+      </outputs>
+    </node>
+    <node id="257e6811-e473-4bbc-b134-7835f14f4420" name="Gameplay Event" x="-806" y="-2015" ZIndex="51" width="325" height="286" type="GameplayEventNode" full_type="ParametrizedEventNodeDefinition" Comment="" is_comment_pinned="false" event_id="e8545375-1537-4eba-b045-0cee8a0ad64c">
+      <inputs />
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="3fbd1419-7df9-4f0b-aec8-2085c6d09cc9" type="ExecSocket" name="" />
+        <socket role="Param 0" full_role="Param 0" id="d5e0c46d-efb2-4877-87a9-30afe1db0dfb" type="ShortNameReferenceSocket" name="PrepareShortName" />
+        <socket role="Param 1" full_role="Param 1" id="4fd7cd05-41bb-4d74-81fd-89a31706750a" type="ShortNameReferenceSocket" name="PrepareLowShortName" />
+        <socket role="Param 2" full_role="Param 2" id="fae72d79-6bde-4006-accd-55368f20367d" type="ShortNameReferenceSocket" name="PrepareHighShortName" />
+        <socket role="Param 3" full_role="Param 3" id="e367bb66-3b7f-4536-be2d-a9e4e68dfa01" type="ShortNameReferenceSocket" name="LoopShortName" />
+        <socket role="Param 4" full_role="Param 4" id="64198ad0-9894-4d03-bc7a-c61099eedbfd" type="ShortNameReferenceSocket" name="LoopLowShortName" />
+        <socket role="Param 5" full_role="Param 5" id="d445186a-7656-4725-9b55-d7bc0828eec6" type="ShortNameReferenceSocket" name="LoopHighShortName" />
+        <socket role="Param 6" full_role="Param 6" id="0998d272-085a-493a-ba07-de3851014f78" type="BooleanSocket" name="IsUnsheathedSpell" />
+        <socket role="Param 7" full_role="Param 7" id="64d3ed16-bd65-41e3-a68c-546e736634e9" type="EnumSocket" name="eSpellAnimationIntentType" />
+        <socket role="Param 8" full_role="Param 8" id="51565a51-d766-4162-9a25-07ee7bd33252" type="EnumSocket" name="eSpellAnimationType" />
+      </outputs>
+    </node>
+    <node id="a2cd6056-77e5-4689-a990-4ee933351a82" name="SET" x="-26" y="-2015" ZIndex="47" width="377" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="319093ea-7700-4b4e-99d1-ae6410c73aa2">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="7e46ef72-7db5-49a4-8150-cdb8055482ad" type="ExecSocket" name="WPN_UnsheathScaleDesired" />
+        <socket role="Parameter" full_role="Parameter" id="99dfd8d9-cbc1-4b54-b774-00564e5d59bb" type="Vector3Socket" name="WPN_UnsheathScaleDesired" default="1,1,1" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="4924e5d7-3237-4c76-90b2-1cd7a03b758e" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="aaca9e46-dde1-47bc-bb3e-7ef81bf83f0d" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="ac45e5c9-7d68-495f-a706-ab537586f6bb" name="SET" x="390" y="-2015" ZIndex="48" width="377" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="c6dd5bb5-2f19-48a8-91cb-7329dd3cccc7">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="f22abe74-6f09-41ee-a6c7-1598baf99731" type="ExecSocket" name="WPN_UnsheathScaleCurrent" />
+        <socket role="Parameter" full_role="Parameter" id="3c632a19-7461-4f1d-bacd-5755350f844e" type="Vector3Socket" name="WPN_UnsheathScaleCurrent" default="1,1,1" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="4c242296-9509-4a50-b99f-41ea4b89f704" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="0721857e-0415-4934-a62e-1917512d6ed9" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="205e7b61-7c79-4ba5-a153-e0dffbd5b6b4" name="Gameplay Event" x="-793" y="-1508" ZIndex="52" width="338" height="572" type="GameplayEventNode" full_type="ParametrizedEventNodeDefinition" Comment="" is_comment_pinned="false" event_id="ba293d56-e14d-4d62-8151-4d63f1257bcd">
+      <inputs />
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="f36f522a-f492-4365-b8d7-1c5264197136" type="ExecSocket" name="" />
+        <socket role="Param 0" full_role="Param 0" id="4524e268-6dff-4b49-b025-0c5eb90a95b9" type="ShortNameReferenceSocket" name="AnticipationShortName" />
+        <socket role="Param 1" full_role="Param 1" id="4ecb201e-8074-4304-b6f2-e8c043515c7c" type="ShortNameReferenceSocket" name="AnticipationLowShortName" />
+        <socket role="Param 2" full_role="Param 2" id="5f1136b0-5998-431d-a2da-81d551009eac" type="ShortNameReferenceSocket" name="AnticipationHighShortName" />
+        <socket role="Param 3" full_role="Param 3" id="15384668-0c91-4c9c-935f-e007c2773771" type="ShortNameReferenceSocket" name="DashShortName" />
+        <socket role="Param 4" full_role="Param 4" id="c835eca1-9e03-4aab-86d7-b6a678b8befe" type="ShortNameReferenceSocket" name="DashLowShortName" />
+        <socket role="Param 5" full_role="Param 5" id="19044ae5-2677-46a8-be0f-22e3101ad573" type="ShortNameReferenceSocket" name="DashHighShortName" />
+        <socket role="Param 6" full_role="Param 6" id="eb63f072-526f-4836-a076-865c9df734bb" type="ShortNameReferenceSetSocket" name="CastShortNameSet" />
+        <socket role="Param 7" full_role="Param 7" id="bdc0de62-3c22-4eb6-b69b-b9566a55d5e1" type="ShortNameReferenceSetSocket" name="CastLowShortNameSet" />
+        <socket role="Param 8" full_role="Param 8" id="6ab2e97f-f734-4b3c-af47-0a2412914095" type="ShortNameReferenceSetSocket" name="CastHighShortNameSet" />
+        <socket role="Param 9" full_role="Param 9" id="f4ff4551-58d5-446a-b6aa-d00706ae9cb5" type="ShortNameReferenceSocket" name="RecoverShortName" />
+        <socket role="Param 10" full_role="Param 10" id="53e1b132-1d5a-4132-a058-ebc63bf22827" type="ShortNameReferenceSocket" name="RecoverLowShortName" />
+        <socket role="Param 11" full_role="Param 11" id="a3360cc5-a3b8-4fad-bbf5-b6c755378976" type="ShortNameReferenceSocket" name="RecoverHighShortName" />
+        <socket role="Param 12" full_role="Param 12" id="7f4bc2dc-38ed-4714-ac6b-f9af83b4b245" type="BooleanSocket" name="LoopCastAnimation" />
+        <socket role="Param 13" full_role="Param 13" id="d889c69a-bb10-4452-866c-d3cb58f49b10" type="BooleanSocket" name="ShouldDash" />
+        <socket role="Param 14" full_role="Param 14" id="5d68bdf1-3662-4baa-8875-87fa1f804468" type="EnumSocket" name="eSpellAnimationType" />
+        <socket role="Param 15" full_role="Param 15" id="3519982c-44bf-487e-87e3-f54499be34c3" type="BooleanSocket" name="IsUnsheathedSpell" />
+        <socket role="Param 16" full_role="Param 16" id="9e149d53-016f-40cb-82ea-6fc71aa76799" type="EnumSocket" name="eSpellAnimationIntentType" />
+        <socket role="Param 17" full_role="Param 17" id="8ed07243-9789-4607-be8c-b6ae37216142" type="BooleanSocket" name="IsThrownObjectWeapon" />
+        <socket role="Param 18" full_role="Param 18" id="ba9e23e4-235f-44d3-9a80-8bec417b6459" type="EnumSocket" name="ThrownObjectSize" />
+        <socket role="Param 19" full_role="Param 19" id="3e8ef77d-bfb0-43dc-850b-ffb6ed6f6a57" type="FixedStringSocket" name="SpellUUID" />
+        <socket role="Param 20" full_role="Param 20" id="62f485f2-c5a4-42e5-b702-062bde8e5a37" type="AnimationSetSocket" name="AnimationSubSet" />
+      </outputs>
+    </node>
+    <node id="1e51689d-68f7-49ac-af9d-6c01c824db59" name="SET" x="-26" y="-1508" ZIndex="46" width="377" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="319093ea-7700-4b4e-99d1-ae6410c73aa2">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="3e2b83ba-7f51-4d39-abb8-36016bfe295c" type="ExecSocket" name="WPN_UnsheathScaleDesired" />
+        <socket role="Parameter" full_role="Parameter" id="72490407-4cb4-458b-9841-cb85a2f9b7d2" type="Vector3Socket" name="WPN_UnsheathScaleDesired" default="1,1,1" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="a27d5cc9-dcd3-4d40-9f65-e71294912067" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="38ffed04-7b1f-425f-b2f3-bfee0f1a19dd" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="8099d0b1-f301-4c55-ac12-66907f91f7eb" name="SET" x="390" y="-1508" ZIndex="49" width="377" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="c6dd5bb5-2f19-48a8-91cb-7329dd3cccc7">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="9b1ef029-fae8-4a44-a1a8-8e09c5800eea" type="ExecSocket" name="WPN_UnsheathScaleCurrent" />
+        <socket role="Parameter" full_role="Parameter" id="012f5ceb-5e70-424f-bc7b-6830f04b4775" type="Vector3Socket" name="WPN_UnsheathScaleCurrent" default="1,1,1" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="852ce322-4b22-44f9-b50f-befda22c5536" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="7ddc9651-dfa4-438a-a2e6-f12b13b7d67b" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="5200d637-88ce-4c26-b2ea-d802497e6589" name="IsWeaponScalingEnabled" x="52" y="-286" ZIndex="29" width="208" height="52" type="FunctionNode" full_type="FunctionGraphNodeDefinition" Comment="" is_comment_pinned="false" graph_id="6c584733-c433-4e7b-9ac7-ba756fe7dbaa">
+      <inputs />
+      <outputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="1c6b96fb-35ee-471d-a1a7-9ec545550e56" type="BooleanSocket" name="Enabled" />
+      </outputs>
+    </node>
+    <node id="26a94f7b-6e19-4f15-ab28-c590f15420ee" name="Branch" x="52" y="-169" ZIndex="38" width="195" height="78" type="BranchNode" full_type="BranchNode" Comment="only scale big weapons. Refer to the weapon equipment type in the  Weapon Type Editor" is_comment_pinned="true">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="efef782e-1373-4989-8558-0d1b1c367d77" type="ExecSocket" name="" />
+        <socket role="Condition" full_role="Condition" id="ec2925ef-82d9-42fa-a295-2bdc13e67ecf" type="BooleanSocket" name="Condition" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutputTrue" full_role="ExecOutputTrue" id="cb9aabf8-0f3b-4748-9fb1-8beea810939b" type="ExecSocket" name="True" />
+        <socket role="ExecOutputFalse" full_role="ExecOutputFalse" id="de22e97d-3cfd-4ebb-a50a-cf6e91abe5ca" type="ExecSocket" name="False" />
+      </outputs>
+    </node>
+    <node id="6218e235-b8e1-4fc9-9cfa-9565bdd7e1b7" name="Branch" x="-364" y="-923" ZIndex="53" width="195" height="78" type="BranchNode" full_type="BranchNode" Comment="only scale big weapons. Refer to the weapon equipment type in the  Weapon Type Editor" is_comment_pinned="true">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="090e7b7d-73b1-44a5-aa89-76bc086b8bea" type="ExecSocket" name="" />
+        <socket role="Condition" full_role="Condition" id="cac4c649-ca47-4e8a-9bdd-fde7172023f7" type="BooleanSocket" name="Condition" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutputTrue" full_role="ExecOutputTrue" id="b2214127-310d-47b9-923f-b2b0dddb1c96" type="ExecSocket" name="True" />
+        <socket role="ExecOutputFalse" full_role="ExecOutputFalse" id="59ce2b70-db62-4b5e-b80b-c6e2d7780f2a" type="ExecSocket" name="False" />
+      </outputs>
+    </node>
+    <node id="a8e03c9e-9ba4-4625-9634-31d437bc2041" name="Make Vector3" x="182" y="559" ZIndex="31" width="117" height="104" type="MakeVector3Node" full_type="MakeVector3Node" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="XParameter" full_role="XParameter" id="cc42b19c-85e5-40ca-8e68-71c8895fa00b" type="FloatSocket" name="X" default="0" />
+        <socket role="YParameter" full_role="YParameter" id="9e54e293-5a17-48ad-830a-adb8ba5de740" type="FloatSocket" name="Y" default="0" />
+        <socket role="ZParameter" full_role="ZParameter" id="98953ca2-6517-413d-99ea-6a3e3d3ed525" type="FloatSocket" name="Z" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="f3d4e24d-8aa2-4a33-8fee-713fe7f34669" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="485dfcd1-e72e-40ae-8103-6100e6f29546" name="Float Interpolation" x="-117" y="559" ZIndex="28" width="247" height="104" type="FloatInterpolationNode" full_type="FloatInterpolationNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="8e8588fe-9a15-466e-9aa4-c05050d830a0" type="FloatSocket" name="Current" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="90713e9d-c0b3-4ef2-ab87-c8407538034e" type="FloatSocket" name="Target" default="1" />
+        <socket role="Parameter" full_role="Parameter" id="b92a372b-c59b-4c43-8200-143f9c1a80eb" type="FloatSocket" name="Interpolation speed" default="5" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="91ed5b17-e086-4b9c-acf8-cb016c9db442" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="5840996f-3a69-4a7d-8f38-1b612cded1c2" name="Float Interpolation" x="-117" y="663" ZIndex="27" width="247" height="104" type="FloatInterpolationNode" full_type="FloatInterpolationNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="3988e673-25b4-48d3-94b0-fc0aae529e0a" type="FloatSocket" name="Current" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="0a255f87-b410-452f-885d-a42f0168038f" type="FloatSocket" name="Target" default="1" />
+        <socket role="Parameter" full_role="Parameter" id="ed32f512-75a5-4be6-9bc8-30be429761c2" type="FloatSocket" name="Interpolation speed" default="5" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="be06a607-1749-4ec5-95a2-18cd290fa0b1" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="507f3d79-e1ee-4ed1-a23a-73840b2959bc" name="Float Interpolation" x="-117" y="767" ZIndex="30" width="247" height="104" type="FloatInterpolationNode" full_type="FloatInterpolationNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="aad91a51-fa06-4bde-b2b0-57769747c123" type="FloatSocket" name="Current" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="2802e0e1-0602-4355-bf67-4f2c0b9f75c4" type="FloatSocket" name="Target" default="1" />
+        <socket role="Parameter" full_role="Parameter" id="57e4682a-4ea5-4ec6-84ae-92cb34814ff7" type="FloatSocket" name="Interpolation speed" default="5" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="c5e01887-8175-4585-b4d7-e7644748ca81" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="78b02354-c22d-4e01-a21c-b56a886546dc" name="SET" x="455" y="-78" ZIndex="6" width="260" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="c6dd5bb5-2f19-48a8-91cb-7329dd3cccc7">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="aee1565b-4ae1-4075-9ab5-fb9137bc87b8" type="ExecSocket" name="WPN_UnsheathScaleCurrent" />
+        <socket role="Parameter" full_role="Parameter" id="47e148a3-a286-4d0f-b99d-cf4090df7442" type="Vector3Socket" name="WPN_UnsheathScaleCurrent" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="6ed9d65b-d0bd-4fe1-8f15-bd9c1656d983" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="d252af29-5934-4434-8ac8-3063f3c96ffd" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="8b9ee8f9-774d-4409-9bcb-40791615acda" name="Break Vector3" x="-247" y="715" ZIndex="34" width="117" height="104" type="BreakVector3Node" full_type="BreakVector3Node" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter" full_role="Parameter" id="ba70bb41-69ad-4e2c-ad79-16efd974abaf" type="Vector3Socket" name="" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="XResult" full_role="XResult" id="39818bef-1a17-4174-b061-a90a094fa028" type="FloatSocket" name="X" />
+        <socket role="YResult" full_role="YResult" id="58065396-4245-4d58-b243-480c4665e4b9" type="FloatSocket" name="Y" />
+        <socket role="ZResult" full_role="ZResult" id="4116a95e-2e19-4814-b703-9f389d7bf27e" type="FloatSocket" name="Z" />
+      </outputs>
+    </node>
+    <node id="6cb405cd-98a2-4652-b26e-dda2e99e4875" name="GetVariableNode" x="-494" y="715" ZIndex="36" width="234" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="c6dd5bb5-2f19-48a8-91cb-7329dd3cccc7">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="ec7fb83d-2a74-4ebf-a62d-b916fbfaae09" type="Vector3Socket" name="WPN_UnsheathScaleCurrent" />
+      </outputs>
+    </node>
+    <node id="1b3d1d82-b646-4197-a419-a166dbd5a227" name="Branch" x="-364" y="-663" ZIndex="50" width="195" height="78" type="BranchNode" full_type="BranchNode" Comment="only scale big weapons. Refer to the weapon equipment type in the  Weapon Type Editor" is_comment_pinned="true">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="0234a6a2-00d7-40c6-861b-26a079af9ea3" type="ExecSocket" name="" />
+        <socket role="Condition" full_role="Condition" id="a8ceca98-6c58-4687-9012-e4e9c7a0abc9" type="BooleanSocket" name="Condition" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutputTrue" full_role="ExecOutputTrue" id="826f2843-f8c0-4d22-9973-5c80b264c6d8" type="ExecSocket" name="True" />
+        <socket role="ExecOutputFalse" full_role="ExecOutputFalse" id="f03c2a8b-361e-4fb8-92c3-3858863082f3" type="ExecSocket" name="False" />
+      </outputs>
+    </node>
+    <node id="643f5acf-ea33-4d59-ad35-94c59e6dcc0f" name="IsWeaponScalingEnabled" x="-754" y="-832" ZIndex="54" width="208" height="52" type="FunctionNode" full_type="FunctionGraphNodeDefinition" Comment="" is_comment_pinned="false" graph_id="6c584733-c433-4e7b-9ac7-ba756fe7dbaa">
+      <inputs />
+      <outputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="0cc87a15-4669-4b8d-bd91-67a1dd5f115b" type="BooleanSocket" name="Enabled" />
+      </outputs>
+    </node>
+    <node id="94c877a1-4385-40ab-92b6-4146a34abdc4" name="DFLT variable value from blueprint instance" x="-338" y="-572" ZIndex="0" width="377" height="195" type="CommentNode" full_type="CommentNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+    </node>
+    <node id="396f7e9b-d91f-4c49-a0fc-895706af026c" name="Spelll unsheath the weapon -&gt; scale one instantly. If sheathed spell, scale to Desired scale imidietely" x="-832" y="-2093" ZIndex="32" width="1664" height="1144" type="CommentNode" full_type="CommentNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+    </node>
+    <node id="dbc596f6-8478-41ca-b8c6-48884e6cf0fe" name="Non linear interpolation of the scale current to Desired" x="-793" y="91" ZIndex="3" width="1118" height="416" type="CommentNode" full_type="CommentNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+    </node>
+    <node id="b4c532a9-a5d1-4466-b491-b0c9ad10b591" name="Non linear scale to 1,1,1 if it is not a scaleable weapon" x="-520" y="520" ZIndex="8" width="845" height="364" type="CommentNode" full_type="CommentNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+    </node>
+    <node id="6e03f6cb-f040-4e48-94fe-205a84c2ccc2" name="Text Event" x="507" y="-923" ZIndex="43" width="156" height="52" type="TextEventNode" full_type="TextEventNode" Comment="" is_comment_pinned="false" TextEvent="Unsheathed_L">
+      <inputs />
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="1b95e10e-7f27-4f76-9ce1-e759934cf177" type="ExecSocket" name="" />
+      </outputs>
+    </node>
+    <node id="8ff78785-1b5e-49d8-9498-216a77b9b978" name="SET" x="715" y="-923" ZIndex="39" width="377" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="319093ea-7700-4b4e-99d1-ae6410c73aa2">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="fe3151fb-d1c9-4d5e-9eec-abccfa1c2a8b" type="ExecSocket" name="WPN_UnsheathScaleDesired" />
+        <socket role="Parameter" full_role="Parameter" id="2e324abd-232e-462c-9360-6d4147040d38" type="Vector3Socket" name="WPN_UnsheathScaleDesired" default="1,1,1" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="c4a50825-ff03-4a4b-b833-bdfc4d3a840b" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="8d74da91-fe15-4277-a3f4-5f04baf96636" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="3dc205ed-9975-410f-99f6-8cd3b49b6132" name="Text Event" x="507" y="-858" ZIndex="44" width="156" height="52" type="TextEventNode" full_type="TextEventNode" Comment="" is_comment_pinned="false" TextEvent="Unsheathed_R">
+      <inputs />
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="037ae44d-1815-42f4-a49d-e81783fd89f2" type="ExecSocket" name="" />
+      </outputs>
+    </node>
+    <node id="f4d7beff-517e-4dfd-9a8d-aebe1ec0b0a4" name="Text Event" x="520" y="-663" ZIndex="37" width="130" height="52" type="TextEventNode" full_type="TextEventNode" Comment="" is_comment_pinned="false" TextEvent="Sheathed_L">
+      <inputs />
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="9f6c0333-30d9-4636-a09a-077f62d6e7a4" type="ExecSocket" name="" />
+      </outputs>
+    </node>
+    <node id="dff9e3c8-1b21-470d-a4a4-01a55612691a" name="Text Event" x="520" y="-598" ZIndex="41" width="143" height="52" type="TextEventNode" full_type="TextEventNode" Comment="" is_comment_pinned="false" TextEvent="Sheathed_R">
+      <inputs />
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="4c37a0fd-7bf2-4a00-b16f-e4b070ee88e6" type="ExecSocket" name="" />
+      </outputs>
+    </node>
+    <node id="513fdcaa-0b88-46fd-afd5-ad82e5a6359e" name="SET" x="728" y="-663" ZIndex="40" width="273" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="319093ea-7700-4b4e-99d1-ae6410c73aa2">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="863dce38-7c3e-4ffa-aa77-cf1e5a0b53d4" type="ExecSocket" name="WPN_UnsheathScaleDesired" />
+        <socket role="Parameter" full_role="Parameter" id="55ef6aae-0cf2-4e93-b9ee-e3f4e7953ee0" type="Vector3Socket" name="WPN_UnsheathScaleDesired" default="1,1,1" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="a058e8fb-23cd-49bf-8c4c-f0ff4780529a" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="85d729fb-a175-48fe-b1f1-3f1fe8530e12" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="0255beca-98f0-4d7f-bbf2-7292845c5ca7" name="GetVariableNode" x="741" y="-572" ZIndex="42" width="221" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="a5c359de-e683-4209-b1bf-b398c59d18c2">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="52653b0c-e19e-4368-bf9b-1aaedd7aac33" type="Vector3Socket" name="WPN_SheathScaleDesired" />
+      </outputs>
+    </node>
+    <node id="425f34f3-8cd3-4edc-a074-3c101f0eafe8" name="GetVariableNode" x="-117" y="130" ZIndex="14" width="208" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="dd8f1aeb-d29c-4a6a-b642-5492ba191d08">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="6e764fac-f141-43ee-bb2e-0d9f5ada8ed4" type="FloatSocket" name="WPN_ScaleInterpSpeed" />
+      </outputs>
+    </node>
+    <node id="db72577b-825b-4b44-b35f-9be7e4bd0d6a" name="GetVariableNode" x="-26" y="-234" ZIndex="18" width="286" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="ff8df738-e53a-4fb0-8cbc-448374d964fe">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="950f9604-9e48-4705-8e7d-30c9503ee0c4" type="BooleanSocket" name="WeaponIndex_WeaponScaleEnabled" />
+      </outputs>
+    </node>
+    <node id="6ceeec00-a979-4c61-b5ed-e2e8cfc158f3" name="GetVariableNode" x="-1885" y="-325" ZIndex="3" width="221" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="a5c359de-e683-4209-b1bf-b398c59d18c2">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="2cc268bc-3090-445d-af7a-0bb6a082ccf8" type="Vector3Socket" name="WPN_SheathScaleDesired" />
+      </outputs>
+    </node>
+    <node id="0583b979-796a-4d16-8688-02684f80c35f" name="SET" x="-1391" y="-481" ZIndex="0" width="286" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="942dade4-886b-4027-a922-8cefc880f3f2">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="aeb4ab46-165c-424a-8785-2107caceca3d" type="ExecSocket" name="WPN_ScaleEnabledForCharacter" />
+        <socket role="Parameter" full_role="Parameter" id="5226efee-bff4-4e13-8acf-b6a79bd52a9b" type="BooleanSocket" name="WPN_ScaleEnabledForCharacter" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="48b8181e-f96d-419b-b349-315929883c8e" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="970ebac9-60a9-4e21-8526-13e62ebe8276" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="a4ce5134-c0b8-4637-8f8d-f30db24e6c0c" name="Sequence" x="-2080" y="-195" ZIndex="0" width="143" height="104" type="SequenceNode" full_type="SequenceNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="4c82b037-06c3-43d1-a3b1-1d8239f3f796" type="ExecSocket" name="" />
+      </inputs>
+      <outputs>
+        <socket role="Out  0" full_role="Out  0" id="1ec12057-b502-47e3-8327-a9461f65c045" type="ExecSocket" name="Then 0" />
+        <socket role="Out  1" full_role="Out  1" id="f2eb8f67-96e2-4ed3-9cb6-a25a5a41ce3f" type="ExecSocket" name="Then 1" />
+      </outputs>
+    </node>
+    <node id="3dfa4305-2169-4a7d-b0e3-5ed9abe4e657" name="Float != Float" x="-1170" y="-299" ZIndex="2" width="130" height="78" type="FloatNeNode" full_type="FloatNeNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="86989ef1-bb3e-4ed2-a6ca-d1182b5730a2" type="FloatSocket" name="" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="c776c96c-5b3d-434f-bf45-9658eadcbf4f" type="FloatSocket" name="" default="3" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="00a0ab04-b8b3-48c4-bf9d-b27b9ec79c52" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="8b665985-c86c-4c2e-ad1e-282d96eac8ed" name="Do Once" x="-1651" y="-481" ZIndex="0" width="234" height="104" type="DoOnceNode" full_type="DoOnceNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="fa663ecf-711e-4159-976b-f683106b3573" type="ExecSocket" name="" />
+        <socket role="ExecResetInput" full_role="ExecResetInput" id="fee39af0-a7eb-4eb9-86cc-402ce16ade36" type="ExecSocket" name="Reset" />
+        <socket role="Condition" full_role="Condition" id="3d29b825-7b79-400a-9bc5-c543bb7b1623" type="BooleanSocket" name="Can Execute" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="65d88293-52ef-4ca4-bd5c-419acd488ccf" type="ExecSocket" name="Output" />
+      </outputs>
+    </node>
+    <node id="27413343-fc34-40dd-956f-4b2f51d81b01" name="Break Vector3" x="-1625" y="-325" ZIndex="5" width="117" height="104" type="BreakVector3Node" full_type="BreakVector3Node" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter" full_role="Parameter" id="1791523e-10b8-4db3-a012-a5152cdd4cc4" type="Vector3Socket" name="" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="XResult" full_role="XResult" id="4ce850cb-cfc4-40a3-985d-99b852334ba5" type="FloatSocket" name="X" />
+        <socket role="YResult" full_role="YResult" id="101583ba-6355-4362-bf84-7ef335467580" type="FloatSocket" name="Y" />
+        <socket role="ZResult" full_role="ZResult" id="48be6ee8-c7f8-429e-a0c4-e9495b249479" type="FloatSocket" name="Z" />
+      </outputs>
+    </node>
+    <node id="271a98e7-60da-49ce-9bd1-e63364b3bf8f" name="Float + Float" x="-1482" y="-377" ZIndex="4" width="104" height="104" type="FloatAddNode" full_type="VariableInputNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="94293c27-23f6-409e-b948-1706338daba3" type="FloatSocket" name="" default="0" />
+        <socket role="Parameter 1" full_role="Parameter 1" id="187e1742-9e5d-438e-b627-6bf73167d4c7" type="FloatSocket" name="" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="f2d19b94-3704-486e-9ef7-77872d9816b7" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="d5d6fa10-12de-4373-962a-cd9d8409a3da" name="Float + Float" x="-1352" y="-299" ZIndex="1" width="104" height="104" type="FloatAddNode" full_type="VariableInputNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="4bf8e1bc-35ae-4aaa-b4bd-575af3bcc01f" type="FloatSocket" name="" default="0" />
+        <socket role="Parameter 1" full_role="Parameter 1" id="8741db1e-5be9-409a-8a68-d169533fb559" type="FloatSocket" name="" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="f64d715d-25a9-45aa-b55d-b6a86c15339b" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="54d4cf1c-6992-4446-a63a-f06bc95c6acf" name="Branch" x="-247" y="-169" ZIndex="2" width="195" height="78" type="BranchNode" full_type="BranchNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="d0066cbc-d660-45d5-b618-9b5341038753" type="ExecSocket" name="" />
+        <socket role="Condition" full_role="Condition" id="c7b9e061-3a99-4b07-9a81-43cfe5d57687" type="BooleanSocket" name="Condition" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutputTrue" full_role="ExecOutputTrue" id="b8182256-f3dc-4b9e-ad33-92801b258adc" type="ExecSocket" name="True" />
+        <socket role="ExecOutputFalse" full_role="ExecOutputFalse" id="b9df4933-1ed4-4963-9ef3-d069cf7f8d8b" type="ExecSocket" name="False" />
+      </outputs>
+    </node>
+    <node id="05dd060b-753d-40d8-9067-b2131d910825" name="GetVariableNode" x="-325" y="-78" ZIndex="9" width="260" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="942dade4-886b-4027-a922-8cefc880f3f2">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="7b06c779-7d59-4ed1-84c3-ebb4580f37e6" type="BooleanSocket" name="WPN_ScaleEnabledForCharacter" />
+      </outputs>
+    </node>
+    <node id="7cd1297b-22ce-460d-af2f-8dda188a3bde" name="SET" x="-702" y="-481" ZIndex="0" width="325" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="3d1320c9-7518-4566-a1f0-5de217746230">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="80081535-efea-420f-b34d-95ab9ffd4d4b" type="ExecSocket" name="WPN_ScaleSheathedInstrument" />
+        <socket role="Parameter" full_role="Parameter" id="ab9f833e-60f2-4af1-82c5-5fd8c7cd1917" type="BooleanSocket" name="WPN_ScaleSheathedInstrument" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="01eb33a0-d794-4a0e-a7f0-3a7532a779c5" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="e9db95c0-6bbc-42cb-99fe-48ed63e82313" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="7c9c7093-8533-4e7d-b709-c77c400ff72b" name="GetVariableNode" x="-1014" y="-390" ZIndex="4" width="260" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="bbfcaf32-ae82-4f0a-bdbf-27e44904ef5e">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="46a178db-b6d1-4d0c-9f96-46edf63ea30b" type="Vector3Socket" name="WPN_InstrumentSheathedScale" />
+      </outputs>
+    </node>
+    <node id="dbc8da8d-0677-4a40-9522-159dc44a7164" name="Float != Float" x="-507" y="-299" ZIndex="0" width="130" height="78" type="FloatNeNode" full_type="FloatNeNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="373670d9-80ad-44e5-9a93-48366b572c7f" type="FloatSocket" name="" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="1557379b-9ab3-4f11-b18a-4b54a7876adc" type="FloatSocket" name="" default="3" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="b9f8884b-22f7-4202-af77-607b905c5b07" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="38d6651b-02f5-4e91-afbe-f4d1a7fbbadb" name="Break Vector3" x="-871" y="-325" ZIndex="1" width="117" height="104" type="BreakVector3Node" full_type="BreakVector3Node" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter" full_role="Parameter" id="21bcc432-7958-4fca-b38e-715f6bbe6af8" type="Vector3Socket" name="" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="XResult" full_role="XResult" id="45007038-f0ba-4c4e-826b-cbbd4ab361fb" type="FloatSocket" name="X" />
+        <socket role="YResult" full_role="YResult" id="de724b88-8b20-4efa-a4d0-3face1da257f" type="FloatSocket" name="Y" />
+        <socket role="ZResult" full_role="ZResult" id="58b03eb9-0551-454a-a4a7-6c7d9f857e9c" type="FloatSocket" name="Z" />
+      </outputs>
+    </node>
+    <node id="ddf32ea0-e6e9-4385-839d-93d2e70aee4a" name="Float + Float" x="-741" y="-377" ZIndex="3" width="104" height="104" type="FloatAddNode" full_type="VariableInputNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="3770285b-c361-406f-960a-1888c5a1b27f" type="FloatSocket" name="" default="0" />
+        <socket role="Parameter 1" full_role="Parameter 1" id="31a73d00-bf98-4bcd-a1b3-88a4ee318ede" type="FloatSocket" name="" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="02066b84-b7e7-4fd5-a5b7-5ddcf4d89511" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="a399927b-8c9f-4b75-abbe-a6c654064b83" name="Float + Float" x="-624" y="-299" ZIndex="2" width="104" height="104" type="FloatAddNode" full_type="VariableInputNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="fb55dbdc-d324-46e0-97dc-d2df44f9b03e" type="FloatSocket" name="" default="0" />
+        <socket role="Parameter 1" full_role="Parameter 1" id="4fcd1f0a-62c7-4fc9-adef-695a84356a4a" type="FloatSocket" name="" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="d4898a20-4a0e-4595-9706-fa9a0a5ed0ff" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+  </nodes>
+  <links>
+    <link id="d9a57254-5aaa-4cd4-93c3-f65ac1a3666f" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b9c26057-ff69-488d-a32b-1166c11481a6" to_id="8c43f6c6-4657-4725-a44b-d82f3981fd81" begin_point_x="85" begin_point_y="220" end_point_x="201" end_point_y="220" />
+    <link id="917791b5-98c1-4ffd-9e94-492d937467ab" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="a38d31a4-6e98-48a4-a943-d4158d9a589b" to_id="43a8b83c-8e2f-4a44-884b-e5946694f169" begin_point_x="85" begin_point_y="324" end_point_x="201" end_point_y="246" />
+    <link id="e0a52c9f-7375-4728-bf12-c69bfaf4f916" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56e758f0-595a-4944-a075-7b44fe896fde" to_id="621d4da4-f320-4c9c-90ed-dd88da79247a" begin_point_x="85" begin_point_y="428" end_point_x="201" end_point_y="272" />
+    <link id="f5f2912e-f46e-4682-89bd-de947d6b4e0d" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="10ba6ef9-f725-43f8-8f4a-adfcf7358280" to_id="7743f27a-2434-47e0-a721-560a50061ae8" begin_point_x="-552" begin_point_y="376" end_point_x="-410" end_point_y="376" />
+    <link id="f9bee990-051f-4cbd-98f0-cd12c7231e12" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="81e67c38-46f6-47be-872e-d80cc2578edc" to_id="ee932163-8d38-4d88-b135-0b8316d07b06" begin_point_x="-331" begin_point_y="376" end_point_x="-98" end_point_y="220" />
+    <link id="6757a79f-0128-400e-bbd9-2f8f2a42a781" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="22472313-4d84-4908-93d5-57557477838c" to_id="3dedd154-d119-4ecc-a0c6-8b9f226b2054" begin_point_x="-552" begin_point_y="259" end_point_x="-410" end_point_y="259" />
+    <link id="0fc5d458-049a-45e8-8938-8e0ed9d65df0" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="72d72eb8-8cf0-494f-93c9-b5fe53c6054e" to_id="00358ca0-ed91-4b78-a72a-2f7d4dedbf99" begin_point_x="-19" begin_point_y="-495" end_point_x="45" end_point_y="-599" />
+    <link id="f523e88e-ec3c-4a6f-a350-9081ab95d340" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="33b0b92f-1b7c-4e88-b01c-7f9bc7354b4e" to_id="c18a3377-d1ab-4752-a377-c0958c1d2261" begin_point_x="-331" begin_point_y="259" end_point_x="-98" end_point_y="246" />
+    <link id="f172108d-44bc-4887-857e-724cbb190d46" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="dd28e8b9-3a38-494e-80b2-473461c87d6f" to_id="f3e77487-338b-42b6-95cb-d0a9feefc1e7" begin_point_x="-331" begin_point_y="285" end_point_x="-98" end_point_y="350" />
+    <link id="72eed6ad-a6fd-420b-89e7-5dda4dc94005" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="4f66f391-31d6-4e7e-97b3-79526e632f27" to_id="669f1a40-874e-4566-87cd-03e84aeeb67e" begin_point_x="-331" begin_point_y="311" end_point_x="-98" end_point_y="454" />
+    <link id="8895b3ae-3fa2-43f6-83fa-cb086ae061e0" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="bc418c8c-fad0-4937-a21e-12b47a072d24" to_id="dfc2a296-50d1-475f-805c-e065069618b0" begin_point_x="-331" begin_point_y="401" end_point_x="-98" end_point_y="324" />
+    <link id="098147cb-bafb-4bd7-90f7-e6d3b9f5bfbf" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="02c65f42-e765-49b3-a5c9-52d2da42ef6a" to_id="4499f100-603f-463f-b82d-6bf0eff7be76" begin_point_x="-331" begin_point_y="427" end_point_x="-98" end_point_y="428" />
+    <link id="a1614fb8-a268-449e-8464-174a7ea01890" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="4924e5d7-3237-4c76-90b2-1cd7a03b758e" to_id="f22abe74-6f09-41ee-a6c7-1598baf99731" begin_point_x="331" begin_point_y="-1977" end_point_x="409" end_point_y="-1977" />
+    <link id="6c21f0a9-520b-4f85-b4eb-bd30fdd239b3" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="a27d5cc9-dcd3-4d40-9f65-e71294912067" to_id="9b1ef029-fae8-4a44-a1a8-8e09c5800eea" begin_point_x="331" begin_point_y="-1470" end_point_x="409" end_point_y="-1470" />
+    <link id="4cc5e162-d8f3-4b70-ba26-be3bf13b5c8c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="91ed5b17-e086-4b9c-acf8-cb016c9db442" to_id="cc42b19c-85e5-40ca-8e68-71c8895fa00b" begin_point_x="111" begin_point_y="597" end_point_x="201" end_point_y="597" />
+    <link id="3d205bfc-5db6-44ec-b2c7-dcdeb994a3b4" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="be06a607-1749-4ec5-95a2-18cd290fa0b1" to_id="9e54e293-5a17-48ad-830a-adb8ba5de740" begin_point_x="111" begin_point_y="701" end_point_x="201" end_point_y="623" />
+    <link id="7927cb11-6f0a-48a6-8fda-3c884b957bb2" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c5e01887-8175-4585-b4d7-e7644748ca81" to_id="98953ca2-6517-413d-99ea-6a3e3d3ed525" begin_point_x="111" begin_point_y="805" end_point_x="201" end_point_y="649" />
+    <link id="72618a8c-72b9-4386-ad26-b6bfb1cfa356" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="de22e97d-3cfd-4ebb-a50a-cf6e91abe5ca" to_id="aee1565b-4ae1-4075-9ab5-fb9137bc87b8" begin_point_x="228" begin_point_y="-105" end_point_x="474" end_point_y="-40" />
+    <link id="27ff56cd-bd0d-4ed0-9e2f-524c3b445ce6" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="39818bef-1a17-4174-b061-a90a094fa028" to_id="8e8588fe-9a15-466e-9aa4-c05050d830a0" begin_point_x="-149" begin_point_y="753" end_point_x="-98" end_point_y="597" />
+    <link id="31977a45-f285-499f-a318-5ff84bc46c23" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="58065396-4245-4d58-b243-480c4665e4b9" to_id="3988e673-25b4-48d3-94b0-fc0aae529e0a" begin_point_x="-149" begin_point_y="779" end_point_x="-98" end_point_y="701" />
+    <link id="94a71759-2639-44cc-8d5e-6a969eb78c88" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="4116a95e-2e19-4814-b703-9f389d7bf27e" to_id="aad91a51-fa06-4bde-b2b0-57769747c123" begin_point_x="-149" begin_point_y="805" end_point_x="-98" end_point_y="805" />
+    <link id="a16ea59a-cbb7-4d60-acfb-9321ccdde5b2" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="ec7fb83d-2a74-4ebf-a62d-b916fbfaae09" to_id="ba70bb41-69ad-4e2c-ad79-16efd974abaf" begin_point_x="-279" begin_point_y="753" end_point_x="-228" end_point_y="753" />
+    <link id="a510b4be-54c0-4e3f-adf8-a8a32dfad740" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7124f1d7-1e2f-45b6-817f-b73390e3f973" to_id="090e7b7d-73b1-44a5-aa89-76bc086b8bea" begin_point_x="-565" begin_point_y="-885" end_point_x="-345" end_point_y="-885" />
+    <link id="91b4ab8e-364a-4fbd-8600-f16cffabf27e" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7652fe70-033a-4990-ad9e-b613c9c58685" to_id="0234a6a2-00d7-40c6-861b-26a079af9ea3" begin_point_x="-603" begin_point_y="-625" end_point_x="-345" end_point_y="-625" />
+    <link id="7a0fca7f-c2c1-45e9-bb03-c824e0e893ca" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="0cc87a15-4669-4b8d-bd91-67a1dd5f115b" to_id="cac4c649-ca47-4e8a-9bdd-fde7172023f7" begin_point_x="-565" begin_point_y="-794" end_point_x="-345" end_point_y="-859" />
+    <link id="647e1c04-8ac1-4e9b-828e-ea75726d05a2" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="0cc87a15-4669-4b8d-bd91-67a1dd5f115b" to_id="a8ceca98-6c58-4687-9012-e4e9c7a0abc9" begin_point_x="-565" begin_point_y="-794" end_point_x="-345" end_point_y="-599" />
+    <link id="a8c9e601-a1d2-45e2-862a-18f00b631bb9" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="3fbd1419-7df9-4f0b-aec8-2085c6d09cc9" to_id="7e46ef72-7db5-49a4-8150-cdb8055482ad" begin_point_x="-500" begin_point_y="-1977" end_point_x="-7" end_point_y="-1977" />
+    <link id="c0ac38b4-496e-4f59-b7ba-e0d42e2b6a51" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f36f522a-f492-4365-b8d7-1c5264197136" to_id="3e2b83ba-7f51-4d39-abb8-36016bfe295c" begin_point_x="-474" begin_point_y="-1470" end_point_x="-7" end_point_y="-1470" />
+    <link id="2c640ff5-0294-4ad7-87a8-c9a5d9ae4bb1" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b81e4087-eee1-4510-a379-97d8a218abfb" to_id="e6b4cf6e-f69b-4eab-b8ed-3711b18f9c63" begin_point_x="280" begin_point_y="220" end_point_x="474" end_point_y="-105" />
+    <link id="895f797b-fbc9-4024-bf51-35789ff41d1d" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="cb9aabf8-0f3b-4748-9fb1-8beea810939b" to_id="c4af0196-62a4-4dde-ab1f-00d6e4b29b25" begin_point_x="228" begin_point_y="-131" end_point_x="474" end_point_y="-131" />
+    <link id="191d844d-d26e-4ec5-a557-dc210d39e344" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="826f2843-f8c0-4d22-9973-5c80b264c6d8" to_id="9b0cd7eb-87c9-4de8-ac8b-787d54a4ae26" begin_point_x="-188" begin_point_y="-625" end_point_x="45" end_point_y="-625" />
+    <link id="a6ddce8f-dba6-48a3-a79f-141e9c07f24c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b2214127-310d-47b9-923f-b2b0dddb1c96" to_id="d4c21e1f-c276-4449-99a5-ef8b70ebf22c" begin_point_x="-188" begin_point_y="-885" end_point_x="58" end_point_y="-885" />
+    <link id="a4fa1420-99ed-4387-9220-3a56d884554a" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="1b95e10e-7f27-4f76-9ce1-e759934cf177" to_id="fe3151fb-d1c9-4d5e-9eec-abccfa1c2a8b" begin_point_x="644" begin_point_y="-885" end_point_x="734" end_point_y="-885" />
+    <link id="3b1c6bbf-d843-4943-9cfc-cb8d8d8e3a1d" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="037ae44d-1815-42f4-a49d-e81783fd89f2" to_id="fe3151fb-d1c9-4d5e-9eec-abccfa1c2a8b" begin_point_x="644" begin_point_y="-820" end_point_x="734" end_point_y="-885" />
+    <link id="c78f9676-e366-4654-97d5-381ce0c634df" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="52653b0c-e19e-4368-bf9b-1aaedd7aac33" to_id="55ef6aae-0cf2-4e93-b9ee-e3f4e7953ee0" begin_point_x="943" begin_point_y="-534" end_point_x="747" end_point_y="-599" />
+    <link id="56414962-5203-4017-b6ef-bc3847399424" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="9f6c0333-30d9-4636-a09a-077f62d6e7a4" to_id="863dce38-7c3e-4ffa-aa77-cf1e5a0b53d4" begin_point_x="631" begin_point_y="-625" end_point_x="747" end_point_y="-625" />
+    <link id="38b51ea8-b32b-440c-af0a-d4fac193c61a" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="4c37a0fd-7bf2-4a00-b16f-e4b070ee88e6" to_id="863dce38-7c3e-4ffa-aa77-cf1e5a0b53d4" begin_point_x="644" begin_point_y="-560" end_point_x="747" end_point_y="-625" />
+    <link id="c2e4877f-b3a6-4576-8ae4-0b9e1bdf94c4" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="6e764fac-f141-43ee-bb2e-0d9f5ada8ed4" to_id="93544cf8-4a84-4e37-a5b0-18334d5aa0d5" begin_point_x="72" begin_point_y="168" end_point_x="-98" end_point_y="272" />
+    <link id="4d4f66e7-6e41-45e9-974a-99be39e80d59" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="6e764fac-f141-43ee-bb2e-0d9f5ada8ed4" to_id="10864590-165a-42ff-bb8d-b815e12391cd" begin_point_x="72" begin_point_y="168" end_point_x="-98" end_point_y="376" />
+    <link id="03e86f09-4a6c-40a5-bafa-1e3b5b00af64" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="6e764fac-f141-43ee-bb2e-0d9f5ada8ed4" to_id="b9612b7f-e660-4e77-8f9f-7e5a64f55b87" begin_point_x="72" begin_point_y="168" end_point_x="-98" end_point_y="480" />
+    <link id="4991516e-1deb-4819-b53e-922ed8a64958" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="950f9604-9e48-4705-8e7d-30c9503ee0c4" to_id="ec2925ef-82d9-42fa-a295-2bdc13e67ecf" begin_point_x="240" begin_point_y="-196" end_point_x="71" end_point_y="-105" />
+    <link id="54a1867d-91f9-4ad9-9a42-9040b2cc65ba" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f3d4e24d-8aa2-4a33-8fee-713fe7f34669" to_id="47e148a3-a286-4d0f-b99d-cf4090df7442" begin_point_x="280" begin_point_y="597" end_point_x="474" end_point_y="-14" />
+    <link id="af8a3ddb-5423-439b-9eea-7251999b2b5c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="eccbed5b-51b6-4e05-8c85-c7e8dc189a3c" to_id="4c82b037-06c3-43d1-a3b1-1d8239f3f796" begin_point_x="-2255" begin_point_y="-157" end_point_x="-2061" end_point_y="-157" />
+    <link id="279c1d23-55d7-4ffc-abba-29ef19ac7aa3" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="00a0ab04-b8b3-48c4-bf9d-b27b9ec79c52" to_id="5226efee-bff4-4e13-8acf-b6a79bd52a9b" begin_point_x="-1058" begin_point_y="-261" end_point_x="-1372" end_point_y="-417" />
+    <link id="b1bc251a-3d7a-471e-9093-3ee0aa796b69" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="1ec12057-b502-47e3-8327-a9461f65c045" to_id="fa663ecf-711e-4159-976b-f683106b3573" begin_point_x="-1956" begin_point_y="-157" end_point_x="-1632" end_point_y="-443" />
+    <link id="b4c99e28-8d42-44cb-859d-0204c1a84146" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="65d88293-52ef-4ca4-bd5c-419acd488ccf" to_id="aeb4ab46-165c-424a-8785-2107caceca3d" begin_point_x="-1436" begin_point_y="-443" end_point_x="-1372" end_point_y="-443" />
+    <link id="2ddd4496-5379-4ccd-a66e-138ecedea519" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="2cc268bc-3090-445d-af7a-0bb6a082ccf8" to_id="1791523e-10b8-4db3-a012-a5152cdd4cc4" begin_point_x="-1682" begin_point_y="-287" end_point_x="-1606" end_point_y="-287" />
+    <link id="96d08dbd-d8a8-48cf-9351-3e96ba6f2b24" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="4ce850cb-cfc4-40a3-985d-99b852334ba5" to_id="94293c27-23f6-409e-b948-1706338daba3" begin_point_x="-1526" begin_point_y="-287" end_point_x="-1463" end_point_y="-339" />
+    <link id="1d35333e-2b6d-488b-8e6b-1a0d1d89a39e" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="101583ba-6355-4362-bf84-7ef335467580" to_id="187e1742-9e5d-438e-b627-6bf73167d4c7" begin_point_x="-1526" begin_point_y="-261" end_point_x="-1463" end_point_y="-313" />
+    <link id="09b87500-8900-4d03-87d6-99bcd67bd8e6" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f2d19b94-3704-486e-9ef7-77872d9816b7" to_id="4bf8e1bc-35ae-4aaa-b4bd-575af3bcc01f" begin_point_x="-1397" begin_point_y="-339" end_point_x="-1333" end_point_y="-261" />
+    <link id="43a68e2e-a829-4e52-8b9b-96de049a105a" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="48be6ee8-c7f8-429e-a0c4-e9495b249479" to_id="8741db1e-5be9-409a-8a68-d169533fb559" begin_point_x="-1526" begin_point_y="-235" end_point_x="-1333" end_point_y="-235" />
+    <link id="59b32464-ad17-4e04-a558-5212a4522886" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f64d715d-25a9-45aa-b55d-b6a86c15339b" to_id="86989ef1-bb3e-4ed2-a6ca-d1182b5730a2" begin_point_x="-1267" begin_point_y="-261" end_point_x="-1151" end_point_y="-261" />
+    <link id="1e83bd3a-7e3a-47a0-bca3-c349555a1eaa" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f2eb8f67-96e2-4ed3-9cb6-a25a5a41ce3f" to_id="d0066cbc-d660-45d5-b618-9b5341038753" begin_point_x="-1956" begin_point_y="-130" end_point_x="-228" end_point_y="-131" />
+    <link id="f373c52f-2449-4ee0-9800-cc13ff906a27" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7b06c779-7d59-4ed1-84c3-ebb4580f37e6" to_id="c7b9e061-3a99-4b07-9a81-43cfe5d57687" begin_point_x="-84" begin_point_y="-40" end_point_x="-228" end_point_y="-105" />
+    <link id="52283a40-6cdb-43d2-882b-28b4c9f08878" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b8182256-f3dc-4b9e-ad33-92801b258adc" to_id="efef782e-1373-4989-8558-0d1b1c367d77" begin_point_x="-71" begin_point_y="-131" end_point_x="71" end_point_y="-131" />
+    <link id="cb3d65c2-836e-4e82-8710-5ccbce10a43d" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="48b8181e-f96d-419b-b349-315929883c8e" to_id="80081535-efea-420f-b34d-95ab9ffd4d4b" begin_point_x="-1124" begin_point_y="-443" end_point_x="-683" end_point_y="-443" />
+    <link id="621a896b-0aaf-4846-a345-ff5b2da4f7fd" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="45007038-f0ba-4c4e-826b-cbbd4ab361fb" to_id="3770285b-c361-406f-960a-1888c5a1b27f" begin_point_x="-773" begin_point_y="-287" end_point_x="-722" end_point_y="-339" />
+    <link id="2c2c415f-c26c-4254-a110-020848ae365a" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="de724b88-8b20-4efa-a4d0-3face1da257f" to_id="31a73d00-bf98-4bcd-a1b3-88a4ee318ede" begin_point_x="-773" begin_point_y="-261" end_point_x="-722" end_point_y="-312" />
+    <link id="606ac3ed-1b6c-41b5-9064-e9cf631f083d" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="02066b84-b7e7-4fd5-a5b7-5ddcf4d89511" to_id="fb55dbdc-d324-46e0-97dc-d2df44f9b03e" begin_point_x="-656" begin_point_y="-339" end_point_x="-605" end_point_y="-261" />
+    <link id="bdc997a2-2fa2-4906-b48a-d434f975e30f" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="58b03eb9-0551-454a-a4a7-6c7d9f857e9c" to_id="4fcd1f0a-62c7-4fc9-adef-695a84356a4a" begin_point_x="-773" begin_point_y="-234" end_point_x="-605" end_point_y="-234" />
+    <link id="4781ba37-951a-4af5-9bf6-45efc4c38ae7" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="d4898a20-4a0e-4595-9706-fa9a0a5ed0ff" to_id="373670d9-80ad-44e5-9a93-48366b572c7f" begin_point_x="-539" begin_point_y="-261" end_point_x="-488" end_point_y="-261" />
+    <link id="943ddd5c-f925-4047-ac39-16866991081d" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="46a178db-b6d1-4d0c-9f96-46edf63ea30b" to_id="21bcc432-7958-4fca-b38e-715f6bbe6af8" begin_point_x="-773" begin_point_y="-352" end_point_x="-852" end_point_y="-287" />
+    <link id="356439c6-5b68-4419-b74f-5aadc77c8ebd" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b9f8884b-22f7-4202-af77-607b905c5b07" to_id="ab9f833e-60f2-4af1-82c5-5fd8c7cd1917" begin_point_x="-396" begin_point_y="-261" end_point_x="-683" end_point_y="-417" />
+  </links>
+  <properties>
+    <property id="0b5f9fd8-73eb-4363-ad17-d4c918928294" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Virtual" />
+  </properties>
+</graph>

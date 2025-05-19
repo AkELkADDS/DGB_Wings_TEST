@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="85c49fe1-8ffb-4564-979b-27676157d2f7" can_be_deleted="false" type="State">
+  <nodes>
+    <node id="51861e2f-35ff-4c1d-8aed-d9d6149b8da4" name="Final Animation Pose" x="416" y="0" ZIndex="0" width="156" height="52" type="FinalAnimationPoseNode" full_type="FinalAnimationPoseNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Result" full_role="Result" id="95bfa866-c319-49ab-a5ef-1f0afbbde055" type="AnimationPoseSocket" name="Result" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="9f832a81-519d-4bce-858d-b34197d56c7e" name="Play Animation From Active Set" x="-39" y="221" ZIndex="1" width="312" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="daf59e58-44a3-403c-920e-e5021084ef03" type="ShortNameReferenceSocket" name="ShortName" default="66d25f66-2696-4dd3-a438-46b9f6475afc" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="1f89acf1-e845-4b2a-bdc9-99442b805106" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="defce250-72c5-4f01-ac2a-f23fd7cc8ff1" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="53d6b090-be0d-48e8-a162-64e44181a807" type="FloatSocket" name="Play Rate" default="1.7" />
+        <socket role="StartOffset" full_role="StartOffset" id="bc552a39-720a-4e48-8efb-db762f3602aa" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="cc605723-3ab2-4e87-9020-ad00c9cd78e4" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="6dc7449a-545a-4003-a706-a07c4253990a" type="BooleanSocket" name="Allow Text Keys" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="1265cc04-6aea-49d5-9942-bc9bf37c6704" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="e1c1c2ef-20a6-47d3-bb8a-b3a6c6145332" name="GetVariableNode" x="-247" y="0" ZIndex="0" width="208" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="6f54c2c7-fa67-4b0f-bd10-02337ab8d812">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="7dd80d5b-4881-4b45-a26c-2b582552eb62" type="FloatSocket" name="AD_Leg_L_Alpha_Eased" />
+      </outputs>
+    </node>
+    <node id="115f2524-dfe6-4e56-8c3a-e2d8d6ee7166" name="Blend Space With Active Set" x="-13" y="0" ZIndex="0" width="299" height="182" type="BlendSpaceWithActiveSetNode" full_type="BlendSpaceWithActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0">
+      <inputs>
+        <socket role="A" full_role="A" id="3d172286-3f95-424a-b4b8-e0d1eb4974d1" type="FloatSocket" name="X" default="0" />
+        <socket role="B" full_role="B" id="fe811709-f7c1-469c-9932-fe7845bc739a" type="FloatSocket" name="Y" default="0" />
+        <socket role="Sequence" full_role="Sequence" id="82c2b07d-3d55-4cc1-a2ca-22c76582b50d" type="AnimationSequenceSocket" name="Resource" default="9cab275c-803a-2e25-07db-4a9e1e87daa9" />
+        <socket role="StartOffset" full_role="StartOffset" id="5b6a2d5a-b6c4-442b-a847-5ab3a693605b" type="FloatSocket" name="Start Offset Ratio" default="0" />
+        <socket role="LoopBlendSpace" full_role="LoopBlendSpace" id="76399c1c-9ca5-46d8-b53b-0800b7efca13" type="BooleanSocket" name="Loop Blend Space" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="ca242d71-aea9-4498-a6a8-264a975be11b" type="FloatSocket" name="Play Rate" default="1" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="0d652347-8781-4634-a3ca-2306f5386042" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+  </nodes>
+  <links>
+    <link id="71695980-3378-452b-a1fc-41a67b9c8aac" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="0d652347-8781-4634-a3ca-2306f5386042" to_id="95bfa866-c319-49ab-a5ef-1f0afbbde055" begin_point_x="267" begin_point_y="38" end_point_x="435" end_point_y="38" />
+    <link id="6fdd3c62-c2fc-42d0-a713-6a6beaad845f" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7dd80d5b-4881-4b45-a26c-2b582552eb62" to_id="3d172286-3f95-424a-b4b8-e0d1eb4974d1" begin_point_x="-58" begin_point_y="38" end_point_x="6" end_point_y="38" />
+  </links>
+  <properties>
+    <property id="be91fd71-fba9-41c0-9333-7158721970b5" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="6ea0bfa6-a37a-47e2-b613-ef0ac5895d20" name="OnEnterBegin" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+    <property id="900a3941-a168-4fa3-9c1e-37d93fa7032c" name="OnEnterFinish" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+    <property id="005ecc2b-1898-4567-8b34-df3853a2daed" name="OnExitBegin" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+    <property id="b7708fc3-12c5-4e4a-8241-b52280048fd6" name="OnExitFinish" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+  </properties>
+</graph>

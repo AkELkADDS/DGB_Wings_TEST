@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="3c397aa5-178b-48eb-bbb9-b5236d46dd82" can_be_deleted="false" type="StateMachine">
+  <nodes>
+    <node id="378709d9-9e1a-413b-a863-26da0efad894" name="EntryState" x="13" y="-156" ZIndex="0" width="91" height="52" type="EntryState" full_type="EntryState" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="aa75ceab-c75b-40d5-a395-90526fa26052" type="EntrySocket" name="" />
+    </node>
+    <node id="6a4f85f4-6dfb-4b43-ac71-f3df2a5afc1d" name="Additive_Idle" x="26" y="78" ZIndex="4" width="104" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="7012ef0e-fd5f-4dcc-88a0-5cf0f2f4221c" on_enter_begin_event_name="" on_enter_finish_event_name="Roll_Random_Additive" on_exit_begin_event_name="Reset_Addative_Timer" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="7a7cb22b-67b6-42ab-856f-ba4f33562b93" type="StateSocket" name="" />
+    </node>
+    <node id="01bb92a6-8162-4166-9925-0b42634f5c3e" name="Reset" x="273" y="78" ZIndex="3" width="65" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="58b685f3-fdf7-4fb3-a027-a382fe636738" on_enter_begin_event_name="" on_enter_finish_event_name="AdditiveReset_Entered" on_exit_begin_event_name="" on_exit_finish_event_name="AdditiveReset_Exit">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="d538ad83-6186-4a4b-bf98-7c82a81d7248" type="StateSocket" name="" />
+    </node>
+  </nodes>
+  <links>
+    <link id="d8a1ac8d-ba0d-43f6-86f1-d3e9da9987d0" type="UnconditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.UnconditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="aa75ceab-c75b-40d5-a395-90526fa26052" to_id="7a7cb22b-67b6-42ab-856f-ba4f33562b93" begin_point_x="62" begin_point_y="-104" end_point_x="62" end_point_y="78" />
+    <link id="aef7492c-765d-4601-a8a1-7b575ce3b1cb" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7a7cb22b-67b6-42ab-856f-ba4f33562b93" to_id="d538ad83-6186-4a4b-bf98-7c82a81d7248" begin_point_x="130" begin_point_y="107" end_point_x="273" end_point_y="107" rule_id="87c3702b-5079-4e96-bb57-3568ffa28149">
+      <node id="87c3702b-5079-4e96-bb57-3568ffa28149" name="Additive_Idle to Reset" x="201" y="123" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="15347b9b-bb56-49e0-b9ce-5e629080cbe5" blend_type="Linear" blend_duration="0">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="a540541c-895f-4491-a773-9097012e42f3" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="d538ad83-6186-4a4b-bf98-7c82a81d7248" to_id="7a7cb22b-67b6-42ab-856f-ba4f33562b93" begin_point_x="273" begin_point_y="101" end_point_x="130" end_point_y="101" rule_id="74816770-822d-4def-bc10-ba7d237070bd">
+      <node id="74816770-822d-4def-bc10-ba7d237070bd" name="Reset to Additive_Idle" x="185" y="51" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="c20efef6-074e-42e5-bde2-4507bff516fd" blend_type="Linear" blend_duration="0">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="56485a5e-c52b-4345-b55a-2d30f1fd3082" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7a7cb22b-67b6-42ab-856f-ba4f33562b93" to_id="d538ad83-6186-4a4b-bf98-7c82a81d7248" begin_point_x="130" begin_point_y="107" end_point_x="273" end_point_y="107" rule_id="3c1f20b9-bffb-429b-a73e-b90bd764f651">
+      <node id="3c1f20b9-bffb-429b-a73e-b90bd764f651" name="Additive_Idle to Reset" x="168" y="123" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="666d650f-a14b-4cbb-8aba-44f9f282c217" blend_type="CubicInOut" blend_duration="0.5">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+  </links>
+  <properties>
+    <property id="95373daa-a20d-4a97-8d3d-7a8cd692301a" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="17d95502-259e-417e-9728-d246dbb58ce0" name="MaxTransitionsPerFrame" full_type="Genome.DataModel.Property.IntegerProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+    <property id="bb91d0ee-a0d1-4f34-b3d7-d61abc4b0e34" name="ExitEvent" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+  </properties>
+</graph>

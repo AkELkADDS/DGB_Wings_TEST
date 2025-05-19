@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="c2ea644c-81a2-47f6-ac7f-af707225601e" can_be_deleted="false" type="StateMachine">
+  <nodes>
+    <node id="e1da16e8-8813-47c5-a0eb-1481450925b9" name="EntryState" x="-416" y="-208" ZIndex="0" width="91" height="52" type="EntryState" full_type="EntryState" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="da50494f-ee5c-470e-a0e9-e7d987e1cb5d" type="EntrySocket" name="" />
+    </node>
+    <node id="0d2be06a-82fa-4fa6-b0dd-b7494647c076" name="Hit_A" x="-416" y="-52" ZIndex="0" width="65" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="82823d8d-d78b-4607-894e-b507d801fca2" on_enter_begin_event_name="OnActionStarted" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="HIT_AComplete">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="0ad68d00-af79-4ace-b2b5-b9ced551345f" type="StateSocket" name="" />
+    </node>
+    <node id="43b6713b-e976-4d4b-9591-5e6b437b69c2" name="OnActionFinished" x="-455" y="156" ZIndex="1" width="130" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="42bb8058-8707-4b96-adf2-ca8736687003" on_enter_begin_event_name="HitActionFinishEnterBegin" on_enter_finish_event_name="OnActionFinished" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="a0c89f21-ce08-47a4-9a5a-ec9911304f2d" type="StateSocket" name="" />
+    </node>
+    <node id="220f3f7e-ee99-4b2c-ad5a-bbdfab1d9daf" name="Hit_B" x="-624" y="-52" ZIndex="7" width="65" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="7bd1fb36-1509-4a95-8daa-6bbe2b2c976c" on_enter_begin_event_name="HitBEnterBegin" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="HIT_BComplete">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="51f35b13-b1b7-4ec8-8fe4-5e46c144f479" type="StateSocket" name="" />
+    </node>
+  </nodes>
+  <links>
+    <link id="40f41470-6fcd-48e3-9b83-4e7b126665b1" type="UnconditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.UnconditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="da50494f-ee5c-470e-a0e9-e7d987e1cb5d" to_id="0ad68d00-af79-4ace-b2b5-b9ced551345f" begin_point_x="-386" begin_point_y="-156" end_point_x="-386" end_point_y="-52" />
+    <link id="8623b659-3f62-43a0-913b-fd2a9c393bd6" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="0ad68d00-af79-4ace-b2b5-b9ced551345f" to_id="a0c89f21-ce08-47a4-9a5a-ec9911304f2d" begin_point_x="-386" begin_point_y="0" end_point_x="-386" end_point_y="156" rule_id="418b0d61-9e09-420c-989d-7335f6c14878">
+      <node id="418b0d61-9e09-420c-989d-7335f6c14878" name="Hit_A to OnActionFinished" x="-436" y="61" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="324c77ef-0cb9-4776-9913-7896e8f9d3b1" blend_type="QuadraticOut" blend_duration="0.35">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="ffc1ff82-257c-4ca5-8409-e29c0bdd3430" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="51f35b13-b1b7-4ec8-8fe4-5e46c144f479" to_id="0ad68d00-af79-4ace-b2b5-b9ced551345f" begin_point_x="-559" begin_point_y="-23" end_point_x="-416" end_point_y="-23" rule_id="db1c1f42-395c-43c7-b4b8-7e1bae713a18">
+      <node id="db1c1f42-395c-43c7-b4b8-7e1bae713a18" name="Hit_B to Hit_A" x="-504" y="-6" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="3c5bccbf-9569-4b9c-af31-1a2766ff0dc3" blend_type="Linear" blend_duration="0">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="d1dbd73b-5b1a-46d2-a5d6-0d976e14b6e2" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="0ad68d00-af79-4ace-b2b5-b9ced551345f" to_id="51f35b13-b1b7-4ec8-8fe4-5e46c144f479" begin_point_x="-416" begin_point_y="-29" end_point_x="-559" end_point_y="-29" rule_id="fd67e477-6c52-4590-a879-3c808f180209">
+      <node id="fd67e477-6c52-4590-a879-3c808f180209" name="Hit_A to Hit_B" x="-504" y="-78" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="978f584a-7b16-46a1-ae5c-8e99dd9a51ee" blend_type="Linear" blend_duration="0">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="81c5cbbe-7a9b-4a39-8065-19f74a71685e" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="51f35b13-b1b7-4ec8-8fe4-5e46c144f479" to_id="a0c89f21-ce08-47a4-9a5a-ec9911304f2d" begin_point_x="-561" begin_point_y="1" end_point_x="-457" end_point_y="157" rule_id="f1581c1c-7a63-4cb4-b559-62b044c32ba2">
+      <node id="f1581c1c-7a63-4cb4-b559-62b044c32ba2" name="Hit_B to OnActionFinished" x="-553" y="81" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="608798c6-6d50-4fd5-ba73-a2066209a927" blend_type="QuadraticOut" blend_duration="0.35">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+  </links>
+  <properties>
+    <property id="80aef2e2-3dc4-42e2-b10d-988037a9de87" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="de761839-cc91-408d-a45f-da3de92f745e" name="MaxTransitionsPerFrame" full_type="Genome.DataModel.Property.IntegerProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+    <property id="fa0f18ff-b90d-4c3a-9e83-46b9cabe238e" name="ExitEvent" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ASHitExit" />
+  </properties>
+</graph>

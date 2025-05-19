@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="b1501fa2-3201-4806-8d7c-8ed1e0085c13" can_be_deleted="false" type="StateMachine">
+  <nodes>
+    <node id="cf2ee5fe-a0f7-440b-8981-aaf5948fd644" name="EntryState" x="-430" y="0" ZIndex="0" width="91" height="52" type="EntryState" full_type="EntryState" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="30691afc-c6cd-43f6-b96f-5e35602695c0" type="EntrySocket" name="" />
+    </node>
+    <node id="9754f1c3-5f64-4c41-a570-c86b3093d0fd" name="Carried Start" x="-247" y="0" ZIndex="5" width="104" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="01d9a494-55b3-4632-a177-1c152847079c" on_enter_begin_event_name="OnActionStarted" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="63e6b397-8825-4aef-b08b-84f2e9116911" type="StateSocket" name="" />
+    </node>
+    <node id="88ad3f8a-007e-472a-b8ab-49fc57aab486" name="Carried Loop" x="26" y="-143" ZIndex="6" width="104" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="83d2a098-83da-4a34-8d49-6d85a5147f88" on_enter_begin_event_name="" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="b8ce1907-3bab-4b96-80cb-72091f564041" type="StateSocket" name="" />
+    </node>
+    <node id="37198595-2b9e-445b-97cc-e472abacf64e" name="Carried End" x="312" y="0" ZIndex="7" width="91" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="df2d2a55-bc86-4dfb-81b5-5c25035d73ef" on_enter_begin_event_name="" on_enter_finish_event_name="CarriedEndEntered" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="85105e03-3a06-49bc-9fbc-c2e1326097ce" type="StateSocket" name="" />
+    </node>
+    <node id="8e6f8f1c-e1f9-43b0-9caa-78d9b45f35d6" name="ActionFinish" x="520" y="0" ZIndex="7" width="104" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="28757806-634c-459a-87b1-472983772fb1" on_enter_begin_event_name="OnActionFinished" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="cb538457-4ad5-4d1a-9b4b-5a9bede8ac98" type="StateSocket" name="" />
+    </node>
+  </nodes>
+  <links>
+    <link id="d5b5140a-cdc0-48fe-a1d2-acf48ff02a53" type="UnconditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.UnconditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="30691afc-c6cd-43f6-b96f-5e35602695c0" to_id="63e6b397-8825-4aef-b08b-84f2e9116911" begin_point_x="-339" begin_point_y="29" end_point_x="-247" end_point_y="29" />
+    <link id="2b81aba1-eda8-4d49-9fcc-85a9df8102c9" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="63e6b397-8825-4aef-b08b-84f2e9116911" to_id="b8ce1907-3bab-4b96-80cb-72091f564041" begin_point_x="-141" begin_point_y="2" end_point_x="27" end_point_y="-88" rule_id="80df0caa-10f9-4954-9868-b25d020cde45">
+      <node id="80df0caa-10f9-4954-9868-b25d020cde45" name="Carried Start to Carried Loop" x="-57" y="-30" ZIndex="4" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="98b551e4-cf57-48ef-b45e-493be972fd0b" blend_type="Linear" blend_duration="0.15">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="a014349d-2a9c-4c98-b33c-c5f9dc12e3e1" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b8ce1907-3bab-4b96-80cb-72091f564041" to_id="85105e03-3a06-49bc-9fbc-c2e1326097ce" begin_point_x="128" begin_point_y="-88" end_point_x="310" end_point_y="2" rule_id="1fabef27-c013-4a4a-bff7-f48ed706b02b">
+      <node id="1fabef27-c013-4a4a-bff7-f48ed706b02b" name="Carried Loop to Carried End" x="188" y="-29" ZIndex="3" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="00c26f35-9226-4cb9-9a37-f043c6559739" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="329b1779-d164-4fda-9127-3e61ad837400" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="85105e03-3a06-49bc-9fbc-c2e1326097ce" to_id="cb538457-4ad5-4d1a-9b4b-5a9bede8ac98" begin_point_x="403" begin_point_y="29" end_point_x="520" end_point_y="29" rule_id="b3cf6ec6-8649-4dd2-bc9c-0bf080135b11">
+      <node id="b3cf6ec6-8649-4dd2-bc9c-0bf080135b11" name="Carried End to ActionFinish" x="445" y="45" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="2b0ec5c3-153d-4f48-b5c1-79807c5da867" blend_type="Linear" blend_duration="0.15">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="afbf2af1-56cd-4fcd-945e-dfae9b7039a5" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="63e6b397-8825-4aef-b08b-84f2e9116911" to_id="85105e03-3a06-49bc-9fbc-c2e1326097ce" begin_point_x="-143" begin_point_y="29" end_point_x="312" end_point_y="29" rule_id="68b3d98e-015e-4dd4-9009-72041f8979e1">
+      <node id="68b3d98e-015e-4dd4-9009-72041f8979e1" name="Carried Start to Carried End" x="68" y="45" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="7ecc4828-02eb-455f-bc53-ffd1eb3b987b" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+  </links>
+  <properties>
+    <property id="fb14eac0-9a3e-4bc0-bd5f-a0f54646ff2b" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="1a1938e9-a6fb-4739-ad84-b6b1ed08b888" name="MaxTransitionsPerFrame" full_type="Genome.DataModel.Property.IntegerProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+    <property id="ecedb1b1-92a0-46de-a19b-6c06a6140209" name="ExitEvent" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+  </properties>
+</graph>

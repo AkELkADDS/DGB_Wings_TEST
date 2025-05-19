@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="c95333bb-ffa4-44a6-8f6c-f1e732870956" can_be_deleted="false" type="State">
+  <nodes>
+    <node id="a1e2313e-43f2-436f-90f8-820e8c54f912" name="Final Animation Pose" x="0" y="0" ZIndex="0" width="156" height="52" type="FinalAnimationPoseNode" full_type="FinalAnimationPoseNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Result" full_role="Result" id="36839612-4adf-4f01-809c-3d1cbd65e348" type="AnimationPoseSocket" name="Result" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="3d69d987-f7fa-4555-b50c-354b43e431c5" name="GetVariableNode" x="-923" y="26" ZIndex="0" width="260" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="4e740d0a-4ff8-4fbf-af2b-d641ec5ee1ee">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="b29a2a7a-bb9a-4d46-acd4-fb6acf5b1d43" type="ShortNameReferenceSocket" name="STAT_Incapacitated_Combat_End" />
+      </outputs>
+    </node>
+    <node id="a5042630-b004-489e-bdd8-9c2dc965fcd8" name="Play Animation From Active Set" x="-442" y="0" ZIndex="4" width="403" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="True">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="8d9f302f-5059-4b88-8668-01526811ef81" type="ShortNameReferenceSocket" name="ShortName" default="1f3a444e-1012-48ba-8d67-2717082e6470" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="7480b2cc-39a7-467a-8758-0dcf74c4392f" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="0c7d931e-5648-4a4a-b439-ad66b7dc6b4e" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="4526c71e-3a10-4e0e-9f7a-1a62487d6c38" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="355ee9ec-10a5-4b4b-abd8-efecb8876052" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="579b53c8-3f25-4b90-a6ba-a0bf2656ed06" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="43f7fb88-1614-4790-80b8-a76b0212e109" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="99edd970-9aa6-4c3b-822b-284790f76a33" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="c69e992e-24b0-4161-8d4d-d9f1f9a0f067" name="GetVariableNode" x="-910" y="78" ZIndex="0" width="247" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="05393aa1-c5cb-498c-804c-016f6fd6d2ae">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="86e65155-5b9c-45af-966b-87392c619fd9" type="ShortNameReferenceSocket" name="STAT_Incapacitated_Peace_End" />
+      </outputs>
+    </node>
+    <node id="2c45be8e-ece4-4cbc-b48e-64952771176a" name="Shortname Switch" x="-624" y="0" ZIndex="0" width="156" height="104" type="SwitchShortnameNodeByBool" full_type="SwitchShortnameNodeByBool" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Index" full_role="Index" id="0568998b-7c67-4a6e-acfc-f106407ef592" type="BooleanSocket" name="" default="False" />
+        <socket role="Option 0" full_role="Option 0" id="ecb1491d-fdf0-4006-a94f-18f00bd0abdc" type="ShortNameReferenceSocket" name="True" default="00000000-0000-0000-0000-000000000000" />
+        <socket role="Option 1" full_role="Option 1" id="fccc888c-5dc6-4308-af17-397baea0f0fc" type="ShortNameReferenceSocket" name="False" default="00000000-0000-0000-0000-000000000000" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="d95853d7-2827-4a96-b5e3-aa60ff0f3600" type="ShortNameReferenceSocket" name="Out" />
+      </outputs>
+    </node>
+    <node id="82026200-449a-412a-a332-79328723bebf" name="GetVariableNode" x="-741" y="-130" ZIndex="1" width="195" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="a995c728-adb7-4e3e-bc75-f270e163f583">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="69ce5c45-08ce-4c41-aaf9-be70f94edd59" type="BooleanSocket" name="bIsinCombat_Desired" />
+      </outputs>
+    </node>
+    <node id="813c0cf4-0115-4a94-ac20-6c7b9b4779ee" name="STAT_Incapacitated_PlayCombatEnd" x="-741" y="-65" ZIndex="0" width="273" height="52" type="FunctionNode" full_type="FunctionGraphNodeDefinition" Comment="" is_comment_pinned="false" graph_id="b7fd7458-0d24-4636-9304-08da94a16dd5">
+      <inputs />
+      <outputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="50a74ae6-0cc0-4a70-b72c-213e48ffa9fb" type="BooleanSocket" name="PlayCombatEnd" />
+      </outputs>
+    </node>
+  </nodes>
+  <links>
+    <link id="2d120385-f998-4bed-a57b-7d36735706ff" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="99edd970-9aa6-4c3b-822b-284790f76a33" to_id="36839612-4adf-4f01-809c-3d1cbd65e348" begin_point_x="-58" begin_point_y="38" end_point_x="19" end_point_y="38" />
+    <link id="e0b0f7cc-821e-4301-95e8-96407c6077fb" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b29a2a7a-bb9a-4d46-acd4-fb6acf5b1d43" to_id="ecb1491d-fdf0-4006-a94f-18f00bd0abdc" begin_point_x="-682" begin_point_y="64" end_point_x="-605" end_point_y="64" />
+    <link id="e07b00bd-d8b2-45c9-ad26-a253577be18f" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="86e65155-5b9c-45af-966b-87392c619fd9" to_id="fccc888c-5dc6-4308-af17-397baea0f0fc" begin_point_x="-682" begin_point_y="116" end_point_x="-605" end_point_y="90" />
+    <link id="3f772765-f08c-4cc1-9549-a5171662c5e9" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="d95853d7-2827-4a96-b5e3-aa60ff0f3600" to_id="8d9f302f-5059-4b88-8668-01526811ef81" begin_point_x="-487" begin_point_y="38" end_point_x="-423" end_point_y="38" />
+    <link id="065f6931-678d-4bcc-bce4-ada135c01742" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="50a74ae6-0cc0-4a70-b72c-213e48ffa9fb" to_id="0568998b-7c67-4a6e-acfc-f106407ef592" begin_point_x="-487" begin_point_y="-27" end_point_x="-605" end_point_y="38" />
+  </links>
+  <properties>
+    <property id="1e680d27-1577-4c6d-8903-75a9f765f70f" name="OnEnterBegin" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="IncapacitateEnd_Entering" />
+    <property id="0d3128f3-9d89-4e75-9791-1cece964d546" name="OnEnterFinish" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="IncapacitatedEnd_Entered" />
+    <property id="c776cdc8-8a0d-4099-9d7d-919013eb9e64" name="OnExitBegin" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="InacapitateEnd_Exiting" />
+    <property id="e4009ded-86d9-423b-8d0e-8736750b3488" name="OnExitFinish" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="InacapitateEnd_OnExitFinish" />
+    <property id="d2937824-0f10-410d-9856-74d0f27e791a" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+  </properties>
+</graph>

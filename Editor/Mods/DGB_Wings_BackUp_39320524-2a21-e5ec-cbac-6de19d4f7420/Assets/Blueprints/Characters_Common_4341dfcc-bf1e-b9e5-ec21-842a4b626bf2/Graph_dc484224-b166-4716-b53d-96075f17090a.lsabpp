@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="dc484224-b166-4716-b53d-96075f17090a" can_be_deleted="false" type="StateMachine">
+  <nodes>
+    <node id="63c5556b-08db-4412-8aa8-c9238f118ce7" name="EntryState" x="-429" y="-247" ZIndex="9" width="91" height="52" type="EntryState" full_type="EntryState" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="bd3a41e7-f4af-47f2-aa9b-b7e2fa3c1bcc" type="EntrySocket" name="" />
+    </node>
+    <node id="bed247ac-62f5-454f-b6a1-b5f20a0462e4" name="ActionCompleted" x="-78" y="-65" ZIndex="5" width="130" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="a6b35741-5ad5-4f89-90da-da2bb458e03f" on_enter_begin_event_name="" on_enter_finish_event_name="OnActionMachineFinished" on_exit_begin_event_name="" on_exit_finish_event_name="OnActionMachine_OnExitFinish">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="0b5b6599-2114-4c52-a41b-54c9d50aa35c" type="StateSocket" name="" />
+    </node>
+    <node id="f5486dc5-dda1-4dbd-b594-cf5202bde060" name="Action" x="-143" y="-260" ZIndex="2" width="65" height="78" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="7c075b19-d6fa-44a7-9836-a9658514b0c1" on_enter_begin_event_name="OnActionMachineStarted" on_enter_finish_event_name="" on_exit_begin_event_name="IKTurnOn" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="73cc720b-5910-4e29-b249-3bf5e4c8b257" type="StateSocket" name="" />
+    </node>
+    <node id="d989bd64-7174-4a7e-9afa-5f991f0fe127" name="Interrupt" x="52" y="-247" ZIndex="1" width="78" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="5c0c2442-ebc4-4965-b62e-029ed5ac7dc4" on_enter_begin_event_name="" on_enter_finish_event_name="InterruptEntered" on_exit_begin_event_name="" on_exit_finish_event_name="InterruptCompleted">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="ce07d4f3-8374-4f2c-9550-4ded40465d54" type="StateSocket" name="" />
+    </node>
+  </nodes>
+  <links>
+    <link id="bc1736ac-9e8c-48bb-b4f4-6093511fadfb" type="UnconditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.UnconditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="bd3a41e7-f4af-47f2-aa9b-b7e2fa3c1bcc" to_id="73cc720b-5910-4e29-b249-3bf5e4c8b257" begin_point_x="-338" begin_point_y="-218" end_point_x="-143" end_point_y="-218" />
+    <link id="277e290d-2a5f-46bf-b600-6708f06e4f19" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="73cc720b-5910-4e29-b249-3bf5e4c8b257" to_id="ce07d4f3-8374-4f2c-9550-4ded40465d54" begin_point_x="-78" begin_point_y="-218" end_point_x="52" end_point_y="-218" rule_id="c6a6bc36-6b15-4c89-b658-e6e36618df6d">
+      <node id="c6a6bc36-6b15-4c89-b658-e6e36618df6d" name="Action to Interrupt" x="-13" y="-201" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="807ffa40-e045-4472-ae9f-4b1bc9a019f8" blend_type="Linear" blend_duration="0.3">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="9e56b84f-75ff-41e1-81d5-af8fef9f58e7" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="ce07d4f3-8374-4f2c-9550-4ded40465d54" to_id="73cc720b-5910-4e29-b249-3bf5e4c8b257" begin_point_x="52" begin_point_y="-224" end_point_x="-78" end_point_y="-224" rule_id="ce324f1d-7265-497b-adba-8051bd8a98b3">
+      <node id="ce324f1d-7265-497b-adba-8051bd8a98b3" name="Interrupt to Action" x="-46" y="-273" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="92057d56-9b16-4599-8168-be906878c308" blend_type="Linear" blend_duration="0.1">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="f7a3a992-6899-4610-b906-aca533ea7c30" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="73cc720b-5910-4e29-b249-3bf5e4c8b257" to_id="0b5b6599-2114-4c52-a41b-54c9d50aa35c" begin_point_x="-81" begin_point_y="-182" end_point_x="-81" end_point_y="-65" rule_id="b80280ab-b462-4430-a168-faa728072208">
+      <node id="b80280ab-b462-4430-a168-faa728072208" name="Action to ActionCompleted" x="-130" y="-107" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="c03469d1-71c9-4c5f-aa1b-d17b4dcf4975" blend_type="Linear" blend_duration="0.1">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="0950863c-9a1c-48f3-a4b4-644051f392bb" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="73cc720b-5910-4e29-b249-3bf5e4c8b257" to_id="0b5b6599-2114-4c52-a41b-54c9d50aa35c" begin_point_x="-81" begin_point_y="-182" end_point_x="-81" end_point_y="-65" rule_id="10c4b6c7-8b3a-468d-a06b-829a1effb362">
+      <node id="10c4b6c7-8b3a-468d-a06b-829a1effb362" name="Action to ActionCompleted" x="-130" y="-140" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="48c41292-34a3-4d80-a52e-0b620d5ebf8d" blend_type="Linear" blend_duration="0.1">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="d9cef872-f939-4ef7-be85-63399de7797b" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="0b5b6599-2114-4c52-a41b-54c9d50aa35c" to_id="ce07d4f3-8374-4f2c-9550-4ded40465d54" begin_point_x="55" begin_point_y="-65" end_point_x="55" end_point_y="-195" rule_id="7e5b9337-1ff9-40ed-a5d9-d9e72f9d39da">
+      <node id="7e5b9337-1ff9-40ed-a5d9-d9e72f9d39da" name="ActionCompleted to Interrupt" x="71" y="-146" ZIndex="2" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="70c2a911-1883-4e5c-aa7d-01d2617b6960" blend_type="Linear" blend_duration="0">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="edb59be8-9825-4177-a7a1-b2f56f4b9e4d" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="73cc720b-5910-4e29-b249-3bf5e4c8b257" to_id="ce07d4f3-8374-4f2c-9550-4ded40465d54" begin_point_x="-78" begin_point_y="-218" end_point_x="52" end_point_y="-218" rule_id="0b42e27c-ba43-48a3-840a-c85dd99eb1ab">
+      <node id="0b42e27c-ba43-48a3-840a-c85dd99eb1ab" name="Action to Interrupt" x="-46" y="-201" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="7a31b01a-9d3c-49b4-b21f-c801b40f7a18" blend_type="Linear" blend_duration="0.1">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="899f5c7a-3787-4ad5-b0fb-47dd22ef81d0" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="ce07d4f3-8374-4f2c-9550-4ded40465d54" to_id="73cc720b-5910-4e29-b249-3bf5e4c8b257" begin_point_x="52" begin_point_y="-224" end_point_x="-78" end_point_y="-224" rule_id="599db86c-438e-441f-abba-be3529180816">
+      <node id="599db86c-438e-441f-abba-be3529180816" name="Interrupt to Action" x="-13" y="-273" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="688cd703-bf93-4c54-b133-e3858a338b4a" blend_type="Linear" blend_duration="0.1">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="881b880b-1752-4c7c-8fa2-2b39dcbb1ab9" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="73cc720b-5910-4e29-b249-3bf5e4c8b257" to_id="0b5b6599-2114-4c52-a41b-54c9d50aa35c" begin_point_x="-81" begin_point_y="-182" end_point_x="-81" end_point_y="-65" rule_id="0ad938a0-8364-4dc7-b0f2-a11febb25e73">
+      <node id="0ad938a0-8364-4dc7-b0f2-a11febb25e73" name="Action to ActionCompleted" x="-130" y="-173" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="c8cd6654-e46a-43f7-935c-9414de30224a" blend_type="Linear" blend_duration="0">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+  </links>
+  <properties>
+    <property id="643ce4af-660f-48d8-b4c0-40b72d30006c" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="5904685b-e157-48f2-8160-2dec81b76d2a" name="MaxTransitionsPerFrame" full_type="Genome.DataModel.Property.IntegerProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+    <property id="e8fc3ca5-6d8a-4e03-b381-9604d03d2691" name="ExitEvent" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ActionMachineComplete" />
+  </properties>
+</graph>

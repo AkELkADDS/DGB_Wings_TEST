@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="bd74fec2-306b-4ac3-973f-6f3752049973" can_be_deleted="false" type="StateMachine">
+  <nodes>
+    <node id="501c9f49-319e-4865-80d3-a9410329d369" name="EntryState" x="-572" y="-143" ZIndex="3" width="91" height="52" type="EntryState" full_type="EntryState" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="7f393396-c0ca-45d3-bfcf-dd5e8f7d5a6b" type="EntrySocket" name="" />
+    </node>
+    <node id="9b5d75a3-295f-4bd1-a8e9-d9c0d26452f2" name="Idle" x="-403" y="-143" ZIndex="5" width="52" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="bb71013c-b6ee-4feb-89b6-0985f89bc520" on_enter_begin_event_name="" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="fde38091-9507-4553-a29e-20d702c9a41c" type="StateSocket" name="" />
+    </node>
+    <node id="f45749ef-fcf9-4dc0-a131-77b63524f355" name="Reaction" x="-234" y="-143" ZIndex="5" width="78" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="fa5f17cc-5e05-4627-bc5a-9c4f335c6a88" on_enter_begin_event_name="" on_enter_finish_event_name="CC_PlayingReaction" on_exit_begin_event_name="CC_FinishedReaction" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="5fec6265-da5c-450f-9bd2-22848f14e615" type="StateSocket" name="" />
+    </node>
+  </nodes>
+  <links>
+    <link id="048a4bd0-fa4a-46e5-a0b4-f6668d2329aa" type="UnconditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.UnconditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7f393396-c0ca-45d3-bfcf-dd5e8f7d5a6b" to_id="fde38091-9507-4553-a29e-20d702c9a41c" begin_point_x="-481" begin_point_y="-114" end_point_x="-403" end_point_y="-114" />
+    <link id="02781a8d-9451-42dd-8d3e-84d49e548e08" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="fde38091-9507-4553-a29e-20d702c9a41c" to_id="5fec6265-da5c-450f-9bd2-22848f14e615" begin_point_x="-351" begin_point_y="-114" end_point_x="-234" end_point_y="-114" rule_id="9764fdba-d90b-4c29-881b-910b1e83dfac">
+      <node id="9764fdba-d90b-4c29-881b-910b1e83dfac" name="Idle to Reaction" x="-309" y="-97" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="d73a9d67-a19e-409c-8182-cff94ef3ca87" blend_type="CubicInOut" blend_duration="0">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="21280e89-f90d-4d49-ba44-c269a5402a54" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="5fec6265-da5c-450f-9bd2-22848f14e615" to_id="fde38091-9507-4553-a29e-20d702c9a41c" begin_point_x="-234" begin_point_y="-120" end_point_x="-351" end_point_y="-120" rule_id="9e605fa1-276a-44bf-9033-bf668bcc866b">
+      <node id="9e605fa1-276a-44bf-9033-bf668bcc866b" name="Reaction to Idle" x="-309" y="-169" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="f25e1a3b-ee36-45e3-9306-74beeba6ee52" blend_type="QuadraticOut" blend_duration="0.75">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+  </links>
+  <properties>
+    <property id="6c486604-f628-4510-b790-c16ed338924f" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="52111385-41f8-44db-b56b-cddb442f2383" name="MaxTransitionsPerFrame" full_type="Genome.DataModel.Property.IntegerProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+    <property id="a51e6f7f-23b8-4e1d-9837-546646823c63" name="ExitEvent" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+  </properties>
+</graph>

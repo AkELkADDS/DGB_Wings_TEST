@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="79b10037-f832-43e9-b35e-61fd950bcf1c" can_be_deleted="false" type="StateMachine">
+  <nodes>
+    <node id="ba613a86-9fe2-4e4f-8841-799955b570eb" name="EntryState" x="-819" y="0" ZIndex="2" width="91" height="52" type="EntryState" full_type="EntryState" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="4965b2ed-f85a-4c0d-bebf-5a8b4de311c6" type="EntrySocket" name="" />
+    </node>
+    <node id="8dacba3b-32b8-4b1d-8070-3819d69559ee" name="Draw" x="-481" y="0" ZIndex="8" width="65" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="ca73f421-e96f-47ff-a8ac-060ed2de1bb5" on_enter_begin_event_name="UnsheathStart" on_enter_finish_event_name="" on_exit_begin_event_name="UnsheathComplete" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="504ffe3d-bea6-499c-b739-1378f41c0e42" type="StateSocket" name="" />
+    </node>
+    <node id="a0ab83eb-8633-408f-8919-4de627be0f5c" name="OnActionFinished" x="-104" y="0" ZIndex="5" width="130" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="ac29c4ca-a330-4c20-9ffc-d859c57432c5" on_enter_begin_event_name="UnsheathUpdatePose" on_enter_finish_event_name="OnActionFinished" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="d21564f0-b3d5-4129-8e80-4f1834592649" type="StateSocket" name="" />
+    </node>
+    <node id="26b9381c-f366-46bf-b0f9-fe1488420f51" name="Cancel" x="-494" y="351" ZIndex="1" width="65" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="eaa3afc4-0458-4cf1-bf2e-6de182da3134" on_enter_begin_event_name="" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="1eeff163-15ac-4d26-a301-378ba99efde8" type="StateSocket" name="" />
+    </node>
+    <node id="1ba10ea4-d9ad-4ad8-a2f6-53b5b979b4cd" name="Neutral_Transition" x="-130" y="377" ZIndex="1" width="130" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="52891a4d-9dc1-4ac0-9263-5b6064590b8d" on_enter_begin_event_name="" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="dd58226a-68a9-432d-a961-fac6ad57a8af" type="StateSocket" name="" />
+    </node>
+    <node id="0df721e1-b30f-45a1-a24f-f70feab4061f" name="Neutral Transition to go from Spell Cancel to Idle_Still" x="-377" y="260" ZIndex="0" width="442" height="299" type="CommentNode" full_type="CommentNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+    </node>
+    <node id="86e80a64-a9c5-478b-9eec-96d497d84cb5" name="Commentary" x="65" y="260" ZIndex="1" width="291" height="299" type="NoteNode" full_type="NoteNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;\red239\green239\blue239;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf2 \cf2\ql{\f2 {\ltrch Neutral Loop -&gt; Neutral Transition.}{\ltrch \line }{\ltrch If a character uses the Neutral System ( Ex : Elf Male ) then the SpellPrepareCanceled event will be delayed until after the neutral transition finishes in order to take the character from Neutral_Loop_Pose (end of the spell cancel ) to Idle_Pose before sending SpellAnimationFinish. This will make it so that the Neutral Transition can happen before the game requests ASUnSheath/ASSheath.}\li0\ri0\sa0\sb0\fi0\ql\par}
+}
+}</node>
+  </nodes>
+  <links>
+    <link id="21b2ddbc-8ba8-402e-9023-a739f9ce5b32" type="UnconditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.UnconditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="4965b2ed-f85a-4c0d-bebf-5a8b4de311c6" to_id="504ffe3d-bea6-499c-b739-1378f41c0e42" begin_point_x="-728" begin_point_y="29" end_point_x="-481" end_point_y="29" />
+    <link id="6deba8db-9ae9-4d16-a473-d20ea4f6ee67" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="504ffe3d-bea6-499c-b739-1378f41c0e42" to_id="d21564f0-b3d5-4129-8e80-4f1834592649" begin_point_x="-416" begin_point_y="29" end_point_x="-104" end_point_y="29" rule_id="66e22f47-232b-4860-aea7-81c6d216df28">
+      <node id="66e22f47-232b-4860-aea7-81c6d216df28" name="Draw to OnActionFinished" x="-260" y="45" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="3c70be97-a04f-47e4-aced-1edb2916b11d" blend_type="QuadraticOut" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="8602530d-716a-470e-a0dd-48631756fe79" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="504ffe3d-bea6-499c-b739-1378f41c0e42" to_id="d21564f0-b3d5-4129-8e80-4f1834592649" begin_point_x="-416" begin_point_y="29" end_point_x="-104" end_point_y="29" rule_id="fd12f07d-ec1d-4c76-ab16-b72b621502b3">
+      <node id="fd12f07d-ec1d-4c76-ab16-b72b621502b3" name="Draw to OnActionFinished" x="-293" y="45" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="27d462be-d5ab-40db-b9bf-858c4cb2d6dd" blend_type="Linear" blend_duration="0">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="f9095d0b-286a-4b3c-bb7e-a14aac3315a9" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="504ffe3d-bea6-499c-b739-1378f41c0e42" to_id="1eeff163-15ac-4d26-a301-378ba99efde8" begin_point_x="-458" begin_point_y="52" end_point_x="-458" end_point_y="351" rule_id="9f68fa33-2b2d-47f7-83e8-c18d3e98c6a2">
+      <node id="9f68fa33-2b2d-47f7-83e8-c18d3e98c6a2" name="Draw to Cancel" x="-507" y="185" ZIndex="6" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="64da07f3-da7d-4f9f-99e8-f7b7d3f41810" blend_type="Linear" blend_duration="0">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="c2629cb9-21a9-448a-b262-78403df90a7c" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="1eeff163-15ac-4d26-a301-378ba99efde8" to_id="d21564f0-b3d5-4129-8e80-4f1834592649" begin_point_x="-426" begin_point_y="353" end_point_x="-101" end_point_y="54" rule_id="52a045f6-cf54-4c6c-a180-fa3a0e198d38">
+      <node id="52a045f6-cf54-4c6c-a180-fa3a0e198d38" name="Cancel to OnActionFinished" x="-258" y="211" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="82dae822-5f6b-4391-a0f7-aa857291856c" blend_type="QuadraticOut" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="684fe66c-c089-409f-8dd4-112659e7f738" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="1eeff163-15ac-4d26-a301-378ba99efde8" to_id="dd58226a-68a9-432d-a961-fac6ad57a8af" begin_point_x="-429" begin_point_y="393" end_point_x="-130" end_point_y="393" rule_id="f8a7603b-e4f2-4a95-a737-614ed979e930">
+      <node id="f8a7603b-e4f2-4a95-a737-614ed979e930" name="Cancel to Neutral_Transition" x="-296" y="409" ZIndex="2" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="f10a61e0-1155-4604-b3ac-f82b235da8bb" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="1f006f04-f551-4c49-aba0-dca7f7e494ac" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="dd58226a-68a9-432d-a961-fac6ad57a8af" to_id="d21564f0-b3d5-4129-8e80-4f1834592649" begin_point_x="-49" begin_point_y="377" end_point_x="-49" end_point_y="52" rule_id="2a7f87b9-71b2-479e-a26b-024d281c5e00">
+      <node id="2a7f87b9-71b2-479e-a26b-024d281c5e00" name="Neutral_Transition to OnActionFinished" x="-32" y="198" ZIndex="2" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="a005444d-ca64-4cda-91c6-0442cdf1d558" blend_type="QuadraticOut" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+  </links>
+  <properties>
+    <property id="a7740146-fea6-475d-831a-ae04689b4a40" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="7f4e46b0-dad0-4668-a95d-42b30873c41e" name="MaxTransitionsPerFrame" full_type="Genome.DataModel.Property.IntegerProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+    <property id="0aa556f2-762a-44f5-8b1e-5433e1c337f8" name="ExitEvent" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="WeaponDrawExit" />
+  </properties>
+</graph>

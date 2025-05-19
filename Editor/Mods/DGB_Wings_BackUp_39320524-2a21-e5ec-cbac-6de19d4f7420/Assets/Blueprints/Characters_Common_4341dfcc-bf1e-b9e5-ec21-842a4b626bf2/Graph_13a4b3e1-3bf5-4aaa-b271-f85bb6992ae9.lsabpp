@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="13a4b3e1-3bf5-4aaa-b271-f85bb6992ae9" can_be_deleted="false" type="FunctionGraph" name="DIAG_Face_EyelidsCorrection">
+  <nodes>
+    <node id="1a85cac7-c1a5-40a5-bc5a-62576e0b10d4" name="Entry" x="-430" y="0" ZIndex="0" width="65" height="26" type="FunctionEntryNode" full_type="VaryingSocketNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+    </node>
+    <node id="e7445664-85e5-435f-9ae2-908cd37837cd" name="Result" x="1365" y="130" ZIndex="7" width="104" height="52" type="FunctionResultNode" full_type="VaryingSocketNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="c22f6d83-97b3-42c9-999e-446d3ed7c467" type="AnimationPoseSocket" name="Out" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="35fa92ee-5983-4338-b732-27e3e9014356" name="Get Animation Bone Component Transform" x="-1443" y="533" ZIndex="6" width="351" height="130" type="GetAnimationBoneComponentTransformNode" full_type="GetAnimationBoneComponentTransformNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="InputPose" full_role="InputPose" id="52c5ea78-2ea2-4d40-83d2-602033af9753" type="AnimationPoseSocket" name="" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="8144a4e0-3110-4f2c-91a3-8ee2e8008473" type="AnimationPoseSocket" name="" />
+        <socket role="Position" full_role="Position" id="0a162cd3-ef9e-49ea-94ec-e9eb8a3aeaf7" type="Vector3Socket" name="Position" />
+        <socket role="Rotation" full_role="Rotation" id="ebabebdf-9fc5-46af-b107-9699633992f8" type="Rotator3Socket" name="Rotation" />
+        <socket role="Scale" full_role="Scale" id="a3d7c9c9-d36f-4fdf-9eb9-b2a3f84329ed" type="Vector3Socket" name="Scale" />
+      </outputs>
+      <properties>
+        <property id="a2128ff9-05cd-4011-a491-207b664c291e" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="a48653e0-f413-46e8-8cac-172c1f0bd251" name="Bone Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="7b56018c-7d17-4643-ba63-5b20e28eb0ab" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="17ec1ed7-7254-4192-95a7-04e7cd39cff8" name="Bone" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_l" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="faee67f9-8ee9-46cb-8a72-a866418e1cab" name="Cached Pose 'Head_BeforeIK'" x="-1820" y="533" ZIndex="8" width="247" height="52" type="UseCachedPoseNode" full_type="UseCachedPoseNode" Comment="" is_comment_pinned="false" cached_pose_id="8141788b-a8f6-4677-96d6-28a3be91a557">
+      <inputs />
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="dd211703-6396-4872-b01e-2be97d97a179" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="01554f30-5da2-4a5f-8172-7a8276b54e77" name="Get Animation Bone Component Transform" x="-1443" y="663" ZIndex="0" width="351" height="130" type="GetAnimationBoneComponentTransformNode" full_type="GetAnimationBoneComponentTransformNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="InputPose" full_role="InputPose" id="57a9fe10-6cd4-46c6-89e6-90d896eb94ea" type="AnimationPoseSocket" name="" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="e5717568-28dd-4a41-a958-12c51a098812" type="AnimationPoseSocket" name="" />
+        <socket role="Position" full_role="Position" id="3c1a6843-fa19-4867-b87a-824014b00ddd" type="Vector3Socket" name="Position" />
+        <socket role="Rotation" full_role="Rotation" id="df901d11-800a-43dd-92ea-4767ae91661c" type="Rotator3Socket" name="Rotation" />
+        <socket role="Scale" full_role="Scale" id="833f8059-b789-4151-a043-8ee3db4fafee" type="Vector3Socket" name="Scale" />
+      </outputs>
+      <properties>
+        <property id="70aac088-207d-4387-8f27-752d7b9d7f3c" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="54167b0c-0c20-49dd-894f-e3f590e553ae" name="Bone Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="5f31a298-8bc0-4b83-9f78-a9e099df6b8a" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="e5dc554a-7e1f-4f4b-84c6-60f8c3c11b4a" name="Bone" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_l" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="6a17be46-54a4-4032-82d1-a07d05a7ab0b" name="Cached Pose 'Head_AfterIK'" x="-1807" y="663" ZIndex="15" width="234" height="52" type="UseCachedPoseNode" full_type="UseCachedPoseNode" Comment="" is_comment_pinned="false" cached_pose_id="d0b4e7f8-35cb-4629-9488-5aa238d7b036">
+      <inputs />
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="67521c9e-7fa2-4ffe-a1fd-ad0ef835a79f" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="5ff14c3e-44e7-4b0f-bc7f-59b390c770ef" name="Cached Pose 'Head_AfterIK'" x="-1053" y="156" ZIndex="5" width="234" height="52" type="UseCachedPoseNode" full_type="UseCachedPoseNode" Comment="" is_comment_pinned="false" cached_pose_id="d0b4e7f8-35cb-4629-9488-5aa238d7b036">
+      <inputs />
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="d9940a32-a854-4913-b5cf-aece80f3f418" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="da3a7cee-01f7-469b-8a72-2aec3083f69e" name="Local To Component" x="-793" y="156" ZIndex="9" width="156" height="52" type="LocalToComponentNode" full_type="LocalToComponentNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="InputPose" full_role="InputPose" id="9027da86-7d4b-4896-b898-b8750dfbfbf8" type="AnimationPoseSocket" name="" />
+      </inputs>
+      <outputs>
+        <socket role="ResultPose" full_role="ResultPose" id="b3f6df0f-d5d0-43b8-b5ef-d61201a00a71" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="44381fee-4902-415d-ae86-bf9e212d41c1" name="Get Animation Bone Component Transform" x="-169" y="533" ZIndex="3" width="351" height="130" type="GetAnimationBoneComponentTransformNode" full_type="GetAnimationBoneComponentTransformNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="InputPose" full_role="InputPose" id="bbc59c7a-0d62-43e1-8b3b-c93f35d01f96" type="AnimationPoseSocket" name="" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="f3b23541-e850-4145-b544-69a68b710385" type="AnimationPoseSocket" name="" />
+        <socket role="Position" full_role="Position" id="09950778-a3d6-4706-a94c-f50fbc014e7f" type="Vector3Socket" name="Position" />
+        <socket role="Rotation" full_role="Rotation" id="5c6e5b12-4546-49d1-aed6-a8d75d429b9c" type="Rotator3Socket" name="Rotation" />
+        <socket role="Scale" full_role="Scale" id="cd825ebc-81c5-4aa3-9192-0dadf2b3824b" type="Vector3Socket" name="Scale" />
+      </outputs>
+      <properties>
+        <property id="af730fb3-0aa7-41d0-b226-a825626432ff" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="258953ef-633a-4391-be8c-c088df01287e" name="Bone Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="02899c46-9fa4-4f98-a96f-c4fa47179146" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="cd0227b2-af09-4b94-89b7-5ede2f1d5dac" name="Bone" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_r" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="11bd28a4-8ac0-477b-8c71-0985c959c557" name="Cached Pose 'Head_BeforeIK'" x="-169" y="481" ZIndex="25" width="247" height="52" type="UseCachedPoseNode" full_type="UseCachedPoseNode" Comment="" is_comment_pinned="false" cached_pose_id="8141788b-a8f6-4677-96d6-28a3be91a557">
+      <inputs />
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="b1dce628-d82c-459d-b08f-2ff3903b0e28" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="aca21c83-a386-4fb1-9800-a4a2ade961b4" name="Get Animation Bone Component Transform" x="-169" y="689" ZIndex="27" width="351" height="130" type="GetAnimationBoneComponentTransformNode" full_type="GetAnimationBoneComponentTransformNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="InputPose" full_role="InputPose" id="5cb8d55c-b8e6-439d-8305-812ea66e4008" type="AnimationPoseSocket" name="" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="7f746368-62d8-4da6-9442-ef133e7fac87" type="AnimationPoseSocket" name="" />
+        <socket role="Position" full_role="Position" id="185a888e-3e1d-4a95-b430-675be2ddd4f0" type="Vector3Socket" name="Position" />
+        <socket role="Rotation" full_role="Rotation" id="5bcad7f3-c601-43c1-a58a-af46b6feab30" type="Rotator3Socket" name="Rotation" />
+        <socket role="Scale" full_role="Scale" id="8909d9b2-0967-4225-ad99-c728f5f9803a" type="Vector3Socket" name="Scale" />
+      </outputs>
+      <properties>
+        <property id="6ec41b4d-8f29-4046-ba07-de8d37426f7d" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="b4c29296-54af-41ff-9c16-fbb1b65a5f5e" name="Bone Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="3809a984-e7ab-434b-b9d0-53b0996cf878" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="6cf1185d-64fa-401b-9ef2-5a19b5b35b8e" name="Bone" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_r" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="080e4e0d-a71d-4ee4-8868-f61a682af1de" name="Cached Pose 'Head_AfterIK'" x="-169" y="637" ZIndex="28" width="234" height="52" type="UseCachedPoseNode" full_type="UseCachedPoseNode" Comment="" is_comment_pinned="false" cached_pose_id="d0b4e7f8-35cb-4629-9488-5aa238d7b036">
+      <inputs />
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="2a624f82-b05c-47b4-b0c1-1e7ef96b00af" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="ea354bde-e653-48c0-a987-ef41b73b123d" name="Component To Local" x="1183" y="130" ZIndex="10" width="156" height="52" type="ComponentToLocalNode" full_type="ComponentToLocalNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="InputPose" full_role="InputPose" id="6f8c1934-c0c1-4b3d-a297-f484a2ffeb44" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </inputs>
+      <outputs>
+        <socket role="ResultPose" full_role="ResultPose" id="63b8ff2f-6427-4a80-9487-8c7188047693" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="2ab6d003-d68e-4eb3-90b2-68f5e5a31b99" name="Transform (Modify) Bone" x="-598" y="156" ZIndex="12" width="286" height="156" type="TransformModifyBoneNode" full_type="TransformModifyBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ComponentPoseParameter" full_role="ComponentPoseParameter" id="c598edcf-a408-4ca9-94ef-f8c26652bb67" type="ComponentSpaceAnimationPoseSocket" name="Pose" />
+        <socket role="TranslationParameter" full_role="TranslationParameter" id="89b3fbff-1595-4914-89a3-c0f68fc4b317" type="Vector3Socket" name="Translation" default="0,0,0" />
+        <socket role="RotationParameter" full_role="RotationParameter" id="729e2d2e-d3f4-43aa-b0f0-ab7272e62801" type="Rotator3Socket" name="Rotation" default="0,0,0" />
+        <socket role="ScaleParameter" full_role="ScaleParameter" id="24cb002d-22e7-4a58-a85c-69d48520f77f" type="Vector3Socket" name="Scale" default="0,0,0" />
+        <socket role="AlphaParameter" full_role="AlphaParameter" id="92af3453-469b-4ba5-974d-e754fca88c63" type="FloatSocket" name="Alpha" default="0.25" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="20768453-9b4a-4725-9b62-8faf06f42f55" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="fa1e42cf-a4a2-4e2d-9a60-003b1c02f570" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="e7eb614f-f12c-4ba7-87c8-49f0b4b704c6" name="Skeletal Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="3fc165cb-71af-49c0-83e5-28264fcf3481" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="12ea844f-218b-491f-a52b-e433adab3fb0" name="Bone to Modify" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_l_upperlid_01" />
+          </properties>
+        </property>
+        <property id="8026d269-9153-46c4-9c50-b61ebc24d1b4" name="Translation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="e759a407-5226-46a1-888f-dbee8dc9f97d" name="Translation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="021a54da-ad94-430f-9c08-e060df3bde37" name="Translation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="2b0c9919-4c78-452c-849f-aa1e2da553d5" name="Rotation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="03228f10-3691-4937-a352-8be0451bcc3d" name="Rotation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AddToExisting" />
+            <property id="8126b856-b023-4346-af14-e90eed984a77" name="Rotation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="b7ade744-46f3-495f-b59e-8b4d2e8d4c40" name="Scale" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="29350bfd-d7f9-49be-bdd4-ec958228433a" name="Scale Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="4cc1a237-236e-4f25-9661-bc077c02121b" name="Scale Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="3be819eb-2107-44a9-9d56-55ec3668a35c" name="Transform (Modify) Bone" x="-598" y="325" ZIndex="19" width="286" height="156" type="TransformModifyBoneNode" full_type="TransformModifyBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ComponentPoseParameter" full_role="ComponentPoseParameter" id="411531e7-ce38-44da-9313-783f6aff9faa" type="ComponentSpaceAnimationPoseSocket" name="Pose" />
+        <socket role="TranslationParameter" full_role="TranslationParameter" id="8281c43a-14ef-411f-bbb7-ab5ab056e27e" type="Vector3Socket" name="Translation" default="0,0,0" />
+        <socket role="RotationParameter" full_role="RotationParameter" id="73e70b6f-e7cf-4468-ac7d-d18d9801fd8a" type="Rotator3Socket" name="Rotation" default="0,0,0" />
+        <socket role="ScaleParameter" full_role="ScaleParameter" id="855552ce-1873-40f4-89c0-66a8f94f12c6" type="Vector3Socket" name="Scale" default="0,0,0" />
+        <socket role="AlphaParameter" full_role="AlphaParameter" id="5a3e4b57-94c2-48c6-b9db-d84c583d25b5" type="FloatSocket" name="Alpha" default="0.35" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="874d4efe-3f14-4a01-9046-b49f4ce20061" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="9a0af5fc-3ce9-412a-9fb6-3a753c60ce75" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="ec013a2e-31a5-4b7f-bee5-98abe6c4527b" name="Skeletal Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="fa11e144-b143-4f5d-a90b-2e4543f2aff3" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="31762d8d-7579-4fb6-b84e-64ee5380d5aa" name="Bone to Modify" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_l_upperlid_02" />
+          </properties>
+        </property>
+        <property id="6af59885-1af3-4794-9520-766aae14bfff" name="Translation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="f8b7d535-3617-48c4-9904-eb463d96a391" name="Translation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="7ce1fbf0-7905-4ffd-915b-fc049f488ca0" name="Translation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="297b0114-2478-4007-bf2b-821b7b1c363b" name="Rotation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="8e5e205e-124b-4234-8079-dd676ca863d8" name="Rotation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AddToExisting" />
+            <property id="6eadf1f0-c09c-4de6-96eb-a19a6b9c2b84" name="Rotation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="db24ad73-832a-45ee-8ab6-f336fd003f99" name="Scale" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="95cbbc83-ab60-4d7c-b201-1ee8ef90cfdd" name="Scale Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="df27d584-6b84-4711-9f48-bb20a2292bea" name="Scale Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="4ffa3fc6-75a2-4bc6-862d-d53eba4e30d1" name="Transform (Modify) Bone" x="-598" y="507" ZIndex="14" width="286" height="156" type="TransformModifyBoneNode" full_type="TransformModifyBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ComponentPoseParameter" full_role="ComponentPoseParameter" id="863e6b97-af26-498b-9d22-f535982a7ae8" type="ComponentSpaceAnimationPoseSocket" name="Pose" />
+        <socket role="TranslationParameter" full_role="TranslationParameter" id="e2680183-5d5f-4ef8-b155-4943d9069232" type="Vector3Socket" name="Translation" default="0,0,0" />
+        <socket role="RotationParameter" full_role="RotationParameter" id="0bfa3da6-c0e7-4a77-b725-98426684d40d" type="Rotator3Socket" name="Rotation" default="0,0,0" />
+        <socket role="ScaleParameter" full_role="ScaleParameter" id="24d96d45-9c5d-49b8-a67e-4ca051b7b89e" type="Vector3Socket" name="Scale" default="0,0,0" />
+        <socket role="AlphaParameter" full_role="AlphaParameter" id="c26c2b72-55f6-494c-9eba-f96cdb93db8f" type="FloatSocket" name="Alpha" default="0.25" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="bdb9df2d-ee52-4270-b343-1c4bb7c0ac0b" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="d3ac2123-d99d-4ea5-aa38-2f76dffe11a7" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="0d9bdb7d-e008-46e9-aa9a-ba278931dbb5" name="Skeletal Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="683f717d-f561-4c07-8567-d2436761c5e7" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="d036717a-fa03-44a4-810c-89543633a3d0" name="Bone to Modify" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_l_upperlid_03" />
+          </properties>
+        </property>
+        <property id="b02419c7-fbcd-4189-9931-105f8c485979" name="Translation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="4977cda1-41f9-458c-8c8f-7760aee0fb1b" name="Translation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="f0dc9c50-b2fc-4f5c-b058-34f96ae2349f" name="Translation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="c8b59727-cbd2-425d-8d12-71f297494066" name="Rotation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="419fec8e-082d-4548-9736-85f4b6b5bdfe" name="Rotation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AddToExisting" />
+            <property id="ca47d127-8456-479c-bda6-10f02993b0ff" name="Rotation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="a16e27d9-6bdf-499c-ba9b-d6f9661ca5d8" name="Scale" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="864829a3-6089-4f5c-b0ef-dec552bbbf17" name="Scale Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="b4a57194-cde5-499a-af71-779ca7365e4f" name="Scale Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="b70fba32-1784-4c0b-91af-4100da86126a" name="Transform (Modify) Bone" x="-585" y="715" ZIndex="0" width="286" height="156" type="TransformModifyBoneNode" full_type="TransformModifyBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ComponentPoseParameter" full_role="ComponentPoseParameter" id="67a08083-f855-44b2-8a11-78d265ec20d6" type="ComponentSpaceAnimationPoseSocket" name="Pose" />
+        <socket role="TranslationParameter" full_role="TranslationParameter" id="3e7f0e93-76ea-4956-a233-95b24108bde7" type="Vector3Socket" name="Translation" default="0,0,0" />
+        <socket role="RotationParameter" full_role="RotationParameter" id="413245a6-59b9-4105-be88-6b2795181f25" type="Rotator3Socket" name="Rotation" default="0,0,0" />
+        <socket role="ScaleParameter" full_role="ScaleParameter" id="20c167b2-cf28-4d63-b248-e621dfb48767" type="Vector3Socket" name="Scale" default="0,0,0" />
+        <socket role="AlphaParameter" full_role="AlphaParameter" id="8f0ee6c4-1d79-4224-8a4d-2e64ba550e63" type="FloatSocket" name="Alpha" default="0.25" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="73ed6d5e-516e-4aa5-922c-8b0f93545598" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="8cc48ba2-322d-4ade-b498-83372048ed75" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="954c7319-3766-45b1-a8b3-04e450a0bd42" name="Skeletal Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="f6150d1d-6326-4900-beae-4d360c1552d9" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="6b700704-fbad-4c5b-8cf1-cdb2e8afcfd5" name="Bone to Modify" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_l_lowerlid_01" />
+          </properties>
+        </property>
+        <property id="d54fbe9b-1694-4723-9db1-6e8e7acd6307" name="Translation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="e17408a9-2fc2-452d-89a8-749a361fe42c" name="Translation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="111eb70f-0fc8-4399-a780-d1b3050af356" name="Translation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="79ec16dc-f0ab-441f-bd33-e1b8475b903c" name="Rotation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="0170dae8-efec-4ac3-8729-7d569f929c3f" name="Rotation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AddToExisting" />
+            <property id="43766bca-d129-4cda-9675-057108804242" name="Rotation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="33efd47c-50de-4407-bf10-6bdaaad9f25c" name="Scale" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="894393c2-c805-4f1e-a8c5-919c7b6ae479" name="Scale Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="c7b3a323-7824-4a34-8d24-5cb563aa84de" name="Scale Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="7bb3364a-9324-44d4-bb04-a4a208894d66" name="Transform (Modify) Bone" x="-585" y="884" ZIndex="1" width="286" height="156" type="TransformModifyBoneNode" full_type="TransformModifyBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ComponentPoseParameter" full_role="ComponentPoseParameter" id="e0c7b9b5-9799-4a0b-a67c-7ab436d33a5d" type="ComponentSpaceAnimationPoseSocket" name="Pose" />
+        <socket role="TranslationParameter" full_role="TranslationParameter" id="b3583448-6309-4b7a-a8d9-bda7ac8bdc32" type="Vector3Socket" name="Translation" default="0,0,0" />
+        <socket role="RotationParameter" full_role="RotationParameter" id="61d7db61-bee7-4b7d-ae84-817d8af68d0c" type="Rotator3Socket" name="Rotation" default="0,0,0" />
+        <socket role="ScaleParameter" full_role="ScaleParameter" id="b30aad76-0d13-4d03-a118-62d00173c102" type="Vector3Socket" name="Scale" default="0,0,0" />
+        <socket role="AlphaParameter" full_role="AlphaParameter" id="53360274-82f9-4a4f-93cc-ad8fead9feb5" type="FloatSocket" name="Alpha" default="0.35" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="b753b04f-b5ae-41ae-a511-45387ee68548" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="cb0aa1e1-ff78-4e60-b5b0-4a486d89d137" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="3051e14f-64a8-47a5-b812-9945ea029c4b" name="Skeletal Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="7041ce93-31f1-41a8-81fc-50f4ca51b39a" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="8c63af72-3c59-4e44-8f84-c99001700421" name="Bone to Modify" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_l_lowerlid_02" />
+          </properties>
+        </property>
+        <property id="865dad51-0000-4f67-b6ed-828483e3117c" name="Translation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="3e50a011-ead7-4aa7-af02-9f07807545c5" name="Translation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="520838e2-1b9a-4dfe-9317-0ac2fb1df739" name="Translation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="6761dfac-665a-4c80-bf3a-a9f69d738d54" name="Rotation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="66993801-1902-4c45-9c19-c3e864f04017" name="Rotation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AddToExisting" />
+            <property id="c915b61b-298d-4400-bc16-73be4dd19058" name="Rotation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="d096ff52-2476-464c-a8a1-336d4548aceb" name="Scale" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="b6020611-b6da-4bae-8de7-fc3bd498c05f" name="Scale Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="1f35bf38-10c8-4b78-aeb5-58d1a962a425" name="Scale Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="e711c132-55c0-4583-b8f8-5573b48e0908" name="Transform (Modify) Bone" x="-585" y="1066" ZIndex="24" width="286" height="156" type="TransformModifyBoneNode" full_type="TransformModifyBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ComponentPoseParameter" full_role="ComponentPoseParameter" id="482a7f54-e62c-4e82-ac43-747461a9df5f" type="ComponentSpaceAnimationPoseSocket" name="Pose" />
+        <socket role="TranslationParameter" full_role="TranslationParameter" id="17774f0a-2083-43c9-baa1-58ee9896eed9" type="Vector3Socket" name="Translation" default="0,0,0" />
+        <socket role="RotationParameter" full_role="RotationParameter" id="16489938-ecd4-425b-9dd9-ac83ba40115c" type="Rotator3Socket" name="Rotation" default="0,0,0" />
+        <socket role="ScaleParameter" full_role="ScaleParameter" id="75b83c90-6594-4ba9-a61d-aaa0001ef6d5" type="Vector3Socket" name="Scale" default="0,0,0" />
+        <socket role="AlphaParameter" full_role="AlphaParameter" id="50c0b577-b122-4b5b-b5d9-8b5007ed0101" type="FloatSocket" name="Alpha" default="0.25" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="49598c9d-3505-4d92-956f-e2a02ba29fc4" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="50813ce7-1e42-4b08-94ea-a08d4322bd58" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="0f7078b5-2bfa-4fa9-8223-c66f23db4868" name="Skeletal Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="1dec3450-5c66-4229-8900-3f7aeb6d4c04" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="d102b94b-e747-42fe-9a96-63de2ed489a8" name="Bone to Modify" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_l_lowerlid_03" />
+          </properties>
+        </property>
+        <property id="ab257c5b-8cba-40fe-ba2e-4d2fa4a74dc4" name="Translation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="c7496992-dfdd-4805-a187-570b5e1ab629" name="Translation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="e6928cff-6960-4f9f-b1ef-ac428b973657" name="Translation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="8ce72d7c-662c-40d7-85e2-cac790ce0054" name="Rotation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="04171b2e-6361-45ad-a0f0-c0d2b52bc36f" name="Rotation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AddToExisting" />
+            <property id="0b83964b-fbf7-44f5-8c00-491166d10497" name="Rotation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="d9671d87-1184-4a3e-8d61-9e4caf3a2945" name="Scale" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="4660b866-a160-4d9c-91f1-e4a05d60c6d8" name="Scale Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="bf4a3e4f-b765-45b0-b586-531065d53a02" name="Scale Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="bf45e3bf-c780-4961-84eb-fee897145c0c" name="Transform (Modify) Bone" x="806" y="1066" ZIndex="11" width="286" height="156" type="TransformModifyBoneNode" full_type="TransformModifyBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ComponentPoseParameter" full_role="ComponentPoseParameter" id="ae7ac827-0145-4199-b5bb-511882f3411a" type="ComponentSpaceAnimationPoseSocket" name="Pose" />
+        <socket role="TranslationParameter" full_role="TranslationParameter" id="93ffebfc-4235-4e58-83d3-979744f571b8" type="Vector3Socket" name="Translation" default="0,0,0" />
+        <socket role="RotationParameter" full_role="RotationParameter" id="61f7bf5f-93a6-4b3e-9412-378aa2692d03" type="Rotator3Socket" name="Rotation" default="0,0,0" />
+        <socket role="ScaleParameter" full_role="ScaleParameter" id="1487e973-6399-4e93-a6ad-16a6a2e39706" type="Vector3Socket" name="Scale" default="0,0,0" />
+        <socket role="AlphaParameter" full_role="AlphaParameter" id="7c3c9de0-7815-4b5d-8c70-0f65d185ca22" type="FloatSocket" name="Alpha" default="0.25" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="c444a3a7-4750-4739-bc99-f4c392efcf61" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="717f8583-f15a-42e6-8645-745bf9d4b999" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="cc4795b2-112f-4f06-b6f6-66c116cc7d36" name="Skeletal Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="5c3e9db4-909e-4e19-b714-40f015315c4d" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="4267f394-a6c5-4ace-a895-48dde6887654" name="Bone to Modify" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_r_lowerlid_03" />
+          </properties>
+        </property>
+        <property id="b1bd07dc-aba5-49e4-859c-10766593b149" name="Translation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="d43fb500-a042-4fa2-8745-60fe169d233a" name="Translation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="73cee791-343c-4f9b-b0e6-655ed0fa1986" name="Translation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="e0c238bb-1ea4-471f-bcc8-9c5eee473bd2" name="Rotation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="5896ecf6-cbff-419c-b976-5a2fe762ffa2" name="Rotation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AddToExisting" />
+            <property id="634c9bdc-9478-4190-9d9d-0b0eec534b48" name="Rotation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="c555a1ae-e4be-4f8c-ab0a-491ace928453" name="Scale" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="4e7b19bc-9d78-41ff-864e-7edf2b6e3423" name="Scale Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="4b3381ba-2142-4a42-8180-867e0bdef588" name="Scale Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="8312f5b6-a376-43f3-9598-713308aae635" name="Transform (Modify) Bone" x="806" y="897" ZIndex="16" width="286" height="156" type="TransformModifyBoneNode" full_type="TransformModifyBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ComponentPoseParameter" full_role="ComponentPoseParameter" id="218c7ce8-4bfc-4470-93ae-81822a74fd03" type="ComponentSpaceAnimationPoseSocket" name="Pose" />
+        <socket role="TranslationParameter" full_role="TranslationParameter" id="7e03adc6-9d88-4f78-9297-a070c7661264" type="Vector3Socket" name="Translation" default="0,0,0" />
+        <socket role="RotationParameter" full_role="RotationParameter" id="358a9ce8-88ff-499b-b1b9-dc7753dd675c" type="Rotator3Socket" name="Rotation" default="0,0,0" />
+        <socket role="ScaleParameter" full_role="ScaleParameter" id="4e3a90ac-93c9-47aa-ad2d-a1d435f573bd" type="Vector3Socket" name="Scale" default="0,0,0" />
+        <socket role="AlphaParameter" full_role="AlphaParameter" id="92f4d193-cadf-4d73-b276-1b80b20aef7e" type="FloatSocket" name="Alpha" default="0.35" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="fa5434ec-e229-4e62-a984-6f9e911eb84d" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="5df8c04b-1857-4697-8079-3afe86ef1c52" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="ff52d35d-775c-482b-a00f-2a4362327df6" name="Skeletal Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="e2a28d6a-3f6a-4ada-a07c-a7275cd9ad8d" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="83591d85-023e-4999-bb1b-566890eb507e" name="Bone to Modify" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_r_lowerlid_02" />
+          </properties>
+        </property>
+        <property id="aadcbc8a-b572-42bf-bf09-da462f8483a3" name="Translation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="0fef7e56-451f-4f69-b8af-53800258e0cd" name="Translation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="804c4708-d98c-42bd-8704-d5d0e4ffd240" name="Translation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="1196056f-cbf4-4f58-900d-99ef5aa50ac6" name="Rotation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="2e17be91-583f-4aa7-aee0-c176d3072271" name="Rotation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AddToExisting" />
+            <property id="62b01b90-ce47-4686-a7c3-c2b799086259" name="Rotation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="972075e8-9073-4a46-926e-cd7b9ac86944" name="Scale" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="33a4ae59-89ef-4e7a-a7b3-aaedb4e60607" name="Scale Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="6c8948a3-e0d0-4839-9e85-6287ea5fd183" name="Scale Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="21ca1deb-54b9-4304-90e4-86a93003c2ca" name="Transform (Modify) Bone" x="806" y="299" ZIndex="18" width="286" height="156" type="TransformModifyBoneNode" full_type="TransformModifyBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ComponentPoseParameter" full_role="ComponentPoseParameter" id="6bce79ec-826b-42bf-8967-53d7e221a6a6" type="ComponentSpaceAnimationPoseSocket" name="Pose" />
+        <socket role="TranslationParameter" full_role="TranslationParameter" id="f33cfe75-a77c-4a30-8e09-ad90a1479b87" type="Vector3Socket" name="Translation" default="0,0,0" />
+        <socket role="RotationParameter" full_role="RotationParameter" id="483a9fa3-e429-4891-83a9-f4b8c960e85e" type="Rotator3Socket" name="Rotation" default="0,0,0" />
+        <socket role="ScaleParameter" full_role="ScaleParameter" id="02928921-c86f-4565-a6ff-0839877ff59b" type="Vector3Socket" name="Scale" default="0,0,0" />
+        <socket role="AlphaParameter" full_role="AlphaParameter" id="0bc92343-2f6f-4e58-a7bd-2fc734593db5" type="FloatSocket" name="Alpha" default="0.35" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="269a7659-9b89-4d59-915d-25c96ca9cfec" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="ae2aec1e-fb1f-4d5b-96a8-8d593bc21b83" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="670ceb79-729d-49c4-8e60-23ec2c09afc7" name="Skeletal Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="3a25405d-913b-462f-bb33-dd9b9b040cac" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="874101ae-a695-4d27-a2c3-21174e60e129" name="Bone to Modify" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_r_upperlid_02" />
+          </properties>
+        </property>
+        <property id="066cbaa2-2b5d-44aa-8124-241994fc7f27" name="Translation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="ee8edba0-3285-486a-8da1-0001a9f5a632" name="Translation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="ba29c368-e23a-4032-9fc0-915193809707" name="Translation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="2e1b83ae-836c-4931-8437-357b46f32412" name="Rotation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="f53d0ecc-126f-49ac-8817-452d96fb9cbe" name="Rotation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AddToExisting" />
+            <property id="e4d54481-9776-4f67-82dc-76fdc177cf44" name="Rotation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="5f2d01e0-b096-4c9a-8fdd-1ec5ca4d2fc2" name="Scale" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="9125eb0c-54dd-4264-bbd0-efb88228726d" name="Scale Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="d4bbe0fe-ae0b-4863-bdcf-861306237f9a" name="Scale Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="7ff10bc1-285a-47ab-8215-11b04f396b91" name="Transform (Modify) Bone" x="806" y="728" ZIndex="20" width="286" height="156" type="TransformModifyBoneNode" full_type="TransformModifyBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ComponentPoseParameter" full_role="ComponentPoseParameter" id="e470b1a7-1e6d-48ba-8828-9973a045aa43" type="ComponentSpaceAnimationPoseSocket" name="Pose" />
+        <socket role="TranslationParameter" full_role="TranslationParameter" id="6b7a588c-9aa0-42f2-9d3e-b6098f190462" type="Vector3Socket" name="Translation" default="0,0,0" />
+        <socket role="RotationParameter" full_role="RotationParameter" id="9b5bfc4c-9663-4804-b9d6-96337099ad40" type="Rotator3Socket" name="Rotation" default="0,0,0" />
+        <socket role="ScaleParameter" full_role="ScaleParameter" id="5e7e9ffc-c65b-4d7d-8eef-881580228e37" type="Vector3Socket" name="Scale" default="0,0,0" />
+        <socket role="AlphaParameter" full_role="AlphaParameter" id="9ed5a94b-c55f-4fd9-acc9-2739ebac95ee" type="FloatSocket" name="Alpha" default="0.25" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="54cb6ff4-5603-4e71-ac95-f0c381e937d3" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="c000f5b0-f0d8-49b0-85e6-0616d08468f6" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="f4ce049f-84a3-4283-aa0d-8691faae0987" name="Skeletal Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="945b048d-e841-4ba6-889f-793c4fcb76cc" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="d5edaa27-e557-4416-8619-c10ca5c6b0f6" name="Bone to Modify" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_r_lowerlid_01" />
+          </properties>
+        </property>
+        <property id="5a6e5db7-7c33-481c-b8cd-15c4f500af6c" name="Translation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="b59fd546-97e6-44b6-8eef-e50596acdb7c" name="Translation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="69db5f83-58ce-45e2-81db-5e01ad06a189" name="Translation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="a1acd6d6-c6b3-4ebf-a4c5-fc69ce7a09b8" name="Rotation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="f8f59cfd-eec8-42d5-8ce2-daa1698ad755" name="Rotation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AddToExisting" />
+            <property id="f334fd28-a6e5-4389-88e2-86586faef0ae" name="Rotation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="a7a50184-36cf-45a9-bf5c-1c2c848faf3d" name="Scale" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="de950083-fa43-491c-9da5-c9583afd30a8" name="Scale Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="7e164196-2554-4451-9046-7bdca0f7a541" name="Scale Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="2149991f-5da3-4920-a976-96b968b13a0a" name="Transform (Modify) Bone" x="806" y="468" ZIndex="21" width="286" height="156" type="TransformModifyBoneNode" full_type="TransformModifyBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ComponentPoseParameter" full_role="ComponentPoseParameter" id="bc709919-1127-4180-bbd9-bc7feefef742" type="ComponentSpaceAnimationPoseSocket" name="Pose" />
+        <socket role="TranslationParameter" full_role="TranslationParameter" id="9d09673f-b471-437b-adc9-971fcad47297" type="Vector3Socket" name="Translation" default="0,0,0" />
+        <socket role="RotationParameter" full_role="RotationParameter" id="66aced7f-c6ee-404c-a507-8e03d2a0d171" type="Rotator3Socket" name="Rotation" default="0,0,0" />
+        <socket role="ScaleParameter" full_role="ScaleParameter" id="9e0adc12-dbf1-459f-ac20-0db48bfab6c4" type="Vector3Socket" name="Scale" default="0,0,0" />
+        <socket role="AlphaParameter" full_role="AlphaParameter" id="c629eb06-420d-4be0-b717-d57b7c937192" type="FloatSocket" name="Alpha" default="0.25" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="c8a4fc17-0a05-4d31-b7f0-48a6723d5923" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="08bd9c19-6071-4e84-827e-59764723996d" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="2a0cf268-eb83-428a-8eba-acda3b17480d" name="Skeletal Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="ce3421b2-0db6-44d3-a84d-142a5fe2ccf8" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="17712ff4-9b12-49ec-930e-7679dffba885" name="Bone to Modify" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_r_upperlid_03" />
+          </properties>
+        </property>
+        <property id="9655f49b-7728-4e73-9827-ab358f29e8ae" name="Translation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="d3d84476-db8c-4091-b4bd-b6edec2b6bff" name="Translation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="fbf5a0df-1638-4144-949f-f3f390d3a7f4" name="Translation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="ff8aef64-021a-45ec-9532-cc1436e4e0c5" name="Rotation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="9788b35a-21fa-43de-9d56-62a761b7c76c" name="Rotation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AddToExisting" />
+            <property id="ec7fe3f8-cea8-46b2-9de1-e49ded0ff2ab" name="Rotation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="4b7eebdf-d9ec-408b-8bbe-20442d50d8cc" name="Scale" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="a3a59e4c-be47-4c3e-8429-14fbe841e68d" name="Scale Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="417faf49-79cc-4021-92df-bb525fcd08d7" name="Scale Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="e5c263d9-c81d-471d-9ad6-07e56fb3a0e4" name="Transform (Modify) Bone" x="806" y="130" ZIndex="23" width="286" height="156" type="TransformModifyBoneNode" full_type="TransformModifyBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ComponentPoseParameter" full_role="ComponentPoseParameter" id="c638c704-baec-4783-9050-39b047eb6ce7" type="ComponentSpaceAnimationPoseSocket" name="Pose" />
+        <socket role="TranslationParameter" full_role="TranslationParameter" id="80409c9b-6a9c-44e3-b092-64351faae960" type="Vector3Socket" name="Translation" default="0,0,0" />
+        <socket role="RotationParameter" full_role="RotationParameter" id="5f09b456-fd09-441c-a98f-06bf81a46ea0" type="Rotator3Socket" name="Rotation" default="0,0,0" />
+        <socket role="ScaleParameter" full_role="ScaleParameter" id="a1349294-fbee-4e24-b3ed-321cd6dc1183" type="Vector3Socket" name="Scale" default="0,0,0" />
+        <socket role="AlphaParameter" full_role="AlphaParameter" id="8eb3b328-3678-492e-94db-b1b682e71bcd" type="FloatSocket" name="Alpha" default="0.25" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="c9d21adc-5e57-49d3-9716-ad229d5bb648" type="ComponentSpaceAnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="dabb83ce-7369-4a59-9865-3b468bd312d1" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="e89b1dcf-b49b-4102-b7f0-1d61b69c4d14" name="Skeletal Control" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="f8eb4247-151b-47ff-b74a-9af762c79a5b" name="Slot" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+            <property id="ec12d1d2-2a5a-47a1-ab29-9e7bf241b38c" name="Bone to Modify" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="eye_r_upperlid_01" />
+          </properties>
+        </property>
+        <property id="abf43b2a-6956-49b5-a791-d2f035d39ffa" name="Translation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="902d7d78-59dd-4f35-870a-cd38fd16bc0e" name="Translation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="1384c7c6-3c61-45d0-bf13-7f3bf4a5452a" name="Translation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="ec0d1ef0-bfee-4bf4-bff7-7e91c316d721" name="Rotation" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="3c7b31ad-276f-4fc1-be06-f94ce46a4773" name="Rotation Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AddToExisting" />
+            <property id="82344cb9-a848-4525-8fd0-2dbc81e6d740" name="Rotation Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+        <property id="56458670-d833-4fb8-89dd-b7131f9bf95e" name="Scale" full_type="Genome.DataModel.Property.CategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="7ca84f30-192d-45de-bd9c-ef7d3c93cf88" name="Scale Mode" full_type="Genome.DataModel.Property.TransformModifyBone.BoneModeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Ignore" />
+            <property id="6f84056d-1b55-45b2-ad7a-aa98a7d24ef8" name="Scale Space" full_type="Genome.DataModel.Property.TransformModifyBone.BoneSpaceProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ComponentSpace" />
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="c9f2c146-9329-414c-a9e5-599fa67f4818" name="Add 2 Rotators" x="390" y="741" ZIndex="2" width="117" height="78" type="RotatorConcatenateNode" full_type="RotatorConcatenateNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="a5641f40-629b-458c-ac15-5c441b99af66" type="Rotator3Socket" name="" default="0,0,0" />
+        <socket role="ParameterB" full_role="ParameterB" id="e0a6b1da-1f62-455f-bbd7-092ae01984ac" type="Rotator3Socket" name="" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="3ddc1608-a6d4-4f68-88ec-52207a79e4b1" type="Rotator3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="4a55b1cb-1c8a-4afd-8158-a819a9820ff0" name="Invert Rotator" x="234" y="585" ZIndex="4" width="104" height="52" type="InvertRotationNode" full_type="InvertRotationNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter" full_role="Parameter" id="52b27c01-0e31-4ac3-b762-087685799016" type="Rotator3Socket" name="" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="7a49e441-76cf-41e3-9cc2-a8e0ebb7d63b" type="Rotator3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="d299e50e-c90f-42ad-b6b4-601b26e500bf" name="Add 2 Rotators" x="-884" y="715" ZIndex="0" width="117" height="78" type="RotatorConcatenateNode" full_type="RotatorConcatenateNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="7f5b354d-a0de-48d8-8481-082aca355e15" type="Rotator3Socket" name="" default="0,0,0" />
+        <socket role="ParameterB" full_role="ParameterB" id="aa8d6e82-2fa5-4201-8dbe-03d6290fc200" type="Rotator3Socket" name="" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="7741b68c-86e1-4093-b2a2-0ef10ad2424b" type="Rotator3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="cc6e6114-2c72-4525-8568-9ccca5e0de82" name="Invert Rotator" x="-1040" y="585" ZIndex="1" width="104" height="52" type="InvertRotationNode" full_type="InvertRotationNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter" full_role="Parameter" id="9e0e33ac-e593-4aff-8a38-2e0bbee23a5d" type="Rotator3Socket" name="" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="ac9f206e-e1a4-493a-9577-97f583ee1c64" type="Rotator3Socket" name="" />
+      </outputs>
+    </node>
+  </nodes>
+  <links>
+    <link id="f6ccdffe-ee66-4f9f-97c1-06d98944cbce" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="dd211703-6396-4872-b01e-2be97d97a179" to_id="52c5ea78-2ea2-4d40-83d2-602033af9753" begin_point_x="-1592" begin_point_y="571" end_point_x="-1424" end_point_y="571" />
+    <link id="e8dbc33f-f4f9-46bc-9b2d-64c81fc1576e" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="67521c9e-7fa2-4ffe-a1fd-ad0ef835a79f" to_id="57a9fe10-6cd4-46c6-89e6-90d896eb94ea" begin_point_x="-1592" begin_point_y="701" end_point_x="-1424" end_point_y="701" />
+    <link id="d91cab2d-9538-43d6-ac33-a29cd46de0f4" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="d9940a32-a854-4913-b5cf-aece80f3f418" to_id="9027da86-7d4b-4896-b898-b8750dfbfbf8" begin_point_x="-838" begin_point_y="194" end_point_x="-774" end_point_y="194" />
+    <link id="cbae0cc5-77ee-4792-9167-5ffb2c23379c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b1dce628-d82c-459d-b08f-2ff3903b0e28" to_id="bbc59c7a-0d62-43e1-8b3b-c93f35d01f96" begin_point_x="59" begin_point_y="519" end_point_x="-150" end_point_y="571" />
+    <link id="147fca91-a7c1-4dba-aff0-5fb64858392c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="2a624f82-b05c-47b4-b0c1-1e7ef96b00af" to_id="5cb8d55c-b8e6-439d-8305-812ea66e4008" begin_point_x="46" begin_point_y="675" end_point_x="-150" end_point_y="727" />
+    <link id="b33c4f40-b544-45bb-9d82-2aa7bc797cdf" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b3f6df0f-d5d0-43b8-b5ef-d61201a00a71" to_id="c598edcf-a408-4ca9-94ef-f8c26652bb67" begin_point_x="-656" begin_point_y="194" end_point_x="-579" end_point_y="194" />
+    <link id="63f4ac77-0825-4b7f-b812-a35b3b827ac1" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="20768453-9b4a-4725-9b62-8faf06f42f55" to_id="411531e7-ce38-44da-9313-783f6aff9faa" begin_point_x="-331" begin_point_y="194" end_point_x="-579" end_point_y="362" />
+    <link id="fb2acc01-52ff-418b-b49f-95a2d94850ec" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="73ed6d5e-516e-4aa5-922c-8b0f93545598" to_id="e0c7b9b5-9799-4a0b-a67c-7ab436d33a5d" begin_point_x="-318" begin_point_y="753" end_point_x="-566" end_point_y="922" />
+    <link id="c868a25a-6774-46c5-95ab-cef064a1a39d" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b753b04f-b5ae-41ae-a511-45387ee68548" to_id="482a7f54-e62c-4e82-ac43-747461a9df5f" begin_point_x="-318" begin_point_y="922" end_point_x="-566" end_point_y="1104" />
+    <link id="62f1b9c2-deca-4b16-aac8-6d6575453246" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="49598c9d-3505-4d92-956f-e2a02ba29fc4" to_id="ae7ac827-0145-4199-b5bb-511882f3411a" begin_point_x="-318" begin_point_y="1104" end_point_x="825" end_point_y="1104" />
+    <link id="33d5b8bc-a15b-4928-a8e6-1147bb20b88e" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c444a3a7-4750-4739-bc99-f4c392efcf61" to_id="218c7ce8-4bfc-4470-93ae-81822a74fd03" begin_point_x="1072" begin_point_y="1104" end_point_x="825" end_point_y="935" />
+    <link id="03c4d3cf-fe1b-4ebe-ab68-d9e8347b21b8" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="fa5434ec-e229-4e62-a984-6f9e911eb84d" to_id="e470b1a7-1e6d-48ba-8828-9973a045aa43" begin_point_x="1072" begin_point_y="935" end_point_x="825" end_point_y="766" />
+    <link id="e7cea8a8-c371-4186-b75e-0bf83a76f0cf" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="54cb6ff4-5603-4e71-ac95-f0c381e937d3" to_id="bc709919-1127-4180-bbd9-bc7feefef742" begin_point_x="1072" begin_point_y="766" end_point_x="825" end_point_y="506" />
+    <link id="c1802b9d-6870-4484-979e-883d1bb56b70" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c8a4fc17-0a05-4d31-b7f0-48a6723d5923" to_id="6bce79ec-826b-42bf-8967-53d7e221a6a6" begin_point_x="1072" begin_point_y="506" end_point_x="825" end_point_y="337" />
+    <link id="0e16b381-5899-4835-b58d-ef82edf0c019" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="269a7659-9b89-4d59-915d-25c96ca9cfec" to_id="c638c704-baec-4783-9050-39b047eb6ce7" begin_point_x="1072" begin_point_y="337" end_point_x="825" end_point_y="168" />
+    <link id="ad9a1b70-dcbc-4502-8a93-8e6e42913967" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c9d21adc-5e57-49d3-9716-ad229d5bb648" to_id="6f8c1934-c0c1-4b3d-a297-f484a2ffeb44" begin_point_x="1072" begin_point_y="168" end_point_x="1202" end_point_y="168" />
+    <link id="284fff61-4af8-4dac-88b0-c2768233c8af" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="874d4efe-3f14-4a01-9046-b49f4ce20061" to_id="863e6b97-af26-498b-9d22-f535982a7ae8" begin_point_x="-331" begin_point_y="362" end_point_x="-579" end_point_y="545" />
+    <link id="d103cbb8-3e75-4c2f-b16b-0e1d52f53d90" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="bdb9df2d-ee52-4270-b343-1c4bb7c0ac0b" to_id="67a08083-f855-44b2-8a11-78d265ec20d6" begin_point_x="-331" begin_point_y="545" end_point_x="-566" end_point_y="753" />
+    <link id="877c97ac-d4c9-47a4-8a8c-2f06c8994cd5" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="63b8ff2f-6427-4a80-9487-8c7188047693" to_id="c22f6d83-97b3-42c9-999e-446d3ed7c467" begin_point_x="1320" begin_point_y="168" end_point_x="1384" end_point_y="167" />
+    <link id="2e14931b-4e7b-47e8-8095-ebedb264aed6" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7a49e441-76cf-41e3-9cc2-a8e0ebb7d63b" to_id="e0a6b1da-1f62-455f-bbd7-092ae01984ac" begin_point_x="319" begin_point_y="623" end_point_x="409" end_point_y="805" />
+    <link id="46d10c18-4410-4927-8acc-aaa3adccb596" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="5bcad7f3-c601-43c1-a58a-af46b6feab30" to_id="a5641f40-629b-458c-ac15-5c441b99af66" begin_point_x="163" begin_point_y="779" end_point_x="409" end_point_y="779" />
+    <link id="05479106-bd0d-46e7-b667-daf76b8abdb6" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="5c6e5b12-4546-49d1-aed6-a8d75d429b9c" to_id="52b27c01-0e31-4ac3-b762-087685799016" begin_point_x="163" begin_point_y="623" end_point_x="253" end_point_y="623" />
+    <link id="8260ee1f-c793-4ce9-b736-e620f341f5bb" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="3ddc1608-a6d4-4f68-88ec-52207a79e4b1" to_id="5f09b456-fd09-441c-a98f-06bf81a46ea0" begin_point_x="488" begin_point_y="779" end_point_x="825" end_point_y="220" />
+    <link id="3741e1cc-3af3-4b02-b8b2-970ed6894c1e" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="3ddc1608-a6d4-4f68-88ec-52207a79e4b1" to_id="483a9fa3-e429-4891-83a9-f4b8c960e85e" begin_point_x="488" begin_point_y="779" end_point_x="825" end_point_y="389" />
+    <link id="9a4e0670-ce1d-45c8-8f23-c77e09f8f0ef" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="3ddc1608-a6d4-4f68-88ec-52207a79e4b1" to_id="66aced7f-c6ee-404c-a507-8e03d2a0d171" begin_point_x="488" begin_point_y="779" end_point_x="825" end_point_y="558" />
+    <link id="e89c6159-aec1-4250-9a09-aebae31a6a63" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="3ddc1608-a6d4-4f68-88ec-52207a79e4b1" to_id="9b5bfc4c-9663-4804-b9d6-96337099ad40" begin_point_x="488" begin_point_y="779" end_point_x="825" end_point_y="817" />
+    <link id="be358f76-c246-4702-93cd-1458cc4cebab" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="3ddc1608-a6d4-4f68-88ec-52207a79e4b1" to_id="358a9ce8-88ff-499b-b1b9-dc7753dd675c" begin_point_x="488" begin_point_y="779" end_point_x="825" end_point_y="987" />
+    <link id="0924de0b-237a-48ed-9be9-622272ce02cb" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="3ddc1608-a6d4-4f68-88ec-52207a79e4b1" to_id="61f7bf5f-93a6-4b3e-9412-378aa2692d03" begin_point_x="488" begin_point_y="779" end_point_x="825" end_point_y="1156" />
+    <link id="27f23a67-1d23-4028-9a50-ce7dbd0c2165" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="ac9f206e-e1a4-493a-9577-97f583ee1c64" to_id="aa8d6e82-2fa5-4201-8dbe-03d6290fc200" begin_point_x="-955" begin_point_y="623" end_point_x="-865" end_point_y="779" />
+    <link id="f6bff901-f885-4833-815a-210dcefbb602" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="ebabebdf-9fc5-46af-b107-9699633992f8" to_id="9e0e33ac-e593-4aff-8a38-2e0bbee23a5d" begin_point_x="-1111" begin_point_y="623" end_point_x="-1021" end_point_y="623" />
+    <link id="593b3032-50c5-4cfd-b15a-63af94181663" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="df901d11-800a-43dd-92ea-4767ae91661c" to_id="7f5b354d-a0de-48d8-8481-082aca355e15" begin_point_x="-1111" begin_point_y="753" end_point_x="-865" end_point_y="753" />
+    <link id="934ff209-50b1-40ea-8a30-316f0c05af44" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7741b68c-86e1-4093-b2a2-0ef10ad2424b" to_id="729e2d2e-d3f4-43aa-b0f0-ab7272e62801" begin_point_x="-786" begin_point_y="753" end_point_x="-579" end_point_y="246" />
+    <link id="e42ecb3c-a46e-466c-8d34-748c723886c8" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7741b68c-86e1-4093-b2a2-0ef10ad2424b" to_id="73e70b6f-e7cf-4468-ac7d-d18d9801fd8a" begin_point_x="-786" begin_point_y="753" end_point_x="-579" end_point_y="414" />
+    <link id="b1294a7a-3cc9-419d-b5f4-ca87d986b88c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7741b68c-86e1-4093-b2a2-0ef10ad2424b" to_id="0bfa3da6-c0e7-4a77-b725-98426684d40d" begin_point_x="-786" begin_point_y="753" end_point_x="-579" end_point_y="597" />
+    <link id="cc0e4359-1656-4880-ae96-ceb91d1942d6" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7741b68c-86e1-4093-b2a2-0ef10ad2424b" to_id="413245a6-59b9-4105-be88-6b2795181f25" begin_point_x="-786" begin_point_y="753" end_point_x="-566" end_point_y="805" />
+    <link id="d703bed1-1a88-4cd9-8d73-e20922635df3" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7741b68c-86e1-4093-b2a2-0ef10ad2424b" to_id="61d7db61-bee7-4b7d-ae84-817d8af68d0c" begin_point_x="-786" begin_point_y="753" end_point_x="-566" end_point_y="974" />
+    <link id="5a382489-b5e7-427e-a817-9d28d1459a20" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7741b68c-86e1-4093-b2a2-0ef10ad2424b" to_id="16489938-ecd4-425b-9dd9-ac83ba40115c" begin_point_x="-786" begin_point_y="753" end_point_x="-566" end_point_y="1156" />
+  </links>
+  <properties>
+    <property id="10b4e69d-e37f-4ef8-9990-663df51a96d7" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Virtual" />
+    <property id="ac699501-fdaa-4078-a245-c2a1b4363e97" name="Graph Type" full_type="Genome.DataModel.Property.FunctionGraphTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AnimationGraph" />
+    <property id="7e1c6f90-5bab-4943-8ab2-2f38d44c5793" name="Input Sockets" full_type="Genome.DataModel.Property.Sockets.SocketCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true" />
+    <property id="ae3f6b63-edf0-4b2e-87f3-79a80a69670e" name="Output Sockets" full_type="Genome.DataModel.Property.Sockets.SocketCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true">
+      <properties>
+        <property id="04668e30-08a0-453e-9bb0-2c92ba2411ae" name="Out" full_type="Genome.DataModel.Property.Sockets.SocketTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="true" value="AnimationPoseSocket" />
+      </properties>
+    </property>
+  </properties>
+</graph>

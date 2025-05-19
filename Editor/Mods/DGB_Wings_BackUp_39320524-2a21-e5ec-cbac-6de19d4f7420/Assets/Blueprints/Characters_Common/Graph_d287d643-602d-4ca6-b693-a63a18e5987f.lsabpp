@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="d287d643-602d-4ca6-b693-a63a18e5987f" can_be_deleted="false" type="StateMachine">
+  <nodes>
+    <node id="2bfbb6ad-dec8-481f-b99d-9decdc7aad5f" name="EntryState" x="-624" y="-156" ZIndex="2" width="91" height="52" type="EntryState" full_type="EntryState" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="7bca2513-eca4-447c-9897-043af5c2fb8b" type="EntrySocket" name="" />
+    </node>
+    <node id="8f1ad1d9-8030-450b-b4ce-06ef9ecbf8e1" name="Ascend" x="-416" y="-156" ZIndex="11" width="78" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="7706b0b4-9a49-4610-a9b0-e82317536912" on_enter_begin_event_name="OnJumpFlightStarted" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="51e43798-3b3b-4448-9115-75750ac2eace" type="StateSocket" name="" />
+    </node>
+    <node id="1f2f5bf0-d87d-4fb6-8ec6-3b6cbd5ec221" name="Descend" x="-416" y="-416" ZIndex="13" width="78" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="bbb5d97a-71b6-4aca-9777-4cea5d6c1e94" on_enter_begin_event_name="" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="63c796b2-e9f9-46bb-828a-93f740d633a0" type="StateSocket" name="" />
+    </node>
+    <node id="cba83853-45ad-49af-9b08-29a2d11c3c59" name="OnActionFinished" x="390" y="-156" ZIndex="4" width="130" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="a31a9fe2-afd3-4995-ac23-3d7843c516da" on_enter_begin_event_name="" on_enter_finish_event_name="OnJumpFlightFinish" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="58605004-1e57-4b02-ad3c-290a659412d4" type="StateSocket" name="" />
+    </node>
+    <node id="d5be9f12-6916-4880-9766-bc352d4734c5" name="Recover" x="-65" y="-156" ZIndex="12" width="78" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="27b161e4-9cd9-4cad-8cb3-df547008bec4" on_enter_begin_event_name="OnJumpFlightLanding" on_enter_finish_event_name="OnJumpFlightLanded" on_exit_begin_event_name="OnJumpFlightRecoverExitBegin" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="f909d24c-5d10-4598-b31f-473bca29216f" type="StateSocket" name="" />
+    </node>
+    <node id="b7701e9e-683d-4dd6-a312-33ad7cca83e2" name="Falling" x="0" y="-416" ZIndex="15" width="65" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="d7b3113e-e7b4-4df3-907c-2cbed5fe996e" on_enter_begin_event_name="OnJumpFlightLanded" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="858cf42a-5c14-4722-893b-2950d9b4478d" type="StateSocket" name="" />
+    </node>
+    <node id="630f0b33-df41-471b-9877-e0a7d4239485" name="Neutral_Transition" x="156" y="52" ZIndex="1" width="130" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="2a714660-5c19-4018-89ea-659f176c0452" on_enter_begin_event_name="" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="fb8ab57c-842a-4c70-92ca-7b8ceb9faf86" type="StateSocket" name="" />
+    </node>
+    <node id="89c9e08c-3276-4a10-808f-6bd69fc25ab9" name="Neutral Transition to go from Recover to Idle_Still" x="13" y="-52" ZIndex="0" width="507" height="299" type="CommentNode" full_type="CommentNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+    </node>
+    <node id="cb5b344a-3ec8-461f-aceb-62c2bd2fa255" name="Commentary" x="-286" y="-52" ZIndex="2" width="291" height="302" type="NoteNode" full_type="NoteNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;\red239\green239\blue239;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf2 \cf2\ql{\f2 {\ltrch Neutral Loop -&gt; Neutral Transition.}{\ltrch \line }{\ltrch If a character uses the Neutral System ( Ex : Elf Male ) then the SpellAnimationFinished event will be delayed until after the neutral transition finishes in order to take the character from Neutral_Loop_Pose (end of the spell cast or recover) to Idle_Pose before sending SpellAnimationFinished. This will make it so that the Neutral Transition can happen before the game requests ASUnSheath/ASSheath.}\li0\ri0\sa0\sb0\fi0\ql\par}
+}
+}</node>
+  </nodes>
+  <links>
+    <link id="2d6baac7-dab3-4414-9f05-3615ec31db60" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="51e43798-3b3b-4448-9115-75750ac2eace" to_id="63c796b2-e9f9-46bb-828a-93f740d633a0" begin_point_x="-374" begin_point_y="-156" end_point_x="-374" end_point_y="-364" rule_id="ea9ce18d-0176-42b1-83ad-3f8cbf4a3f80">
+      <node id="ea9ce18d-0176-42b1-83ad-3f8cbf4a3f80" name="Ascend to Descend" x="-357" y="-276" ZIndex="5" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="3cc5d662-8a1f-4003-8d9e-1b69ad389d95" blend_type="Linear" blend_duration="0.15">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="060378c6-beb1-49ca-be9b-c9c9330de149" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="63c796b2-e9f9-46bb-828a-93f740d633a0" to_id="f909d24c-5d10-4598-b31f-473bca29216f" begin_point_x="-339" begin_point_y="-361" end_point_x="-66" end_point_y="-153" rule_id="666a1b0c-deb1-4ffd-a9f3-806859af0677">
+      <node id="666a1b0c-deb1-4ffd-a9f3-806859af0677" name="Descend to Recover" x="-239" y="-247" ZIndex="6" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="247c71c9-68bc-4a3f-803f-6f32f2229294" blend_type="CubicOut" blend_duration="0.15">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="50ecb670-18a0-435f-9edd-1545f56ac6bf" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f909d24c-5d10-4598-b31f-473bca29216f" to_id="58605004-1e57-4b02-ad3c-290a659412d4" begin_point_x="13" begin_point_y="-127" end_point_x="390" end_point_y="-127" rule_id="e6dbd299-71e9-46d4-b5e6-41b0aa88c558">
+      <node id="e6dbd299-71e9-46d4-b5e6-41b0aa88c558" name="Recover to OnActionFinished" x="185" y="-110" ZIndex="3" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="bbcb3199-be0f-4469-8371-05edcaf5bef2" blend_type="Linear" blend_duration="0.15">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="85de794f-e81f-404c-be05-8aa50694844f" type="UnconditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.UnconditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7bca2513-eca4-447c-9897-043af5c2fb8b" to_id="51e43798-3b3b-4448-9115-75750ac2eace" begin_point_x="-533" begin_point_y="-127" end_point_x="-416" end_point_y="-127" />
+    <link id="ea737528-69ca-401f-9503-5de67f06ffe6" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="858cf42a-5c14-4722-893b-2950d9b4478d" to_id="58605004-1e57-4b02-ad3c-290a659412d4" begin_point_x="63" begin_point_y="-361" end_point_x="388" end_point_y="-153" rule_id="7298461a-fdb6-46d7-a266-33cd38ed0a30">
+      <node id="7298461a-fdb6-46d7-a266-33cd38ed0a30" name="Falling to OnActionFinished" x="191" y="-246" ZIndex="7" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="0faf7a1e-1f9f-4a47-8301-d591a8ffe06d" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="7acd8a05-6983-4211-8144-9e4ae0c56d7a" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="63c796b2-e9f9-46bb-828a-93f740d633a0" to_id="858cf42a-5c14-4722-893b-2950d9b4478d" begin_point_x="-338" begin_point_y="-387" end_point_x="0" end_point_y="-387" rule_id="bddad85e-449b-4c4e-b42c-c732f5ab11c8">
+      <node id="bddad85e-449b-4c4e-b42c-c732f5ab11c8" name="Descend to Falling" x="-185" y="-370" ZIndex="8" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="c7d5ccb0-9732-4cbf-b221-2e07c7046f49" blend_type="CubicIn" blend_duration="0.1">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="b6dcf23f-222b-48a5-b9fc-c8ad8f5d6da8" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="51e43798-3b3b-4448-9115-75750ac2eace" to_id="f909d24c-5d10-4598-b31f-473bca29216f" begin_point_x="-338" begin_point_y="-127" end_point_x="-65" end_point_y="-127" rule_id="f8d3cfeb-3094-446a-8e80-29d19377a2f6">
+      <node id="f8d3cfeb-3094-446a-8e80-29d19377a2f6" name="Ascend to Recover" x="-218" y="-110" ZIndex="9" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="c44ce951-d1d1-4737-b5ef-77fe1b3329bd" blend_type="CubicOut" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="52cda701-537a-402e-b213-69311b44dec5" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="858cf42a-5c14-4722-893b-2950d9b4478d" to_id="f909d24c-5d10-4598-b31f-473bca29216f" begin_point_x="3" begin_point_y="-364" end_point_x="3" end_point_y="-156" rule_id="c656edb3-405c-4e62-a563-f7af36455d2c">
+      <node id="c656edb3-405c-4e62-a563-f7af36455d2c" name="Falling to Recover" x="-46" y="-276" ZIndex="14" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="1dbd5132-8964-481a-99e3-668c32e7b918" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="18a7a613-5eac-41a7-9d1a-3413ce1de766" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="51e43798-3b3b-4448-9115-75750ac2eace" to_id="858cf42a-5c14-4722-893b-2950d9b4478d" begin_point_x="-336" begin_point_y="-153" end_point_x="1" end_point_y="-361" rule_id="dc9114c8-8ee9-460c-b3ab-0fb52394d2c1">
+      <node id="dc9114c8-8ee9-460c-b3ab-0fb52394d2c1" name="Ascend to Falling" x="-166" y="-245" ZIndex="10" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="b6722265-fa74-4a30-9a83-e134f255eed2" blend_type="CubicOut" blend_duration="0.1">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="cc5c7e64-ff88-4175-89f1-6187e4a0c2fe" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f909d24c-5d10-4598-b31f-473bca29216f" to_id="fb8ab57c-842a-4c70-92ca-7b8ceb9faf86" begin_point_x="10" begin_point_y="-101" end_point_x="153" end_point_y="54" rule_id="1d6f6ac4-e62c-4717-b2fb-a7d756f4317f">
+      <node id="1d6f6ac4-e62c-4717-b2fb-a7d756f4317f" name="Recover to Neutral_Transition" x="41" y="-18" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="3605d40a-2483-4a27-b67d-a5567b33e97d" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="ba24612d-dcf1-4e5e-892d-6a23429ecd8e" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="fb8ab57c-842a-4c70-92ca-7b8ceb9faf86" to_id="58605004-1e57-4b02-ad3c-290a659412d4" begin_point_x="288" begin_point_y="53" end_point_x="392" end_point_y="-102" rule_id="1bb34c58-189f-41e9-ad47-add083613ff1">
+      <node id="1bb34c58-189f-41e9-ad47-add083613ff1" name="Neutral_Transition to OnActionFinished" x="351" y="-22" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="85fd42fe-63e8-4be4-8e03-7c0b74843b8d" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+  </links>
+  <properties>
+    <property id="2f101a4d-cfaf-481f-a22c-ed6468700b31" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="5074d394-5412-4065-8074-0d992ff7145c" name="MaxTransitionsPerFrame" full_type="Genome.DataModel.Property.IntegerProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+    <property id="59f1b2ed-4230-48e5-9817-ed1ff13d9951" name="ExitEvent" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="OnJumpFlightComplete" />
+  </properties>
+</graph>

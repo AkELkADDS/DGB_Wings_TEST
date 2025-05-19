@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="09bf5ded-5692-428d-acff-77ebb68c96b3" can_be_deleted="true" type="EventGraph" name="ACT_Digging">
+  <nodes>
+    <node id="99e42df8-da0e-41ee-b5d7-17b31de2a4d1" name="Text Event" x="-689" y="0" ZIndex="0" width="169" height="52" type="TextEventNode" full_type="TextEventNode" Comment="" is_comment_pinned="false" TextEvent="DiggingFinished">
+      <inputs />
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="4b14a695-fe2b-4ee4-8e10-01dda3975cbe" type="ExecSocket" name="" />
+      </outputs>
+    </node>
+    <node id="91213d82-5d60-4687-9807-4d2b9be35dbc" name="Send Event" x="-416" y="0" ZIndex="0" width="299" height="104" type="SendEventNode" full_type="ParametrizedEventNodeDefinition" Comment="" is_comment_pinned="false" event_id="8696f625-0419-42d5-a8b5-4a94127990ab">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="d482691f-3519-40a7-8a9c-85c755501336" type="ExecSocket" name="" />
+        <socket role="Param 0" full_role="Param 0" id="d45de162-c867-44d0-b5c7-c85dd1072e61" type="FixedStringSocket" name="EventName" default="" />
+        <socket role="Param 1" full_role="Param 1" id="a3f8501b-dc22-4893-a245-8d926c5ee76a" type="BooleanSocket" name="WasFromLoad" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="546cfe43-9bb8-40b7-887f-b0586a2b177e" type="ExecSocket" name="" />
+      </outputs>
+    </node>
+    <node id="449087fb-64e5-420a-a1e1-e81d16f71fde" name="GetVariableNode" x="-819" y="52" ZIndex="1" width="299" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="4909d817-4f2f-4396-8591-b4715364cd30">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="c2a64977-61a7-4a54-af39-12a7992f2668" type="FixedStringSocket" name="ACT_Digging_FinishedScriptEventName" />
+      </outputs>
+    </node>
+  </nodes>
+  <links>
+    <link id="6312ad97-f24c-4497-823d-34b2a106e5d0" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="4b14a695-fe2b-4ee4-8e10-01dda3975cbe" to_id="d482691f-3519-40a7-8a9c-85c755501336" begin_point_x="-539" begin_point_y="38" end_point_x="-397" end_point_y="38" />
+    <link id="77163654-d0b2-4ee2-a3ce-6770fdc7b643" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c2a64977-61a7-4a54-af39-12a7992f2668" to_id="d45de162-c867-44d0-b5c7-c85dd1072e61" begin_point_x="-539" begin_point_y="90" end_point_x="-397" end_point_y="64" />
+  </links>
+  <properties>
+    <property id="4965b471-82d7-4683-82c2-d3b73045a94d" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+  </properties>
+</graph>

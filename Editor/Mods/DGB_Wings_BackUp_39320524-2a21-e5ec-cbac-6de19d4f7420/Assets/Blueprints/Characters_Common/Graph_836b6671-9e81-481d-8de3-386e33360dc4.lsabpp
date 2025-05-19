@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="836b6671-9e81-481d-8de3-386e33360dc4" can_be_deleted="false" type="FunctionGraph" name="IDLE_ClientUpdates">
+  <nodes>
+    <node id="914090a4-4031-4fb9-b2b0-6c73bcf59b15" name="Entry" x="-884" y="455" ZIndex="1" width="130" height="78" type="FunctionEntryNode" full_type="VaryingSocketNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs>
+        <socket role="ExecInput 0" full_role="ExecInput 0" id="a6dd285e-54d1-4eee-b419-3d42ac42d298" type="ExecSocket" name="Exec" />
+        <socket role="Parameter 0" full_role="Parameter 0" id="42189fb7-d0d0-4355-b6ff-c0597d2c511f" type="FloatSocket" name="DeltaTime" />
+      </outputs>
+    </node>
+    <node id="6875a81c-6165-442d-8d70-81b0d539bbac" name="Result" x="936" y="208" ZIndex="1" width="78" height="26" type="FunctionResultNode" full_type="VaryingSocketNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+    </node>
+    <node id="c1db5653-7dcd-4fb6-911c-0ebf5a06d57e" name="Sequence" x="-468" y="208" ZIndex="9" width="143" height="182" type="SequenceNode" full_type="SequenceNode" Comment="Then 0 -&gt; Set random variables                      Then 1 -&gt; Set wanted Idle machine shortnames                 Then 2 -&gt; Set wanted additve random shortname                   Then 3 -&gt; Timers                        Then 4 -&gt; Current idle still shortnames set                           Then 5 -&gt; Neutral system timer" is_comment_pinned="false">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="c800c5a2-0b04-4e98-aa92-bebc81e43b42" type="ExecSocket" name="" />
+      </inputs>
+      <outputs>
+        <socket role="Out  0" full_role="Out  0" id="07998a68-5029-486f-8e66-775cc0d424d6" type="ExecSocket" name="Then 0" />
+        <socket role="Out  1" full_role="Out  1" id="5a5cdb1f-7b5a-44ad-9d50-0104c0b79ca4" type="ExecSocket" name="Then 1" />
+        <socket role="Out  2" full_role="Out  2" id="45f62e93-7938-44d3-9c2f-7e82c87d0e3e" type="ExecSocket" name="Then 2" />
+        <socket role="Out  3" full_role="Out  3" id="afcb3dd8-a3fa-4ab7-83d1-438049f4e5e1" type="ExecSocket" name="Then 3" />
+        <socket role="Out  4" full_role="Out  4" id="953b6e33-eb90-4e35-8f72-426366d2ab1f" type="ExecSocket" name="Then 4" />
+      </outputs>
+    </node>
+    <node id="2068c71f-fee9-4efb-9d00-c39be5275061" name="IDLE_SetIdleDesiredShortnames" x="0" y="325" ZIndex="0" width="247" height="52" type="FunctionNode" full_type="FunctionGraphNodeDefinition" Comment="" is_comment_pinned="false" graph_id="d69c3978-0e05-4112-81a5-63489db5d086">
+      <inputs>
+        <socket role="ExecInput 0" full_role="ExecInput 0" id="9afb7f3f-499b-4ffb-a0b0-890e5df675d5" type="ExecSocket" name="Exec" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="8b9d45e4-91ff-40ef-a560-6e499e42598b" name="IDLE_SetAdditive" x="0" y="390" ZIndex="1" width="156" height="52" type="FunctionNode" full_type="FunctionGraphNodeDefinition" Comment="" is_comment_pinned="false" graph_id="d673a84e-b028-406e-9b02-547301d95da5">
+      <inputs>
+        <socket role="ExecInput 0" full_role="ExecInput 0" id="49a621c5-dc60-4c97-930b-1fbfc56a65bd" type="ExecSocket" name="Parameter 0" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="1fccb5e4-b3b9-4c9d-855c-0636fbd51c54" name="IDLE_TimeCounters" x="0" y="455" ZIndex="2" width="169" height="78" type="FunctionNode" full_type="FunctionGraphNodeDefinition" Comment="" is_comment_pinned="false" graph_id="ee5fb04f-4d46-4aab-bc49-89e8d7c4cef8">
+      <inputs>
+        <socket role="ExecInput 0" full_role="ExecInput 0" id="48fca1ae-68d4-4321-83b0-4627496aa03c" type="ExecSocket" name="Parameter 0" />
+        <socket role="Parameter 0" full_role="Parameter 0" id="ecdc4172-e823-4a2a-a4f8-3a8f11479ea0" type="FloatSocket" name="Parameter 1" default="0" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="6d678cf1-1db6-4e1b-b0a9-4d2ab25e9220" name="Do Once" x="195" y="208" ZIndex="15" width="234" height="104" type="DoOnceNode" full_type="DoOnceNode" Comment="Set the random variables and attitive randoms on Turn_On_Additive. Which is in Still state enter finish in the idling machine" is_comment_pinned="false">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="69ce3865-53a8-42f6-9b6f-7a01706927b2" type="ExecSocket" name="" />
+        <socket role="ExecResetInput" full_role="ExecResetInput" id="4e12460f-9e31-40bc-9c35-8c1cb50d89c0" type="ExecSocket" name="Reset" />
+        <socket role="Condition" full_role="Condition" id="6ae781f5-6c7f-475d-badf-20c95d9d1d3a" type="BooleanSocket" name="Can Execute" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="f9b7cb47-dcbf-4ddf-bb84-6d5fc8edf5a8" type="ExecSocket" name="Output" />
+      </outputs>
+    </node>
+    <node id="67b3752c-1306-426a-b083-b80b61619c3b" name="Sequence" x="494" y="208" ZIndex="3" width="143" height="104" type="SequenceNode" full_type="SequenceNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="f6db6f89-5e79-4852-8c26-0661808c6110" type="ExecSocket" name="" />
+      </inputs>
+      <outputs>
+        <socket role="Out  0" full_role="Out  0" id="cb825863-6103-433f-a965-5a79c107c732" type="ExecSocket" name="Then 0" />
+        <socket role="Out  1" full_role="Out  1" id="20a2b6ff-0d1f-4f95-8e15-0c86490d0b78" type="ExecSocket" name="Then 1" />
+      </outputs>
+    </node>
+    <node id="5a8b32f2-7e7f-4076-8136-81d98e9ca0cf" name="IDLE_SetRandoms" x="676" y="208" ZIndex="4" width="169" height="52" type="FunctionNode" full_type="FunctionGraphNodeDefinition" Comment="" is_comment_pinned="false" graph_id="ccea834f-f5c4-4e7e-a748-a7f9dd09ff75">
+      <inputs>
+        <socket role="ExecInput 0" full_role="ExecInput 0" id="fef028d1-f1eb-432f-bfca-59dfcfe61cb4" type="ExecSocket" name="Exec" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput 0" full_role="ExecOutput 0" id="c2690c3e-ab7b-4d61-86b3-d0affad0d166" type="ExecSocket" name="Exec" />
+      </outputs>
+    </node>
+    <node id="7f98d38f-6aae-4957-bddc-c2c6ef206d60" name="IDLE_SetAdditiveRandoms" x="676" y="260" ZIndex="10" width="221" height="52" type="FunctionNode" full_type="FunctionGraphNodeDefinition" Comment="" is_comment_pinned="false" graph_id="0786e104-8d0d-4415-8258-9d5c95b859bf">
+      <inputs>
+        <socket role="ExecInput 0" full_role="ExecInput 0" id="a6143a4d-64db-404b-a5e2-aa4988c06bad" type="ExecSocket" name="Exec" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="779bd567-7bd7-4abf-9d50-bbc3cda4c60b" name="SET" x="247" y="728" ZIndex="8" width="234" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="a365a704-3b03-4b9b-9b79-d7547ac00968">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="0544598c-9b9f-4a89-a2bf-2bde26fd644c" type="ExecSocket" name="IDLE_NeutralLoopTimer" />
+        <socket role="Parameter" full_role="Parameter" id="2cc490b9-1fea-4cb3-8ffb-a9cd1734c883" type="FloatSocket" name="IDLE_NeutralLoopTimer" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="517cbf4a-ce04-4a87-b1d0-6e7f10030953" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="74143964-9c08-4cbe-8956-e367447f23ce" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="f6890aed-55ad-495e-afec-29487075cdec" name="Float + Float" x="-117" y="754" ZIndex="7" width="104" height="104" type="FloatAddNode" full_type="VariableInputNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="3cbbe6a1-cbda-44af-8548-96cd41bb79c0" type="FloatSocket" name="" default="0" />
+        <socket role="Parameter 1" full_role="Parameter 1" id="070db7ad-203b-4565-873b-14f0474a9a84" type="FloatSocket" name="" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="aafa5f06-9c38-480d-9d36-4b733e5c3db2" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="cfcdde29-af42-4c62-8a7b-875543494f6d" name="GetVariableNode" x="-429" y="780" ZIndex="6" width="208" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="a365a704-3b03-4b9b-9b79-d7547ac00968">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="048dd844-c71a-4058-9d52-c05e9a7e920c" type="FloatSocket" name="IDLE_NeutralLoopTimer" />
+      </outputs>
+    </node>
+    <node id="2ef7cc80-6c6c-428e-9e1e-9965641a950d" name="Branch" x="0" y="650" ZIndex="13" width="195" height="78" type="BranchNode" full_type="BranchNode" Comment="How much time has the character been in the neutral" is_comment_pinned="false">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="e670e191-9eda-4e15-91cc-5af1b09047fe" type="ExecSocket" name="" />
+        <socket role="Condition" full_role="Condition" id="f63fa4bf-fd24-4f54-97cc-53f4af0e3f59" type="BooleanSocket" name="Condition" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutputTrue" full_role="ExecOutputTrue" id="2fe0cc03-2795-4e9b-91f0-f4370ae0f612" type="ExecSocket" name="True" />
+        <socket role="ExecOutputFalse" full_role="ExecOutputFalse" id="8bba8b7c-ade4-4e82-9789-6f232c0472fe" type="ExecSocket" name="False" />
+      </outputs>
+    </node>
+    <node id="451fbf11-7a7a-4079-943b-d079db9242a8" name="GetVariableNode" x="-156" y="676" ZIndex="5" width="143" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="e6114ff6-63cb-4da2-ac6b-f1bd6f3de747">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="65d180fb-a8d2-4b84-858c-c2a19f506a15" type="BooleanSocket" name="bIsInAction" />
+      </outputs>
+    </node>
+    <node id="0b1098e6-1c1c-44c2-8e53-6686e65cb216" name="SET" x="247" y="650" ZIndex="2" width="273" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="a365a704-3b03-4b9b-9b79-d7547ac00968">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="559e3605-993c-4ca4-8fcb-be2bbd3d1ead" type="ExecSocket" name="IDLE_NeutralLoopTimer" />
+        <socket role="Parameter" full_role="Parameter" id="dddc388f-b652-40ca-8346-3314c7851345" type="FloatSocket" name="IDLE_NeutralLoopTimer" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="4b020341-8c9a-4c9e-9529-80705f0dbc1a" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="3a22fefc-a71e-4234-8365-c664cf749077" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="69763481-e2ac-4629-8b36-1d3c4a30ba52" name="Idle Neutral Update" x="-533" y="611" ZIndex="0" width="754" height="273" type="CommentNode" full_type="CommentNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+    </node>
+    <node id="8f6dfc23-30b3-43b1-8b39-2d42945889fd" name="Text Event" x="0" y="260" ZIndex="17" width="169" height="52" type="TextEventNode" full_type="TextEventNode" Comment="Sent on Still state enter finish" is_comment_pinned="false" TextEvent="Turn_On_Additive">
+      <inputs />
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="2e3ba371-99b2-4455-b513-6665fc096015" type="ExecSocket" name="" />
+      </outputs>
+    </node>
+  </nodes>
+  <links>
+    <link id="e456aec2-477d-4154-b6dd-bcd8bfe2c814" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f9b7cb47-dcbf-4ddf-bb84-6d5fc8edf5a8" to_id="f6db6f89-5e79-4852-8c26-0661808c6110" begin_point_x="410" begin_point_y="246" end_point_x="513" end_point_y="246" />
+    <link id="04618893-aff7-432d-9398-b7f8c1813ea2" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="cb825863-6103-433f-a965-5a79c107c732" to_id="fef028d1-f1eb-432f-bfca-59dfcfe61cb4" begin_point_x="618" begin_point_y="246" end_point_x="695" end_point_y="246" />
+    <link id="596b13b5-bdc3-4c8e-8614-05741d2123fd" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="20a2b6ff-0d1f-4f95-8e15-0c86490d0b78" to_id="a6143a4d-64db-404b-a5e2-aa4988c06bad" begin_point_x="618" begin_point_y="272" end_point_x="695" end_point_y="298" />
+    <link id="29538f63-54aa-4f73-8d15-f6d4f3a25ca0" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="07998a68-5029-486f-8e66-775cc0d424d6" to_id="69ce3865-53a8-42f6-9b6f-7a01706927b2" begin_point_x="-344" begin_point_y="246" end_point_x="214" end_point_y="246" />
+    <link id="5ca5688e-b9b4-4071-86cc-bb3100ce115c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="5a5cdb1f-7b5a-44ad-9d50-0104c0b79ca4" to_id="9afb7f3f-499b-4ffb-a0b0-890e5df675d5" begin_point_x="-344" begin_point_y="272" end_point_x="19" end_point_y="363" />
+    <link id="50345b3c-34c9-4a8f-887a-17ffbd697444" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="45f62e93-7938-44d3-9c2f-7e82c87d0e3e" to_id="49a621c5-dc60-4c97-930b-1fbfc56a65bd" begin_point_x="-344" begin_point_y="298" end_point_x="19" end_point_y="428" />
+    <link id="400fd41d-b6bc-4667-bc66-1f067834654f" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="afcb3dd8-a3fa-4ab7-83d1-438049f4e5e1" to_id="48fca1ae-68d4-4321-83b0-4627496aa03c" begin_point_x="-344" begin_point_y="324" end_point_x="19" end_point_y="493" />
+    <link id="5aa80d42-8d79-4900-b6cd-ac7008fe3a90" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="048dd844-c71a-4058-9d52-c05e9a7e920c" to_id="070db7ad-203b-4565-873b-14f0474a9a84" begin_point_x="-240" begin_point_y="818" end_point_x="-98" end_point_y="818" />
+    <link id="501bccf3-3b68-46ee-b2a5-9d4d35fbac79" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="aafa5f06-9c38-480d-9d36-4b733e5c3db2" to_id="2cc490b9-1fea-4cb3-8ffb-a9cd1734c883" begin_point_x="-32" begin_point_y="792" end_point_x="266" end_point_y="792" />
+    <link id="22935f67-77ee-40dd-b663-6e889745b038" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="953b6e33-eb90-4e35-8f72-426366d2ab1f" to_id="e670e191-9eda-4e15-91cc-5af1b09047fe" begin_point_x="-344" begin_point_y="350" end_point_x="19" end_point_y="688" />
+    <link id="2371471f-958b-4595-834e-6b8d0d2cb048" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="65d180fb-a8d2-4b84-858c-c2a19f506a15" to_id="f63fa4bf-fd24-4f54-97cc-53f4af0e3f59" begin_point_x="-32" begin_point_y="714" end_point_x="19" end_point_y="714" />
+    <link id="45fdfcec-53e2-427e-80c3-ec1fa0eb4037" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="2fe0cc03-2795-4e9b-91f0-f4370ae0f612" to_id="559e3605-993c-4ca4-8fcb-be2bbd3d1ead" begin_point_x="176" begin_point_y="688" end_point_x="266" end_point_y="688" />
+    <link id="dd2bdd92-5d3c-4fa4-a68c-95896735a43c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="8bba8b7c-ade4-4e82-9789-6f232c0472fe" to_id="0544598c-9b9f-4a89-a2bf-2bde26fd644c" begin_point_x="176" begin_point_y="714" end_point_x="266" end_point_y="766" />
+    <link id="f3e37156-1965-4848-a701-74a42c814220" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="2e3ba371-99b2-4455-b513-6665fc096015" to_id="4e12460f-9e31-40bc-9c35-8c1cb50d89c0" begin_point_x="150" begin_point_y="298" end_point_x="214" end_point_y="272" />
+    <link id="8ff10bc5-6e3f-4661-bd99-638746b3dd48" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="42189fb7-d0d0-4355-b6ff-c0597d2c511f" to_id="3cbbe6a1-cbda-44af-8548-96cd41bb79c0" begin_point_x="-773" begin_point_y="519" end_point_x="-98" end_point_y="792" />
+    <link id="e230f4da-c9ec-498d-b5ed-8eaf8f527eb3" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="42189fb7-d0d0-4355-b6ff-c0597d2c511f" to_id="ecdc4172-e823-4a2a-a4f8-3a8f11479ea0" begin_point_x="-773" begin_point_y="519" end_point_x="19" end_point_y="519" />
+    <link id="ec8d1853-3c75-4f65-bd23-e87cd7b39f0b" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="a6dd285e-54d1-4eee-b419-3d42ac42d298" to_id="c800c5a2-0b04-4e98-aa92-bebc81e43b42" begin_point_x="-773" begin_point_y="493" end_point_x="-449" end_point_y="246" />
+  </links>
+  <properties>
+    <property id="3c822688-e1ca-4960-b086-e70f9fc4687d" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Virtual" />
+    <property id="14f00d24-bbbb-4879-a07d-c55ec40df131" name="Graph Type" full_type="Genome.DataModel.Property.FunctionGraphTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="EventGraph" />
+    <property id="9cd9d010-3fd3-49ad-bcaf-e43d177a47a8" name="Input Sockets" full_type="Genome.DataModel.Property.Sockets.SocketCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true">
+      <properties>
+        <property id="7f22fd11-6f11-4156-bb5d-a6a561c4bd2f" name="Exec" full_type="Genome.DataModel.Property.Sockets.SocketTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="true" value="ExecSocket" />
+        <property id="b8ba0aee-c42e-48d1-a8fa-cd2d3e7f6406" name="DeltaTime" full_type="Genome.DataModel.Property.Sockets.SocketTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="true" value="FloatSocket" />
+      </properties>
+    </property>
+    <property id="aa61a3f3-701b-45ba-8f8d-f1f2d6accea8" name="Output Sockets" full_type="Genome.DataModel.Property.Sockets.SocketCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true" />
+  </properties>
+</graph>

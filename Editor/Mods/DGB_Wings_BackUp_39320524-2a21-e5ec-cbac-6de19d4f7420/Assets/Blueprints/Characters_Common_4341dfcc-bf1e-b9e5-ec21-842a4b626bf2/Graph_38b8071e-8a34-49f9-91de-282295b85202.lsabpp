@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="38b8071e-8a34-49f9-91de-282295b85202" can_be_deleted="false" type="StateMachine">
+  <nodes>
+    <node id="57d65e06-2889-47bf-a379-51848c143405" name="EntryState" x="-520" y="-208" ZIndex="7" width="91" height="52" type="EntryState" full_type="EntryState" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="8c9b3aa3-8ade-4644-b651-5c4ef601cdf6" type="EntrySocket" name="" />
+    </node>
+    <node id="40942b73-fa61-469f-819f-e043876ef945" name="Land" x="247" y="-208" ZIndex="0" width="65" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="67412883-1ad7-4375-a6c7-47cebd1192c0" on_enter_begin_event_name="OnLanded" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="8b766519-cc30-4289-8669-f0db18ed879d" type="StateSocket" name="" />
+    </node>
+    <node id="ecf1ad99-b52f-44e7-99cc-9337d67a3e1a" name="FallingFinished" x="0" y="-416" ZIndex="8" width="117" height="78" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="1403c627-c251-4a94-b481-0c23fee829b7" on_enter_begin_event_name="OnFallingFinished" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="32afb11b-9216-45ef-b424-dadea962977b" type="StateSocket" name="" />
+    </node>
+    <node id="f5bd68d9-f032-42ec-9c71-f9ae8d9cc4ef" name="Fall_Loop" x="-208" y="-208" ZIndex="6" width="91" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="dcda8a3b-47a2-4b4c-b408-f9257a557b27" on_enter_begin_event_name="OnFallingStarted" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="08865b4d-8c06-460d-8f11-90c9ea5179e2" type="StateSocket" name="" />
+    </node>
+    <node id="cc183018-7be6-468a-9fbd-2b521942d9ca" name="To Land" x="-208" y="156" ZIndex="10" width="104" height="52" type="ConduitState" full_type="ConduitState" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="d510154e-259b-40ba-960a-059d3e4432e6" type="StateSocket" name="" />
+    </node>
+    <node id="7ea77e12-67ce-446d-b0a7-1f9dfedbc4dd" name="Prone" x="247" y="156" ZIndex="10" width="65" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="72177ebb-7db3-4eda-9ae7-5f006e4db12a" on_enter_begin_event_name="OnProned" on_enter_finish_event_name="OnFallingFinished" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="fa4e351f-c074-4c44-9ca0-01ee01654e74" type="StateSocket" name="" />
+    </node>
+  </nodes>
+  <links>
+    <link id="8f6f21e2-af82-44f5-aef8-90b6598e3f5f" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="8b766519-cc30-4289-8669-f0db18ed879d" to_id="32afb11b-9216-45ef-b424-dadea962977b" begin_point_x="249" begin_point_y="-210" end_point_x="119" end_point_y="-340" rule_id="64ad3959-03ab-4740-b60a-6ccb4ed91db9">
+      <node id="64ad3959-03ab-4740-b60a-6ccb4ed91db9" name="Land to FallingFinished" x="190" y="-314" ZIndex="9" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="1fa7ba14-7076-492d-8421-ca98c0fadce0" blend_type="Linear" blend_duration="0.15">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="ef493ead-cdf0-4415-ad3e-6016062c87d4" type="UnconditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.UnconditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="8c9b3aa3-8ade-4644-b651-5c4ef601cdf6" to_id="08865b4d-8c06-460d-8f11-90c9ea5179e2" begin_point_x="-429" begin_point_y="-179" end_point_x="-208" end_point_y="-179" />
+    <link id="8e984a73-b471-4ecf-9ad4-fb5611a4a2a1" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="8b766519-cc30-4289-8669-f0db18ed879d" to_id="08865b4d-8c06-460d-8f11-90c9ea5179e2" begin_point_x="247" begin_point_y="-185" end_point_x="-117" end_point_y="-185" rule_id="56c10eb1-bf7c-4ffa-a2d9-2826954e2551">
+      <node id="56c10eb1-bf7c-4ffa-a2d9-2826954e2551" name="Land to Fall_Loop" x="48" y="-234" ZIndex="3" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="4a8425a1-b637-431d-a4b8-7340a52331ff" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="251fbece-51dd-48e2-bed1-34de9b14e726" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="32afb11b-9216-45ef-b424-dadea962977b" to_id="08865b4d-8c06-460d-8f11-90c9ea5179e2" begin_point_x="-2" begin_point_y="-340" end_point_x="-119" end_point_y="-210" rule_id="a3f6924e-eafa-4809-8be2-bb67ec1ecf33">
+      <node id="a3f6924e-eafa-4809-8be2-bb67ec1ecf33" name="FallingFinished to Fall_Loop" x="-101" y="-313" ZIndex="4" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="6b0336e9-48b9-43a3-971b-58a88f64a09c" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="32761d4d-40cb-481c-ab1d-4c90b014f3e7" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="08865b4d-8c06-460d-8f11-90c9ea5179e2" to_id="d510154e-259b-40ba-960a-059d3e4432e6" begin_point_x="-165" begin_point_y="-156" end_point_x="-165" end_point_y="156" rule_id="3535c92f-7c98-4895-a329-f6ad55dd04ef">
+      <node id="3535c92f-7c98-4895-a329-f6ad55dd04ef" name="Fall_Loop to To Land" x="-215" y="-16" ZIndex="5" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="c97644fd-6ee7-4a56-814d-cfaac5aa4fb1">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="5e70617c-15dc-4207-a9bf-96996f2d0c31" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="d510154e-259b-40ba-960a-059d3e4432e6" to_id="8b766519-cc30-4289-8669-f0db18ed879d" begin_point_x="-102" begin_point_y="158" end_point_x="248" end_point_y="-153" rule_id="5436000f-3497-4d79-b764-aa567cce3667">
+      <node id="5436000f-3497-4d79-b764-aa567cce3667" name="To Land to Land" x="78" y="10" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="40bb9f0d-26e0-484e-9f5e-ff5551dfa98c" blend_type="Linear" blend_duration="0.075">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="3e120887-cb85-4fa9-ab33-000c40226b07" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="d510154e-259b-40ba-960a-059d3e4432e6" to_id="fa4e351f-c074-4c44-9ca0-01ee01654e74" begin_point_x="-104" begin_point_y="185" end_point_x="247" end_point_y="185" rule_id="17c547aa-e601-4a6b-9eca-fcbfe93ffc8e">
+      <node id="17c547aa-e601-4a6b-9eca-fcbfe93ffc8e" name="To Land to Prone" x="55" y="201" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="e422892f-978d-46ab-88f4-dcf2e26f4963" blend_type="Linear" blend_duration="0.1">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="f573c444-03cf-412d-a854-c10e6f803b94" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="fa4e351f-c074-4c44-9ca0-01ee01654e74" to_id="08865b4d-8c06-460d-8f11-90c9ea5179e2" begin_point_x="248" begin_point_y="153" end_point_x="-115" end_point_y="-158" rule_id="2f74e065-ef38-4abf-91a9-fb3424985b53">
+      <node id="2f74e065-ef38-4abf-91a9-fb3424985b53" name="Prone to Fall_Loop" x="71" y="-43" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="e078667d-5abb-4c18-b8f9-6a782568f32e" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+  </links>
+  <properties>
+    <property id="44ff13bf-16eb-4263-980e-d282dffa3602" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="4ad18c88-d3ae-4bb4-99d1-951ce3a93f63" name="MaxTransitionsPerFrame" full_type="Genome.DataModel.Property.IntegerProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+    <property id="4438f73e-4cbd-4be2-b2f9-470b20b6b3b2" name="ExitEvent" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="OnFallingFinished" />
+  </properties>
+</graph>

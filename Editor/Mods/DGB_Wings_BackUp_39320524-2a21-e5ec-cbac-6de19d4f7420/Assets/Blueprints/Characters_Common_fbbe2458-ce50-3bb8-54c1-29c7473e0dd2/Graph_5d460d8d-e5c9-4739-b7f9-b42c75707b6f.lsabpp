@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="5d460d8d-e5c9-4739-b7f9-b42c75707b6f" can_be_deleted="false" type="FunctionGraph" name="JumpflightType_IF_Valid">
+  <nodes>
+    <node id="1da1cc4b-a78f-4305-8ab1-5fcd4aaa517c" name="Entry" x="-169" y="0" ZIndex="1" width="169" height="52" type="FunctionEntryNode" full_type="VaryingSocketNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs>
+        <socket role="Parameter 1" full_role="Parameter 1" id="da44c56c-ab0a-48c1-972b-b6a543b09366" type="BooleanSocket" name="ShortnameBool" />
+      </outputs>
+    </node>
+    <node id="25198eb9-d019-4b36-9775-524a8a5b611c" name="Result" x="416" y="0" ZIndex="0" width="143" height="52" type="FunctionResultNode" full_type="VaryingSocketNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="e20d88c0-e006-4eee-af2f-137ca5a761da" type="IntegerSocket" name="JumpFlight" default="0" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="581db824-1f9e-48bf-adb1-e01018b4e2df" name="GetVariableNode" x="-416" y="91" ZIndex="0" width="169" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="edf0acca-c431-468c-a5f7-c0ad503b5849">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="d93b1962-d72b-4839-b8dc-900d60cdecec" type="EnumSocket" name="JumpFlightType" />
+      </outputs>
+    </node>
+    <node id="ad0eec99-c576-43d4-9ccd-0625e4d31264" name="Integer Switch" x="104" y="0" ZIndex="2" width="195" height="104" type="SwitchIntNodeByBool" full_type="SwitchIntNodeByBool" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Index" full_role="Index" id="e9fcc592-a160-41a3-9db1-a40ee6f051e0" type="BooleanSocket" name="" default="False" />
+        <socket role="Option 0" full_role="Option 0" id="d7bc0802-7456-4abd-8eb4-fddc684ce614" type="IntegerSocket" name="True" default="0" />
+        <socket role="Option 1" full_role="Option 1" id="c8fc9f46-4a2e-45b9-b6e2-606aed522406" type="IntegerSocket" name="False" default="1" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="55a0dd56-6bd2-4fa3-a6e2-b86b944816c7" type="IntegerSocket" name="Out" />
+      </outputs>
+    </node>
+    <node id="84708a76-09e4-4763-8606-083e100a09d0" name="ToInteger (Enum)" x="-143" y="91" ZIndex="3" width="143" height="52" type="EnumToIntNode" full_type="EnumToIntNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter" full_role="Parameter" id="ac707944-b9af-4219-921f-79c1bf602dfc" type="EnumSocket" name="" default="0" item_id="00000000-0000-0000-0000-000000000000" enumeration_id="00000000-0000-0000-0000-000000000000" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="0401b6e9-93b0-4af3-80ce-1e69e05fe1f7" type="IntegerSocket" name="" />
+      </outputs>
+    </node>
+  </nodes>
+  <links>
+    <link id="a44e6d72-f97b-4cc1-9bcf-069f3b4db4f2" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="d93b1962-d72b-4839-b8dc-900d60cdecec" to_id="ac707944-b9af-4219-921f-79c1bf602dfc" begin_point_x="-266" begin_point_y="129" end_point_x="-124" end_point_y="129" />
+    <link id="b2d301a1-c7ef-4aa3-83ab-426b284c9d31" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="0401b6e9-93b0-4af3-80ce-1e69e05fe1f7" to_id="d7bc0802-7456-4abd-8eb4-fddc684ce614" begin_point_x="-19" begin_point_y="129" end_point_x="123" end_point_y="64" />
+    <link id="69916f2d-d7be-4016-83f8-511030a36db1" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="55a0dd56-6bd2-4fa3-a6e2-b86b944816c7" to_id="e20d88c0-e006-4eee-af2f-137ca5a761da" begin_point_x="280" begin_point_y="38" end_point_x="435" end_point_y="38" />
+    <link id="7133e4ec-dfe1-404d-9b57-21a1c60a3480" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="da44c56c-ab0a-48c1-972b-b6a543b09366" to_id="e9fcc592-a160-41a3-9db1-a40ee6f051e0" begin_point_x="-19" begin_point_y="38" end_point_x="123" end_point_y="38" />
+  </links>
+  <properties>
+    <property id="4a840644-3236-4331-9800-860f9e67190f" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="d24aedb9-e399-404c-9a74-eff663d3d400" name="Graph Type" full_type="Genome.DataModel.Property.FunctionGraphTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="UniversalGraph" />
+    <property id="dcb28fe5-32a7-4424-8b12-345f1c041545" name="Input Sockets" full_type="Genome.DataModel.Property.Sockets.SocketCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true">
+      <properties>
+        <property id="fc521a91-47f5-4cd0-8a36-dc4fd31ed6ce" name="ShortnameBool" full_type="Genome.DataModel.Property.Sockets.SocketTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="true" value="BooleanSocket" />
+      </properties>
+    </property>
+    <property id="835c78ab-8c14-47dd-850d-952b1048c996" name="Output Sockets" full_type="Genome.DataModel.Property.Sockets.SocketCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true">
+      <properties>
+        <property id="6c012f38-389d-4064-8454-97139ea54f5f" name="JumpFlight" full_type="Genome.DataModel.Property.Sockets.SocketTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="true" value="IntegerSocket" />
+      </properties>
+    </property>
+  </properties>
+</graph>

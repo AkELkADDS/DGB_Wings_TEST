@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="e8fbdfc7-5838-4f8a-8fc2-d6b47a4b32b3" can_be_deleted="false" type="FunctionGraph" name="CMBT_ResetDynamicSheathing">
+  <nodes>
+    <node id="61394ae0-2d3d-403f-86b1-bec643ee7d84" name="Entry" x="-416" y="65" ZIndex="6" width="117" height="52" type="FunctionEntryNode" full_type="VaryingSocketNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs>
+        <socket role="ExecInput 0" full_role="ExecInput 0" id="0f410b2a-d393-4a63-8c79-26bf6154d4fc" type="ExecSocket" name="ExecIn" />
+      </outputs>
+    </node>
+    <node id="bc2bc758-c2ef-48ae-a780-5657f7bf4c88" name="Result" x="520" y="104" ZIndex="0" width="130" height="52" type="FunctionResultNode" full_type="VaryingSocketNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ExecOutput 0" full_role="ExecOutput 0" id="30760821-abf3-49a1-8bd4-8c6cfc3627ae" type="ExecSocket" name="ExecOut" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="8c97d975-7824-4f21-bb5e-5300736a9d83" name="SET" x="208" y="104" ZIndex="3" width="247" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="23e78d85-4bff-481f-a767-a2f69a38b258">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="f1e0b163-10c4-49af-ab2a-632bb6892e03" type="ExecSocket" name="ACT_CombatOverride" />
+        <socket role="Parameter" full_role="Parameter" id="f6172e6b-b0ee-4f3a-8c00-f7ac7c2d728a" type="BooleanSocket" name="ACT_CombatOverride" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="bada4bf2-bad4-43be-bc77-7cfd2749a899" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="3232869d-0765-49b1-a2b5-204d6e11281f" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="33b6df09-0b3d-4c7e-9f7f-82d8720a4b56" name="SET" x="-104" y="104" ZIndex="4" width="221" height="78" type="SetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="9b023561-b460-4bb6-a5ab-f0717cbc2a9b">
+      <inputs>
+        <socket role="ExecInput" full_role="ExecInput" id="62aa6894-aed3-47f3-98bf-21f5ef62b456" type="ExecSocket" name="bIsInCombat_Current" />
+        <socket role="Parameter" full_role="Parameter" id="f4c87cc5-7491-4795-ac9c-0ae15d2fc9d5" type="BooleanSocket" name="bIsInCombat_Current" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="ExecOutput" full_role="ExecOutput" id="b41a3cc2-361c-4359-ba13-5de517bd1b17" type="ExecSocket" name="" />
+        <socket role="Result" full_role="Result" id="d3b463ac-98f1-4d1d-97a9-6e80455fe147" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="135fd923-fdb7-4696-bdc7-d08137f7117e" name="GetVariableNode" x="-416" y="130" ZIndex="5" width="195" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="a995c728-adb7-4e3e-bc75-f270e163f583">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="fa6f2f5c-a1a2-43a5-b6c4-074f2c0e81cb" type="BooleanSocket" name="bIsinCombat_Desired" />
+      </outputs>
+    </node>
+  </nodes>
+  <links>
+    <link id="2685b02a-5ae6-4ad3-b48c-e00f627eba46" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="fa6f2f5c-a1a2-43a5-b6c4-074f2c0e81cb" to_id="f4c87cc5-7491-4795-ac9c-0ae15d2fc9d5" begin_point_x="-240" begin_point_y="168" end_point_x="-85" end_point_y="168" />
+    <link id="7bc0e294-c7fc-4606-b9a4-afd915744592" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b41a3cc2-361c-4359-ba13-5de517bd1b17" to_id="f1e0b163-10c4-49af-ab2a-632bb6892e03" begin_point_x="98" begin_point_y="142" end_point_x="227" end_point_y="142" />
+    <link id="610fbc80-d452-4089-a45f-7f7afc9bbb3c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="0f410b2a-d393-4a63-8c79-26bf6154d4fc" to_id="62aa6894-aed3-47f3-98bf-21f5ef62b456" begin_point_x="-318" begin_point_y="103" end_point_x="-85" end_point_y="142" />
+    <link id="d7f7cc1a-75de-4015-a97b-f912085669cf" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="bada4bf2-bad4-43be-bc77-7cfd2749a899" to_id="30760821-abf3-49a1-8bd4-8c6cfc3627ae" begin_point_x="436" begin_point_y="142" end_point_x="539" end_point_y="142" />
+  </links>
+  <properties>
+    <property id="8d6f6d7f-be0a-4e33-959f-6ea778b686d8" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="719af9b0-15a0-463a-8809-21977e03c472" name="Graph Type" full_type="Genome.DataModel.Property.FunctionGraphTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="EventGraph" />
+    <property id="9c067310-07a0-4756-bf9c-d56460a26b4c" name="Input Sockets" full_type="Genome.DataModel.Property.Sockets.SocketCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true">
+      <properties>
+        <property id="77ea284c-902c-4f17-b06b-4f85e1b4f90d" name="ExecIn" full_type="Genome.DataModel.Property.Sockets.SocketTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="true" value="ExecSocket" />
+      </properties>
+    </property>
+    <property id="8fc639af-366d-4fb6-ae27-fcbef6c3c35f" name="Output Sockets" full_type="Genome.DataModel.Property.Sockets.SocketCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true">
+      <properties>
+        <property id="c89e7555-76ed-4dfe-9bd7-1a3a25ee5d99" name="ExecOut" full_type="Genome.DataModel.Property.Sockets.SocketTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="true" value="ExecSocket" />
+      </properties>
+    </property>
+  </properties>
+</graph>

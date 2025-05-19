@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="a306482f-1014-4457-a873-3f159359b8b5" can_be_deleted="false" type="ConditionRule">
+  <nodes>
+    <node id="06f22f3d-3bc6-4314-97ef-7d6022a76c4b" name="BooleanResultNode" x="0" y="0" ZIndex="0" width="195" height="52" type="BooleanResultNode" full_type="BooleanResultNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Result" full_role="Result" id="a7c34db0-a49f-4a0a-9398-33ecbce4fff1" type="BooleanSocket" name="Can Enter Transition" default="False" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="896b670a-74ea-48e5-9bd3-c8f70e552668" name="Float &lt;= Float" x="-312" y="-39" ZIndex="4" width="130" height="78" type="FloatLeNode" full_type="FloatLeNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="34407afe-8611-4fb5-91f1-d9aa87785715" type="FloatSocket" name="" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="5187c2da-5aef-4ac7-8cb9-0cd4231eea4f" type="FloatSocket" name="" default="0.1" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="b61c5957-1f99-4dce-aee2-7475324824a5" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="11a1fa6e-11c2-4125-9cbd-f14440cd4ce1" name="AND" x="-117" y="0" ZIndex="1" width="104" height="104" type="BooleanAndNode" full_type="VariableInputNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="fc115315-be60-4861-a111-42d1ed6cc75c" type="BooleanSocket" name="" default="False" />
+        <socket role="Parameter 1" full_role="Parameter 1" id="dc5c8374-d60a-42b3-95e7-deb6f0dc4bdf" type="BooleanSocket" name="" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="fdb83e40-08ba-4c53-98f0-91ff1a05920d" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="41b7ee7f-8c23-41d0-b5a5-51933bfd37b3" name="Integer == Integer" x="-299" y="65" ZIndex="2" width="130" height="78" type="IntegerEqNode" full_type="IntegerEqNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="98c61a66-3675-4c0e-ad34-b9b48a826364" type="IntegerSocket" name="" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="e873858c-0353-4f64-a49b-9f4c75f51fb9" type="IntegerSocket" name="" default="1" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="c837a4ae-4a0c-4f44-9e83-f062d8e6c804" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="51e39bac-cfc0-4c0f-86c5-786cdd38901c" name="GetVariableNode" x="-572" y="91" ZIndex="3" width="260" height="26" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="55b62f81-efc0-467a-a9cd-28ef01e55ded">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="4317de99-38d3-4448-a7a0-74273718fb3c" type="IntegerSocket" name="ATT_Current_Arm_State - (1-9)" />
+      </outputs>
+    </node>
+    <node id="0d58db3a-2539-4e4c-a322-47ed3d6bc153" name="Get Relevant Anim Time Remaining (Transfer_State)" x="-676" y="-39" ZIndex="5" width="351" height="52" type="RelevantAnimationTimeRemainingNode" full_type="RelevantAnimationTimeRemainingNode" Comment="" is_comment_pinned="false" dependence_source_id="5b2ee02d-9e3f-4e39-b65a-fe59a7379ad1">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="6797e2a3-ee5a-4302-8e28-cfe846f90a86" type="FloatSocket" name="Return" />
+      </outputs>
+    </node>
+  </nodes>
+  <links>
+    <link id="fda9d368-cf04-4d23-bb64-2137113dcefa" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b61c5957-1f99-4dce-aee2-7475324824a5" to_id="fc115315-be60-4861-a111-42d1ed6cc75c" begin_point_x="-201" begin_point_y="-1" end_point_x="-98" end_point_y="38" />
+    <link id="f5fdbdb3-fa44-4ffc-ab33-6f27d79fb684" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="fdb83e40-08ba-4c53-98f0-91ff1a05920d" to_id="a7c34db0-a49f-4a0a-9398-33ecbce4fff1" begin_point_x="-32" begin_point_y="38" end_point_x="19" end_point_y="38" />
+    <link id="3eeb5a97-7243-439a-b717-c000956c4577" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c837a4ae-4a0c-4f44-9e83-f062d8e6c804" to_id="dc5c8374-d60a-42b3-95e7-deb6f0dc4bdf" begin_point_x="-188" begin_point_y="103" end_point_x="-98" end_point_y="64" />
+    <link id="7e715e5d-d27a-4947-97a3-1ba09cc550e4" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="4317de99-38d3-4448-a7a0-74273718fb3c" to_id="98c61a66-3675-4c0e-ad34-b9b48a826364" begin_point_x="-331" begin_point_y="104" end_point_x="-280" end_point_y="103" />
+    <link id="11117ffe-3699-4f4f-901c-b4856bd6cf51" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="6797e2a3-ee5a-4302-8e28-cfe846f90a86" to_id="34407afe-8611-4fb5-91f1-d9aa87785715" begin_point_x="-344" begin_point_y="-1" end_point_x="-293" end_point_y="-1" />
+  </links>
+  <properties>
+    <property id="512a7686-315d-4f76-8fae-1c09ced4b271" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="2aa1988d-857b-4676-9a0e-94ade24fc801" name="Blend Type" full_type="Genome.DataModel.Property.BlendTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="CubicOut" />
+    <property id="49810795-5be5-4767-bd0b-fdafad806b43" name="Blend Duration" full_type="Genome.DataModel.Property.FloatProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="0.4" />
+  </properties>
+</graph>

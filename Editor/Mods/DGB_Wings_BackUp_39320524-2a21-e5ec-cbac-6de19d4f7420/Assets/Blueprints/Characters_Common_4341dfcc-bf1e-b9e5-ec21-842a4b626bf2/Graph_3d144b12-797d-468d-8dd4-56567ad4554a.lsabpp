@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="3d144b12-797d-468d-8dd4-56567ad4554a" can_be_deleted="false" type="FunctionGraph" name="FLY_TiltAmount">
+  <nodes>
+    <node id="34fb1335-9263-412f-a04d-bfe5af6221bc" name="Entry" x="-1144" y="-104" ZIndex="9" width="65" height="26" type="FunctionEntryNode" full_type="VaryingSocketNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+    </node>
+    <node id="38c448d5-e511-4aa1-8c3b-fc1dbbbb2bb2" name="Result" x="104" y="-65" ZIndex="10" width="104" height="78" type="FunctionResultNode" full_type="VaryingSocketNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 2" full_role="Parameter 2" id="a29311e3-d07b-4035-b7ba-e73f5692bd73" type="FloatSocket" name="Yaw" default="0" />
+        <socket role="Parameter 0" full_role="Parameter 0" id="926a99e9-69f1-40e0-9cf5-33975ea38691" type="FloatSocket" name="Pitch" default="0" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="c13e1f0e-9503-4350-a57a-3f0bf3cdfea7" name="GetVariableNode" x="-728" y="-104" ZIndex="6" width="143" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="ba537ccb-6195-41e0-b327-809b9064d9d9">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="63912288-ff18-4bc8-a5b9-6e4157eb2859" type="Rotator3Socket" name="WorldRotate" />
+      </outputs>
+    </node>
+    <node id="f64d5a01-e18d-48de-91fa-e79534c49c68" name="Rotate Vectors" x="-520" y="-104" ZIndex="8" width="208" height="78" type="RotateVectorNode" full_type="RotateVectorNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="eedf089c-3811-463c-910f-794ff05434d5" type="Vector3Socket" name="" default="0,0,-1" />
+        <socket role="ParameterB" full_role="ParameterB" id="11dd4e20-e3db-4ae1-9f81-7725e29ff11e" type="Rotator3Socket" name="" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="7c8b4514-217c-4619-96e9-64bd732f9e78" type="Vector3Socket" name="" />
+      </outputs>
+    </node>
+    <node id="0f5b048d-f1bc-4e3c-8a4e-1a5e43254fd4" name="Yaw Between 2 Vectors" x="-208" y="-104" ZIndex="1" width="156" height="78" type="YawBetweenFloat3sNode" full_type="YawBetweenFloat3sNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="a80d865f-1542-46f7-b6f2-58d7855e9d61" type="Vector3Socket" name="" default="0,0,0" />
+        <socket role="ParameterB" full_role="ParameterB" id="49235cd1-5d92-4f8e-9ea4-d157cde75ee5" type="Vector3Socket" name="" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="7e110e64-628c-4141-96de-3d3ad750fde4" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="9c289604-6448-4464-8c7d-4b2da34e65fd" name="Pitch Between 2 Vectors" x="-208" y="0" ZIndex="4" width="169" height="78" type="PitchBetweenFloat3sNode" full_type="PitchBetweenFloat3sNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="12d427da-613a-440d-b7dc-287ee3b74c05" type="Vector3Socket" name="" default="0,0,0" />
+        <socket role="ParameterB" full_role="ParameterB" id="1cc5a7af-65e3-40b0-bd7c-1f60157677f9" type="Vector3Socket" name="" default="0,0,0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="dea93191-2ae3-4bc3-ba69-7300b494e1e6" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+    <node id="3f904989-e1b5-456f-ad71-caf866b369b1" name="GetVariableNode" x="-520" y="26" ZIndex="10" width="234" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="1b515a2f-2f26-44a4-a0ac-1f7bc6ba3da0">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="789bcfc5-e5b5-491c-a145-f68821a42455" type="Vector3Socket" name="JumpingTrajectoryDirection" />
+      </outputs>
+    </node>
+  </nodes>
+  <links>
+    <link id="fdb5d120-48ba-4bab-a950-0bf5b09389b8" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="63912288-ff18-4bc8-a5b9-6e4157eb2859" to_id="11dd4e20-e3db-4ae1-9f81-7725e29ff11e" begin_point_x="-604" begin_point_y="-66" end_point_x="-501" end_point_y="-40" />
+    <link id="c372bd65-df10-4a33-b442-9079eb1a3d1a" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7c8b4514-217c-4619-96e9-64bd732f9e78" to_id="a80d865f-1542-46f7-b6f2-58d7855e9d61" begin_point_x="-331" begin_point_y="-66" end_point_x="-189" end_point_y="-66" />
+    <link id="089f6a17-da3a-47e8-894b-a6137a3880ce" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7e110e64-628c-4141-96de-3d3ad750fde4" to_id="a29311e3-d07b-4035-b7ba-e73f5692bd73" begin_point_x="-71" begin_point_y="-66" end_point_x="123" end_point_y="-27" />
+    <link id="81b20034-1fa6-4d3a-8dc5-bd1d96981353" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7c8b4514-217c-4619-96e9-64bd732f9e78" to_id="12d427da-613a-440d-b7dc-287ee3b74c05" begin_point_x="-331" begin_point_y="-66" end_point_x="-189" end_point_y="38" />
+    <link id="8a150b8d-fcc7-492c-802b-e35cee7baea4" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="dea93191-2ae3-4bc3-ba69-7300b494e1e6" to_id="926a99e9-69f1-40e0-9cf5-33975ea38691" begin_point_x="-58" begin_point_y="38" end_point_x="123" end_point_y="-1" />
+    <link id="a8fa0cd0-0718-47f5-b01d-d8d9f6f51651" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="789bcfc5-e5b5-491c-a145-f68821a42455" to_id="1cc5a7af-65e3-40b0-bd7c-1f60157677f9" begin_point_x="-305" begin_point_y="64" end_point_x="-189" end_point_y="64" />
+    <link id="d12ebb6b-a0a7-4b26-8db2-862b6ec51101" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="789bcfc5-e5b5-491c-a145-f68821a42455" to_id="49235cd1-5d92-4f8e-9ea4-d157cde75ee5" begin_point_x="-305" begin_point_y="64" end_point_x="-189" end_point_y="-40" />
+  </links>
+  <properties>
+    <property id="5a2ff500-d1a1-4f32-bb40-501604193495" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="2118ff63-8d1e-4a05-a46d-96c64f9f063a" name="Graph Type" full_type="Genome.DataModel.Property.FunctionGraphTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="UniversalGraph" />
+    <property id="37ee7058-3c1e-49b6-9fb8-f072af36dba9" name="Input Sockets" full_type="Genome.DataModel.Property.Sockets.SocketCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true" />
+    <property id="4011984b-70e2-4c2a-8c68-bc6dfc2eae31" name="Output Sockets" full_type="Genome.DataModel.Property.Sockets.SocketCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true">
+      <properties>
+        <property id="f3d3d37e-c9e9-459f-8b10-a026c2cde20f" name="Yaw" full_type="Genome.DataModel.Property.Sockets.SocketTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="true" value="FloatSocket" />
+        <property id="7a244337-2685-4f89-ba74-54e65e17049d" name="Pitch" full_type="Genome.DataModel.Property.Sockets.SocketTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="true" value="FloatSocket" />
+      </properties>
+    </property>
+  </properties>
+</graph>

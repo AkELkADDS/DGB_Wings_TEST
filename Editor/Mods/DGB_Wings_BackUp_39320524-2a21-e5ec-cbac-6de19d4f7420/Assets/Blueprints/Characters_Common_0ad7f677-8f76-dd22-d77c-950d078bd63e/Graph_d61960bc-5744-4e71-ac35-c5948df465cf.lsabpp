@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="d61960bc-5744-4e71-ac35-c5948df465cf" can_be_deleted="false" type="FunctionGraph" name="DIAG_Turn">
+  <nodes>
+    <node id="cc2c1e3c-e815-4322-aa6f-fef808130549" name="Entry" x="-663" y="0" ZIndex="0" width="91" height="52" type="FunctionEntryNode" full_type="VaryingSocketNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="7751b6a1-fc4f-43fb-9019-00e28b3e3748" type="AnimationPoseSocket" name="In" />
+      </outputs>
+    </node>
+    <node id="f05b3683-9c65-4437-8597-6e6d7ae227e0" name="Result" x="2769" y="-78" ZIndex="30" width="104" height="52" type="FunctionResultNode" full_type="VaryingSocketNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="4d4e77f0-f1d5-4a94-9d77-ef988e555a35" type="AnimationPoseSocket" name="Out" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="82926ea5-9c27-4567-a345-366edfbaf50e" name="GetVariableNode" x="208" y="-312" ZIndex="46" width="208" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="6028801e-c004-4819-ba19-76cf0f0eb220">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="9046b739-b3b6-454e-9a17-2d5fa74b27ad" type="BooleanSocket" name="bDialogTurningEnabled" />
+      </outputs>
+    </node>
+    <node id="e8846417-13a7-4258-9ffe-01da2edfb51b" name="GetVariableNode" x="-1313" y="2080" ZIndex="42" width="195" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="f41967d3-2fcb-4293-abb0-1eb3224ab6bb">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="c03df28c-15c8-4188-a333-de9b0313ea48" type="FloatSocket" name="DialogTurningAngle" />
+      </outputs>
+    </node>
+    <node id="602d58ed-a49f-42ee-8781-3e5f1d961fa5" name="Float &lt; Float" x="-65" y="-221" ZIndex="44" width="130" height="78" type="FloatLtNode" full_type="FloatLtNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="d0a41c43-61c0-4588-9135-5792af29a2af" type="FloatSocket" name="" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="ece08ae2-6cf2-4406-915d-45cf50484923" type="FloatSocket" name="" default="-45" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="e4ab5ce6-9c8b-40a8-ac3d-ba9df448d647" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="834cf07a-443d-4a8a-bf29-4737b2c4be3c" name="Blend Poses by bool" x="1300" y="1105" ZIndex="43" width="234" height="156" type="BlendPosesByBoolNode" full_type="BlendPosesByBoolNode" Comment="" is_comment_pinned="false" blend_type="Linear">
+      <inputs>
+        <socket role="ActiveValue" full_role="ActiveValue" id="736ed6f8-7825-4f30-b033-262285677693" type="BooleanSocket" name="Active Value" default="False" />
+        <socket role="TruePose" full_role="TruePose" id="68ef7cdd-0c8c-4b69-8c09-53deeed86d50" type="AnimationPoseSocket" name="True Pose" />
+        <socket role="TrueBlendTime" full_role="TrueBlendTime" id="eb5d9f83-841e-4e4f-a8bd-9fc0863be4ef" type="FloatSocket" name="True Blend Time" default="0" />
+        <socket role="FalsePose" full_role="FalsePose" id="dc2440ec-86ee-4990-86cd-c82519d58026" type="AnimationPoseSocket" name="False Pose" />
+        <socket role="FalseBlendTime" full_role="FalseBlendTime" id="f85e294f-11a8-43c4-9ef5-1ee29c65b9d7" type="FloatSocket" name="False Blend Time" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="ddc6a14d-d630-43b1-8492-bb8d9ddb59e4" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="fa0363fe-0a16-42d8-a65a-3d32e6983884" name="Play Animation From Active Set" x="143" y="572" ZIndex="38" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="aec1e670-d39c-4f60-8650-ee942dad6683" type="ShortNameReferenceSocket" name="ShortName" default="9707357e-9aa5-40d0-bf48-020a6a6587c8" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="1d37aed8-b6d8-445d-be2c-8a96ca6d1b30" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="d191930a-135d-4a04-843f-022f49822efc" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="fdf36385-dd95-4208-b9cc-9b06862fcf6e" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="4c565a43-1e53-43df-94ed-63e387451e41" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="1cde9f48-06ff-4102-a334-fd04d31e5e2b" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="a059c4fc-8442-4952-b67a-079a18c912bf" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="e13b6038-bb22-49ee-aa54-33c9da4e5490" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="eb0c5f77-d3f8-4c25-a0a7-61fb5d876f98" name="Float &gt; Float" x="-65" y="-117" ZIndex="45" width="130" height="78" type="FloatGtNode" full_type="FloatGtNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="dcec7166-2e12-4ee4-96f1-c55ac8f122b5" type="FloatSocket" name="" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="d24d383c-d0ce-43e0-a94b-4043b8970305" type="FloatSocket" name="" default="45" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="9930081f-cd42-42eb-ad06-0b5f8e3f1667" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="370a3be7-5477-48f0-a476-7ab2464b38aa" name="Play Animation From Active Set" x="156" y="1716" ZIndex="23" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="9b40c563-6718-46c7-ae93-173b0460fb80" type="ShortNameReferenceSocket" name="ShortName" default="27409a84-5f6b-41ed-a6d1-36837388e535" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="d6058026-58e7-46cf-8019-2165e169e7d9" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="394ccf41-1cb1-4b92-9122-ece19dd91b7e" type="BooleanSocket" name="Loop Animation Additive" default="True" />
+        <socket role="PlayRate" full_role="PlayRate" id="9cbd7df6-19b1-4207-a72d-2e6ae69358db" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="c24d01c6-6fe2-4a74-a970-c758b241cc81" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="30152343-1b93-4d42-8c87-455924bcd542" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="b35a65f6-d8c1-401e-8e4a-20a0caba8648" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="ece5df3b-cd9e-406e-a24d-8c90c20db665" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="513a1763-d674-4217-8534-183775a8d2e6" name="AND" x="572" y="-247" ZIndex="47" width="104" height="104" type="BooleanAndNode" full_type="VariableInputNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="7a816fd6-ab14-423f-8bc7-18c8f20c35de" type="BooleanSocket" name="" default="False" />
+        <socket role="Parameter 1" full_role="Parameter 1" id="e8f7a9ea-2dc0-42f3-b234-63305e850115" type="BooleanSocket" name="" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="68db37b6-2f0a-49aa-9870-da675f4d974c" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="1df23d3b-4ac6-4b1b-be00-198f1ee49998" name="OR" x="260" y="-221" ZIndex="48" width="104" height="104" type="BooleanOrNode" full_type="VariableInputNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="3cc9e00c-b86c-4cb8-9cf3-38653e8ecc56" type="BooleanSocket" name="" default="False" />
+        <socket role="Parameter 1" full_role="Parameter 1" id="78060f24-e35a-4d24-abd0-1ac0414b167c" type="BooleanSocket" name="" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="5c5cc6c4-30bf-40ff-9820-5818ff4e309f" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="b4d987a4-afe8-4260-a3f7-de62a1db7992" name="Play Animation From Active Set" x="143" y="806" ZIndex="40" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="4060ec5d-73a6-4abc-9220-f45353027c2e" type="ShortNameReferenceSocket" name="ShortName" default="5ebe4290-149b-489a-8c58-edb3c4f94a03" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="b4f40212-57d3-45c7-ac05-5d62fb4388b5" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="5027f5ba-ddca-446b-be19-efca2922dad2" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="1428bb3d-2925-480b-9eec-e7da391a733a" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="3fcff5bc-7cab-4210-9bba-64a8b552aca4" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="4227aac5-b39b-4da1-ad4c-ea31b36d88d7" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="dca838f3-9783-4d00-80d6-03bd3be7c652" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="9d39bd23-aae6-4118-a44b-bdc033013302" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="31df7d3f-e010-4b5c-8114-f508075da965" name="Play Animation From Active Set" x="143" y="1040" ZIndex="31" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="b42745b6-d48d-4c18-bea2-323b50a02808" type="ShortNameReferenceSocket" name="ShortName" default="63a90dfa-00a7-46c1-a1c3-8e57843179be" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="eb0fdae8-27f5-46f2-bd46-9008ae509470" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="2aaa56b4-4d84-4a42-966c-5ead25373a21" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="8055efa8-549a-4791-950d-61daedcace2b" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="9309086a-bae0-4607-83e0-ef6d855b81d2" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="1aff2a41-1c16-4a06-8aa3-270047e1538d" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="f2386f06-f8f0-49a9-832a-be3e06085818" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="f272b926-ee15-4703-a008-fa37168f942f" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="df2e75b2-f172-4d51-aaf0-c2cc41802d04" name="Play Animation From Active Set" x="156" y="1924" ZIndex="26" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="b639ad5b-9f23-4591-8530-800173bc6110" type="ShortNameReferenceSocket" name="ShortName" default="eb236fdd-a4e4-400a-ae1a-816eb3d9440c" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="110f5216-2e99-4c11-9770-4c5c4e18b335" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="94219659-ef7d-448f-8985-625ea5003208" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="b2d12c12-5189-446a-8cca-0bf516ead72b" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="f6b1cadc-b308-47fb-a081-a03ffdba93d8" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="ebb4a24e-9d60-4e01-a57e-235b4c23df2b" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="909af389-8ec9-433b-9f78-ae1407d8df3e" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="d863d57b-143e-43be-972f-4b708968ff19" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="6f5cb9ee-644b-4ced-8334-850f20eab31d" name="Play Animation From Active Set" x="156" y="2145" ZIndex="22" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="ffe1ed85-cf36-4dcf-aa13-b13cc900a005" type="ShortNameReferenceSocket" name="ShortName" default="1307b2ff-c239-44ea-b6a9-c5a35e6ababc" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="453bff28-94a9-427f-bd5f-c040c45008cf" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="f1a8536b-7929-4d96-8f41-7ec33a2a8855" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="39e7f6ab-306d-4ceb-bab6-b3d374e2cb66" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="cb6d57c3-c80a-4a53-b75a-796df9475cdd" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="bf2f823e-5609-4311-b4aa-540044455f0a" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="3386bb25-9060-4d6f-afd5-76a41060cd3e" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="601de35c-9f6c-4bc8-9240-1251bf5935bf" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="1765a8a9-d51d-464f-8cf3-80d34a6b4c84" name="Blend Poses by bool" x="2483" y="-78" ZIndex="28" width="195" height="156" type="BlendPosesByBoolNode" full_type="BlendPosesByBoolNode" Comment="" is_comment_pinned="false" blend_type="Linear">
+      <inputs>
+        <socket role="ActiveValue" full_role="ActiveValue" id="2ea45a89-5fbd-47dc-b253-9f81f458ca3c" type="BooleanSocket" name="Active Value" default="False" />
+        <socket role="TruePose" full_role="TruePose" id="42614d00-5fa9-4fed-94d3-f7270790319d" type="AnimationPoseSocket" name="True Pose" />
+        <socket role="TrueBlendTime" full_role="TrueBlendTime" id="468a97a3-0979-47d6-aa71-7f9acd66e5f6" type="FloatSocket" name="True Blend Time" default="0.2" />
+        <socket role="FalsePose" full_role="FalsePose" id="a5992ec5-b382-4d95-8775-3e3abd58ef25" type="AnimationPoseSocket" name="False Pose" />
+        <socket role="FalseBlendTime" full_role="FalseBlendTime" id="a3a48e3b-38cf-49d0-8fd6-e706615bb1a7" type="FloatSocket" name="False Blend Time" default="0.2" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="e4b08702-ee76-497d-bf85-1a6b0af9a071" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="1efde017-d098-4863-8032-2ed1b078bd1d" name="Layered Blend per Bone" x="2158" y="247" ZIndex="27" width="221" height="130" type="LayeredBlendPerBoneNode" full_type="LayeredBlendPerBoneNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Base" full_role="Base" id="d8a256c9-4b91-466d-ad69-7e870a29c196" type="AnimationPoseSocket" name="Base Pose" />
+        <socket role="BlendPose 0" full_role="BlendPose 0" id="807f6fd9-2e8d-4300-abb3-261f1d641ae5" type="AnimationPoseSocket" name="Blend Pose 0" />
+        <socket role="BlendWeights 0" full_role="BlendWeights 0" id="c108442a-ff87-4e1c-9489-0f9e9443387c" type="FloatSocket" name="Blend Weights 0" default="1" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="3634caad-ae69-426d-8b3e-91bffe2755be" type="AnimationPoseSocket" name="" />
+      </outputs>
+      <properties>
+        <property id="4cf31cac-8480-4d47-bd52-d31859442370" name="Comment" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="" />
+        <property id="4f60bdbc-c3e3-4611-b348-43ee3c80f476" name="Layer Setup" full_type="Genome.DataModel.Property.LayeredBlendPerBoneNode.LayerSetupCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+          <properties>
+            <property id="1028a3ff-f2ae-4e95-abd4-b8ecb1083f68" name="0" full_type="Genome.DataModel.Property.LayeredBlendPerBoneNode.LayerCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false" layer_id="807f6fd9-2e8d-4300-abb3-261f1d641ae5">
+              <properties>
+                <property id="693b7873-5265-4dca-84ad-4a2dfb328d30" name="Branch Filters" full_type="Genome.DataModel.Property.LayeredBlendPerBoneNode.BranchFiltersCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true">
+                  <properties>
+                    <property id="7bb11a4f-26e6-49ef-80db-4de36c7db5b3" name="0" full_type="Genome.DataModel.Property.LayeredBlendPerBoneNode.SingleBranchFilterCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="false">
+                      <properties>
+                        <property id="f0453a32-f92f-419b-a1d3-ba4010406c38" name="Bone Name" full_type="Genome.DataModel.Property.BoneProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Spine1_M" />
+                        <property id="c65819bb-e077-4b4a-9115-dbf7005540d5" name="Blend Depth" full_type="Genome.DataModel.Property.IntegerProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="2" />
+                        <property id="21a8b2af-19f3-478d-bb21-898978262273" name="Blend Weight Min" full_type="Genome.DataModel.Property.FloatProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="0" />
+                        <property id="aadc5b06-12a2-4ee3-bad5-5cf82dc1220c" name="Blend Weight Max" full_type="Genome.DataModel.Property.FloatProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+                        <property id="7112cdff-6d97-4337-9652-508a2d313cb7" name="Blend Curve" full_type="Genome.DataModel.Property.BlendTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Linear" />
+                      </properties>
+                    </property>
+                  </properties>
+                </property>
+              </properties>
+            </property>
+          </properties>
+        </property>
+      </properties>
+    </node>
+    <node id="7849c951-0995-496e-82be-4f8fd7df6d3a" name="GetVariableNode" x="-507" y="2470" ZIndex="12" width="195" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="68bd71e1-0fb7-46f5-b51a-d1b040cf99c0">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="56559325-7f9f-4eba-aacb-78daea613965" type="BooleanSocket" name="bDialogTurningReset" />
+      </outputs>
+    </node>
+    <node id="b5644ff3-5b41-40d9-964d-c89f89761d0c" name="GetVariableNode" x="949" y="156" ZIndex="32" width="234" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="c3d6c63a-002b-49b0-b56d-05175232552c">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="f96644db-e8d3-48c4-ac39-9e8bcb381f58" type="ShortNameReferenceSocket" name="ATT_CurrentPoseShortname" />
+      </outputs>
+    </node>
+    <node id="b3d3ec0a-8e75-47c4-9d57-dc7112c6e030" name="ShortNameReference == ShortNameReference" x="1326" y="156" ZIndex="34" width="299" height="78" type="ShortNameReferenceEqNode" full_type="ShortNameReferenceEqNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="990e2da4-638f-4b10-82b4-aaf47e4a71cb" type="ShortNameReferenceSocket" name="" default="00000000-0000-0000-0000-000000000000" />
+        <socket role="ParameterB" full_role="ParameterB" id="4645eab2-d9ce-4b08-9872-f05c09b8b078" type="ShortNameReferenceSocket" name="" default="7f6ccd67-aa7d-4803-ad7f-629c7783e83f" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="c92dd577-5a99-487e-8ece-ef1ba2488028" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="70e43074-169a-44ef-baf3-809ad71c31b3" name="Blend Poses by bool" x="1794" y="156" ZIndex="33" width="234" height="156" type="BlendPosesByBoolNode" full_type="BlendPosesByBoolNode" Comment="" is_comment_pinned="false" blend_type="Linear">
+      <inputs>
+        <socket role="ActiveValue" full_role="ActiveValue" id="4b7703f6-49c4-472e-b724-3c329026531b" type="BooleanSocket" name="Active Value" default="False" />
+        <socket role="TruePose" full_role="TruePose" id="bc6db0f1-72e9-45aa-a565-58d5ce3b4190" type="AnimationPoseSocket" name="True Pose" />
+        <socket role="TrueBlendTime" full_role="TrueBlendTime" id="39524064-e4a3-447c-ac73-8805d13bf0a7" type="FloatSocket" name="True Blend Time" default="0" />
+        <socket role="FalsePose" full_role="FalsePose" id="88c8e78d-d566-4c8f-b9a9-e05ba0d4480d" type="AnimationPoseSocket" name="False Pose" />
+        <socket role="FalseBlendTime" full_role="FalseBlendTime" id="dc753d40-234f-4e56-9697-9a046e92b14b" type="FloatSocket" name="False Blend Time" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="b75421fa-4caa-4650-a5f5-3840d0ad80dd" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="cf596235-9b72-4f1a-81c8-e2c4be7fc9e8" name="Blend Poses by bool" x="1274" y="3276" ZIndex="41" width="234" height="156" type="BlendPosesByBoolNode" full_type="BlendPosesByBoolNode" Comment="" is_comment_pinned="false" blend_type="Linear">
+      <inputs>
+        <socket role="ActiveValue" full_role="ActiveValue" id="e75c9261-74fc-401c-b177-1f29644c4e42" type="BooleanSocket" name="Active Value" default="False" />
+        <socket role="TruePose" full_role="TruePose" id="fe88b6fa-45a0-480b-a977-611dd13c2c0e" type="AnimationPoseSocket" name="True Pose" />
+        <socket role="TrueBlendTime" full_role="TrueBlendTime" id="561b3aa0-a479-45b4-8c0d-e9c76265f43f" type="FloatSocket" name="True Blend Time" default="0" />
+        <socket role="FalsePose" full_role="FalsePose" id="2611f7fd-1ac8-4fac-ac61-36ceab1814f2" type="AnimationPoseSocket" name="False Pose" />
+        <socket role="FalseBlendTime" full_role="FalseBlendTime" id="400bb2c7-b01a-48c9-aa80-fc1b1a823d3f" type="FloatSocket" name="False Blend Time" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="2cb3297b-0c65-4e89-af88-d36379ea245d" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="f7706528-0e5f-4272-a92f-c6d516cf2296" name="Play Animation From Active Set" x="156" y="2873" ZIndex="18" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="c5d74576-96dd-40e5-b956-d770047c5899" type="ShortNameReferenceSocket" name="ShortName" default="68396a13-354b-428f-a7a2-8aea0e346c94" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="d4bfad3c-6add-42dc-9edd-acc9bd42c294" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="62910fce-cdd4-407a-8125-dcc37a476636" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="cb444850-ebdc-4e29-bd68-dc66c9606e53" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="b506b6ed-8fe3-428c-8478-ce53c3c78376" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="073e4bfc-8678-4132-aa22-65355b647abb" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="f49e1f84-2ffc-4dee-a1c6-da2ab14a3f13" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="f46603f4-83be-493e-b6c0-3cf5186e8313" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="071cf98c-340b-4a39-b795-a39069ae755a" name="Play Animation From Active Set" x="143" y="4004" ZIndex="11" width="442" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="e30016b4-2899-4c00-942c-1df10f568131" type="ShortNameReferenceSocket" name="ShortName" default="396e291b-e078-4a49-98db-6911e4bde531" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="126824a9-e4e7-4a06-902c-d625de0de300" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="614d1fff-e9c5-43db-beb4-212fae5857de" type="BooleanSocket" name="Loop Animation Additive" default="True" />
+        <socket role="PlayRate" full_role="PlayRate" id="6c0d0b64-f2ad-462d-a445-1a80afbe53b1" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="8f4c1333-9055-4fa8-accf-4721ce01d36c" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="8f55a968-3372-4a1c-a6de-b694fe085de7" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="13018e24-bc6f-454c-b64e-5c29d7d1dcfe" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="d740877e-58de-4701-b263-951f525034e4" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="9e31b325-1322-423e-9075-d7500c8a5860" name="Play Animation From Active Set" x="156" y="3094" ZIndex="24" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="580aa7b0-9db8-44f8-ba89-2febb1b72f6d" type="ShortNameReferenceSocket" name="ShortName" default="58c66847-3385-46bd-b010-6ac080078920" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="1d49e5fc-3f61-4ed2-a55b-36977c80076a" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="d020da48-ab14-4e32-a6bc-aec3be8dd40e" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="a40885b4-24dc-4953-8d8e-e45ecdff6a8e" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="f8565115-e2e3-4a2f-898e-aa033866c356" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="ff5d34e4-4ef2-4128-99bc-a8ad626fbeb6" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="18d9d710-859c-451c-87dc-61228e7a618a" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="f359644c-e334-46ae-b9e6-079ab2d5fc27" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="160727df-c413-4370-8af7-edcd7c8cfcb4" name="Play Animation From Active Set" x="156" y="3315" ZIndex="21" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="4b89fc02-d239-4284-ae66-f037fad82a32" type="ShortNameReferenceSocket" name="ShortName" default="d3549d75-3fd3-4273-ab16-e6fe1666b667" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="83bc97ae-da7b-4bb8-ba71-c706f449e29e" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="e170048b-e0c6-4df9-89ef-762257e8d218" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="b0c6f585-fcfd-4d65-bc3d-6dd17e638b0b" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="0ea7d551-bf7a-4af0-be93-4e9f9e6e394a" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="4cb97fa5-73c7-4e43-a09d-6126b4ad25a5" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="66961ce6-cbdf-47d9-9e8f-60d14d07733f" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="feefeb77-b14e-4559-a284-811d26c0793d" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="a216f07d-6a16-40ed-86df-386c99f8dc04" name="Play Animation From Active Set" x="143" y="4225" ZIndex="14" width="442" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="ba7ce6a7-c9ce-44ad-a4c6-2dd5b96767f8" type="ShortNameReferenceSocket" name="ShortName" default="8f6934f3-4fdd-4887-8151-e3d6bd9ea118" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="03aac43d-5c25-4974-908b-34b1c05bbd0b" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="af00d549-b606-4dec-b0d4-53b2c4e1ec00" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="fcf9b8dc-a86f-4d73-bf0a-851288845f92" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="301a5906-22de-443a-b062-28b2a0d32837" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="9e3bb3ec-2e12-4225-9e1e-f3b4d57cae52" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="20dc4bcd-6648-45cf-b4d2-578ff969c09d" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="e9774ee9-1767-4211-b696-b4232fea7fb9" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="c7f0d1ae-8839-4d6c-abb6-204991ab92bd" name="Play Animation From Active Set" x="143" y="4446" ZIndex="10" width="442" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="39884dc4-a28a-4175-971f-24e5bbbdc279" type="ShortNameReferenceSocket" name="ShortName" default="66e18926-f21d-409a-a7cb-8ec5a6df78b5" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="48c6105a-4890-4259-a123-0bc7b12cdef2" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="54fb0e6e-25fc-4e11-9e17-7eb72c12f1a4" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="a59ce962-7a93-401b-bcd1-97c0520ec49e" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="c401d545-187c-44ca-9053-bc37900b355b" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="f41d176b-ebac-41bf-b93f-152c347bcdaf" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="5b32d1da-8d95-4755-9034-8e466e910f63" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="c17d2fc4-3dbd-4a16-aec8-de36efe260c4" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="ca793c3a-d2ee-4be0-aa4d-973d40271394" name="GetVariableNode" x="1651" y="-299" ZIndex="3" width="195" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="f41967d3-2fcb-4293-abb0-1eb3224ab6bb">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="60f4a806-4ebf-438d-9258-a47781fbf337" type="FloatSocket" name="DialogTurningAngle" />
+      </outputs>
+    </node>
+    <node id="d128a924-b046-4780-8542-9bb3323286f1" name="Float == Float" x="1885" y="-299" ZIndex="1" width="130" height="78" type="FloatEqNode" full_type="FloatEqNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="2fa6b808-ea3e-4a26-8505-56344ea8106d" type="FloatSocket" name="" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="122e3d72-7182-4b9a-bb5c-90f9fb20bf41" type="FloatSocket" name="" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="fd84209b-c145-4559-9a17-6fd8a08a738e" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="5ce548ba-d4ea-44c7-968a-b56e77ba780f" name="Float Switch" x="2054" y="-299" ZIndex="4" width="195" height="104" type="SwitchFloatNodeByBool" full_type="SwitchFloatNodeByBool" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Index" full_role="Index" id="b82de16d-9f8a-40b0-a50e-0265a641e83b" type="BooleanSocket" name="" default="False" />
+        <socket role="Option 0" full_role="Option 0" id="eeca2506-218d-416f-93ac-6e35c34e4002" type="FloatSocket" name="True" default="0" />
+        <socket role="Option 1" full_role="Option 1" id="f99a6bee-d294-4723-b2ea-52f56c26c22d" type="FloatSocket" name="False" default="0.2" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="adc3d2e4-5e0d-45fe-9e62-8666b071890c" type="FloatSocket" name="Out" />
+      </outputs>
+    </node>
+    <node id="de9c4b9a-b1af-4c62-9a1e-5573a0f4b239" name="GetVariableNode" x="-507" y="2327" ZIndex="13" width="195" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="b5a26fff-33d2-4bba-a5b8-17dc91774dd3">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" type="FloatSocket" name="DialogTurningSpeed" />
+      </outputs>
+    </node>
+    <node id="7b10eccd-8732-4b7c-b6cd-9be4ccdfa9ab" name="Cached Pose 'Pre_DIAG_Turn_Pose'" x="1768" y="351" ZIndex="35" width="273" height="52" type="UseCachedPoseNode" full_type="UseCachedPoseNode" Comment="" is_comment_pinned="false" cached_pose_id="beb58aa3-496b-41e8-a5b8-bd00afb1c5f6">
+      <inputs />
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="03e19999-61d4-4724-a74c-52e55d280b5e" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="c45e9bae-cc8d-430f-be05-b7d141d951d7" name="Integer - Integer" x="-767" y="2080" ZIndex="6" width="130" height="78" type="IntegerSubNode" full_type="IntegerSubNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="d5c4a407-7d9b-40a8-80e8-3894811aaa2d" type="IntegerSocket" name="" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="7ad16621-7bbf-4e05-9eb0-2dba109a70ff" type="IntegerSocket" name="" default="30" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="836a4895-2f3a-482f-a5e1-edadfff09eac" type="IntegerSocket" name="" />
+      </outputs>
+    </node>
+    <node id="edb6eadc-5a91-4bf5-8e75-f74b1fc07f41" name="Integer / Integer" x="-611" y="2080" ZIndex="5" width="130" height="78" type="IntegerDivNode" full_type="IntegerDivNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="0df3893c-d32e-4ebc-b213-06c60382bfa9" type="IntegerSocket" name="" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="e9d95d97-7a4b-4d8d-b3f9-0bb976f29870" type="IntegerSocket" name="" default="30" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="c6563848-d72d-40e9-928c-5cd5c46acda8" type="IntegerSocket" name="" />
+      </outputs>
+    </node>
+    <node id="b8f9023d-b8ff-4b7b-a22e-7582539ab217" name="Clamped (Integer)" x="-455" y="2080" ZIndex="8" width="195" height="104" type="ClampedIntegerNode" full_type="ClampedIntegerNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="4535f8c1-7429-4b88-a133-fd4d736f726c" type="IntegerSocket" name="Value" default="0" />
+        <socket role="ParameterB" full_role="ParameterB" id="c9b3f903-fcce-4e5f-a518-85277219dfe2" type="IntegerSocket" name="Min" default="0" />
+        <socket role="ParameterC" full_role="ParameterC" id="ae299cd1-74b7-4c00-af9d-42394333dfbe" type="IntegerSocket" name="Max" default="4" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="bb433036-26af-4979-a1c3-2fd1da744fdd" type="IntegerSocket" name="Result" />
+      </outputs>
+    </node>
+    <node id="96c0d9b6-fe7a-4759-8c91-8eb8691887aa" name="Blend Poses by int" x="702" y="442" ZIndex="37" width="208" height="338" type="BlendPosesByIntNode" full_type="BlendPosesByIntNode" Comment="" is_comment_pinned="false" blend_type="Linear">
+      <inputs>
+        <socket role="ActiveChildIndex" full_role="ActiveChildIndex" id="392182a0-dfd1-41c8-8df3-4a89bf8c1767" type="IntegerSocket" name="Active Child Index" default="0" />
+        <socket role="BlendPose 0" full_role="BlendPose 0" id="c558fb1c-8637-4cdc-9ea1-67752fd45efd" type="AnimationPoseSocket" name="BlendPose 0" />
+        <socket role="BlendTime 0" full_role="BlendTime 0" id="577ee4a1-3cc4-47a0-a208-826d77b6eeb2" type="FloatSocket" name="BlendTime 0" default="0" />
+        <socket role="BlendPose 1" full_role="BlendPose 1" id="a23ae4be-affc-44ac-99c2-084576272fee" type="AnimationPoseSocket" name="BlendPose 1" />
+        <socket role="BlendTime 1" full_role="BlendTime 1" id="f0588e9e-667f-4cf2-9920-308dd3a34ea6" type="FloatSocket" name="BlendTime 1" default="0" />
+        <socket role="BlendPose 2" full_role="BlendPose 2" id="3929a90b-16be-4272-a62d-d8953aa7c21b" type="AnimationPoseSocket" name="BlendPose 2" />
+        <socket role="BlendTime 2" full_role="BlendTime 2" id="eea77176-0879-4cab-b590-076746c3fe58" type="FloatSocket" name="BlendTime 2" default="0" />
+        <socket role="BlendPose 3" full_role="BlendPose 3" id="e9e7d6b0-ff7a-487c-a8ee-644555bf42e0" type="AnimationPoseSocket" name="BlendPose 3" />
+        <socket role="BlendTime 3" full_role="BlendTime 3" id="16fe3b16-6208-443d-aed8-5248f2bfb018" type="FloatSocket" name="BlendTime 3" default="0" />
+        <socket role="BlendPose 4" full_role="BlendPose 4" id="38612820-a9d3-41e2-aa6f-fa4eafe61708" type="AnimationPoseSocket" name="BlendPose 4" />
+        <socket role="BlendTime 4" full_role="BlendTime 4" id="1f5e2d5b-6cde-4b46-98b3-889abc0e34a4" type="FloatSocket" name="BlendTime 4" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="3c25e0e8-7791-49b4-90fb-d3fb9ed53404" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="80dd0729-d2b6-4d4c-98e5-bcfe30775f67" name="Play Animation From Active Set" x="143" y="351" ZIndex="39" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="cc1c5db4-2194-4af6-833c-724598173738" type="ShortNameReferenceSocket" name="ShortName" default="1746a0f3-684e-4179-8c65-92d2efc8715b" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="8025cd33-08b6-4a31-9273-be871ea9ca93" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="4613200c-a0db-43eb-9e03-f058ed223d6a" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="25b0110c-ee1b-4975-819a-3ac76ddb4dc7" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="118da2cd-bbff-413d-9725-56c87b9144b3" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="d4e7b62d-0c27-452d-9990-600088710fe7" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="81859478-cdf2-4141-8cc6-5ca07b9cb970" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="27d768ee-1a04-4389-8dcf-81d18b558f56" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="71f37e10-bddc-4c7e-9803-4c7cc0f67a4d" name="Play Animation From Active Set" x="143" y="117" ZIndex="36" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="aa260808-2db2-4688-a3d2-7681c81f42d4" type="ShortNameReferenceSocket" name="ShortName" default="b5213fc4-042e-4576-8668-c0f655fd2751" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="06f631ee-ecf0-4dae-ab0d-c332fb4e546c" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="d4acfd49-4973-4d0a-8dbe-ed27f2361a4d" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="fa570f6a-aa8b-499e-b74c-583164a7c167" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="e7b6a360-c014-421c-b4b1-58fa04398ed6" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="f1bb2b87-01de-4d37-884b-6b596f5d4474" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="7387b2b0-0d66-447a-9bc6-58a2b15b3fca" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="66fdf0b4-20ff-4bd6-b7c9-a25d907ff8fe" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="bac6b63d-c92e-4f08-a280-09020bea65c3" name="Play Animation From Active Set" x="156" y="1495" ZIndex="20" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="750ddfc4-5854-4110-8c0b-f0f342aada3a" type="ShortNameReferenceSocket" name="ShortName" default="335702f7-8c61-4b14-960a-74a64d147b46" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="91adfedb-09a3-4299-bb02-3ee61da5f845" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="4402aba7-e2f7-4cdf-bbc5-7c5e4d37d7aa" type="BooleanSocket" name="Loop Animation Additive" default="True" />
+        <socket role="PlayRate" full_role="PlayRate" id="57619496-cdcd-44d9-b73f-f63a8728c80d" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="8a4f081e-3c3a-4daa-b221-34aca64381f1" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="f9b2d25d-fc23-4bb2-82d3-18f9e307ee11" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="eb4ab024-cced-4654-a07a-f90f0f335fa8" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="59dedd8b-3439-4cca-912d-4a037e00d101" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="4879334b-e56f-443a-ac50-9c86f2118b90" name="Play Animation From Active Set" x="156" y="1274" ZIndex="29" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="2e31362d-e558-4f2b-9215-57535b1e1851" type="ShortNameReferenceSocket" name="ShortName" default="e3457d4a-2b58-4919-bb9d-ab8bfd2e80dd" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="d927fa16-cb6c-4e3c-9615-97ef5cf3edb0" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="7f05d709-2df4-45b6-ace6-8a91a818738d" type="BooleanSocket" name="Loop Animation Additive" default="True" />
+        <socket role="PlayRate" full_role="PlayRate" id="eb6846a1-ec3d-47e1-a835-5ccab49e3076" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="01b43fd6-5405-4337-9733-b9daf7418580" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="6976c996-e7d7-4842-b73b-df90aa65c771" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="2e56530b-7f91-47ee-9e01-f6a75613bc2b" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="b0b1ea17-6986-432c-81c7-dad0d2fb8bbb" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="47be7b99-9475-4fa4-b8d3-9909233b9349" name="Blend Poses by int" x="754" y="1560" ZIndex="25" width="208" height="338" type="BlendPosesByIntNode" full_type="BlendPosesByIntNode" Comment="" is_comment_pinned="false" blend_type="Linear">
+      <inputs>
+        <socket role="ActiveChildIndex" full_role="ActiveChildIndex" id="26512bbd-53ef-4375-b629-bd54b6a2ba27" type="IntegerSocket" name="Active Child Index" default="0" />
+        <socket role="BlendPose 0" full_role="BlendPose 0" id="64a604b2-fb98-455a-abae-4b9e1b039d02" type="AnimationPoseSocket" name="BlendPose 0" />
+        <socket role="BlendTime 0" full_role="BlendTime 0" id="00566d50-b942-439e-b436-dc899034cc03" type="FloatSocket" name="BlendTime 0" default="0" />
+        <socket role="BlendPose 1" full_role="BlendPose 1" id="687de93c-469e-4d90-9f42-14de12aa71d7" type="AnimationPoseSocket" name="BlendPose 1" />
+        <socket role="BlendTime 1" full_role="BlendTime 1" id="cd037172-5cc8-4888-8b21-107ca8c69fba" type="FloatSocket" name="BlendTime 1" default="0" />
+        <socket role="BlendPose 2" full_role="BlendPose 2" id="b300b755-7795-45d9-aa49-bbfa9fb1889f" type="AnimationPoseSocket" name="BlendPose 2" />
+        <socket role="BlendTime 2" full_role="BlendTime 2" id="0055acca-8b0b-4cc7-9f52-3eb5baaf28fd" type="FloatSocket" name="BlendTime 2" default="0" />
+        <socket role="BlendPose 3" full_role="BlendPose 3" id="798d7ef2-b2c0-4f00-9f2d-2ebf0462d1ea" type="AnimationPoseSocket" name="BlendPose 3" />
+        <socket role="BlendTime 3" full_role="BlendTime 3" id="0800a865-b2b7-42d6-83ca-0e8b56c044c6" type="FloatSocket" name="BlendTime 3" default="0" />
+        <socket role="BlendPose 4" full_role="BlendPose 4" id="aaf8f817-678c-4442-a069-8073a332ccdc" type="AnimationPoseSocket" name="BlendPose 4" />
+        <socket role="BlendTime 4" full_role="BlendTime 4" id="5e3d7a09-2fbb-4ddc-98d7-dc11d0d8b337" type="FloatSocket" name="BlendTime 4" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="dd7126d9-749e-4083-9d3b-8824b438e2b6" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="598ca66b-91a3-4fcb-9265-51298e8181b2" name="Play Animation From Active Set" x="156" y="2652" ZIndex="19" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="45bce895-ad8c-4289-bc10-7b37628af4cc" type="ShortNameReferenceSocket" name="ShortName" default="97a5f505-e44e-4728-b9a0-f9d010a9afba" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="f9d76e7f-0b35-46fc-b64f-1cfd9e5e2466" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="abb65850-fb98-4994-97f4-43d2a8950e2b" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="f12b820a-51bb-43e3-9eb3-6186b34a3ef3" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="1c8ceedc-e617-49ab-93bf-9684a6544de7" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="4c4142e4-3752-4cb4-b2d0-8e3fcf5a5fb8" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="9821623b-dc27-4294-a7d8-b6efd23b55c4" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="ec240426-12a4-4a65-9a52-3c12c084765d" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="f130d4e9-03bf-4197-80c3-c1f8f604882e" name="Play Animation From Active Set" x="156" y="2431" ZIndex="17" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="6007e889-a071-4703-9009-8d35d6712f19" type="ShortNameReferenceSocket" name="ShortName" default="ccbfc4c8-baad-4ebd-9423-ea3b78414201" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="be33a11e-5d11-4c1a-8536-ce6ab5513281" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="5892a167-9aad-4a2b-9b35-a66b8eab2bc5" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="912084eb-ca07-4a02-a0bd-a8e4c06fd7e7" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="2fd430c6-ea2f-4685-a920-c1c1f83acf55" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="ea4c30eb-2e59-4f2c-9a9d-7f1bb5a3969b" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="266ee6e8-a76f-46a4-a545-e2effd940eb4" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="f3bb3490-c15a-44bd-a645-7f528660395c" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="29e43c99-a3e6-471a-8691-5a70ce0a6653" name="Blend Poses by int" x="741" y="2743" ZIndex="49" width="208" height="338" type="BlendPosesByIntNode" full_type="BlendPosesByIntNode" Comment="" is_comment_pinned="false" blend_type="Linear">
+      <inputs>
+        <socket role="ActiveChildIndex" full_role="ActiveChildIndex" id="4ddae8e0-fb24-48e9-bc86-ae029610acee" type="IntegerSocket" name="Active Child Index" default="0" />
+        <socket role="BlendPose 0" full_role="BlendPose 0" id="6c40d449-2724-49a8-90ee-40e6339c5666" type="AnimationPoseSocket" name="BlendPose 0" />
+        <socket role="BlendTime 0" full_role="BlendTime 0" id="bf3ff047-66b6-4dc0-9324-ce4826095e8e" type="FloatSocket" name="BlendTime 0" default="0" />
+        <socket role="BlendPose 1" full_role="BlendPose 1" id="9c26ec28-949e-4bce-ae4e-c80496de6e72" type="AnimationPoseSocket" name="BlendPose 1" />
+        <socket role="BlendTime 1" full_role="BlendTime 1" id="c3f5c8be-29b5-4403-a95c-e4f2686bdf32" type="FloatSocket" name="BlendTime 1" default="0" />
+        <socket role="BlendPose 2" full_role="BlendPose 2" id="73a1e899-388f-4c03-a530-85e4c0b93e54" type="AnimationPoseSocket" name="BlendPose 2" />
+        <socket role="BlendTime 2" full_role="BlendTime 2" id="b09af652-74ab-41fa-9902-764db65f7570" type="FloatSocket" name="BlendTime 2" default="0" />
+        <socket role="BlendPose 3" full_role="BlendPose 3" id="3aa842cd-a4b2-40a6-b13d-7572c7b96fc7" type="AnimationPoseSocket" name="BlendPose 3" />
+        <socket role="BlendTime 3" full_role="BlendTime 3" id="fe8bb35e-2b59-473d-aaf0-e1197fd32fe3" type="FloatSocket" name="BlendTime 3" default="0" />
+        <socket role="BlendPose 4" full_role="BlendPose 4" id="48f5421b-7d4f-4d3f-97da-f1c52f7da99c" type="AnimationPoseSocket" name="BlendPose 4" />
+        <socket role="BlendTime 4" full_role="BlendTime 4" id="d45bf261-cdeb-4ab6-9399-1eab103047ff" type="FloatSocket" name="BlendTime 4" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="a9936731-dd1e-44f6-b428-1d0c4442767d" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="16148eb1-5c49-45b6-a6f9-4c065fbb6496" name="Play Animation From Active Set" x="143" y="3783" ZIndex="9" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="fa6ae089-99d9-4c6f-8c69-a8707f13267f" type="ShortNameReferenceSocket" name="ShortName" default="dc7a32b8-a95e-4271-adc2-31b9b5bc262c" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="1b254a8c-8cb8-40a1-bead-1cdb52062660" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="c5f3c0d8-5edc-4bf8-8d8e-6f035d4bafc9" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="296091d7-ffa9-4549-8db2-054dee996f4b" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="8f9bfbbe-69be-444c-8efc-4016b26fd2fc" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="6fb48eb1-8196-4add-add0-ac2c7b44bc13" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="502809c3-8462-4f18-92ec-9f0acfde6c84" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="878efae2-229b-4c26-aa13-3345e5f82b90" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="8047f81e-1b7e-4682-b4f5-f6548108d57e" name="Play Animation From Active Set" x="143" y="3562" ZIndex="16" width="429" height="208" type="PlayAnimationFromActiveSetNode" full_type="PlayAnimationFromActiveSetNode" Comment="" is_comment_pinned="false" blend_time="0" sync_blend="False">
+      <inputs>
+        <socket role="SimpleName" full_role="SimpleName" id="e3b8deb3-5102-454c-9727-0c7313943063" type="ShortNameReferenceSocket" name="ShortName" default="e4c574c1-fa58-45ee-951e-e2dd585ef9df" />
+        <socket role="LoopAnimation" full_role="LoopAnimation" id="bc354674-5843-4351-964e-6865442fcb10" type="BooleanSocket" name="Loop Animation" default="False" />
+        <socket role="LoopAnimationAdditive" full_role="LoopAnimationAdditive" id="3c0cc418-2001-4873-8f4d-d605aebba3f7" type="BooleanSocket" name="Loop Animation Additive" default="False" />
+        <socket role="PlayRate" full_role="PlayRate" id="5dc4944b-2c17-46ea-93dc-4a00129c342c" type="FloatSocket" name="Play Rate" default="1" />
+        <socket role="StartOffset" full_role="StartOffset" id="0c7c4710-53bf-47ce-aa87-76c1f88020c2" type="FloatSocket" name="Start Offset" default="0" />
+        <socket role="AllowFallback" full_role="AllowFallback" id="0246cc77-52d6-4cc9-b329-7394822951b8" type="BooleanSocket" name="Allow Fallback" default="True" />
+        <socket role="TextKey" full_role="TextKey" id="9bc037c2-95be-4064-a0e1-89833114f0b4" type="BooleanSocket" name="Allow Text Keys" default="True" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="c0dbc8d3-cdfc-4dbc-8ce6-d982c06ab1bd" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="80999b27-97fa-4ca8-a807-06aa2f3df2ef" name="Blend Poses by int" x="728" y="3692" ZIndex="15" width="208" height="338" type="BlendPosesByIntNode" full_type="BlendPosesByIntNode" Comment="" is_comment_pinned="false" blend_type="Linear">
+      <inputs>
+        <socket role="ActiveChildIndex" full_role="ActiveChildIndex" id="15e313ca-df53-4085-84f4-9f764950d9f7" type="IntegerSocket" name="Active Child Index" default="0" />
+        <socket role="BlendPose 0" full_role="BlendPose 0" id="9a736e18-74fc-4437-869a-49ee181fdac8" type="AnimationPoseSocket" name="BlendPose 0" />
+        <socket role="BlendTime 0" full_role="BlendTime 0" id="046799db-2864-48e6-9d42-852eecaffe68" type="FloatSocket" name="BlendTime 0" default="0" />
+        <socket role="BlendPose 1" full_role="BlendPose 1" id="e4de70ee-93e1-4fd1-a9e7-1f3bd606d5da" type="AnimationPoseSocket" name="BlendPose 1" />
+        <socket role="BlendTime 1" full_role="BlendTime 1" id="a52c83ac-22ac-4903-a7fc-0f5238b62237" type="FloatSocket" name="BlendTime 1" default="0" />
+        <socket role="BlendPose 2" full_role="BlendPose 2" id="24cd85e9-32ae-4dc9-b670-c458cb7adf72" type="AnimationPoseSocket" name="BlendPose 2" />
+        <socket role="BlendTime 2" full_role="BlendTime 2" id="7facebe2-78c6-423a-8475-b951f6f272d5" type="FloatSocket" name="BlendTime 2" default="0" />
+        <socket role="BlendPose 3" full_role="BlendPose 3" id="7597edde-7996-444a-ad9b-c34caf8401b9" type="AnimationPoseSocket" name="BlendPose 3" />
+        <socket role="BlendTime 3" full_role="BlendTime 3" id="53d36891-60d5-4b8b-9504-8617192277c3" type="FloatSocket" name="BlendTime 3" default="0" />
+        <socket role="BlendPose 4" full_role="BlendPose 4" id="ecf03dec-fd1e-476f-b5c8-f5df6a9e209c" type="AnimationPoseSocket" name="BlendPose 4" />
+        <socket role="BlendTime 4" full_role="BlendTime 4" id="ffb4657e-c04f-4033-9257-c3f47c0ad294" type="FloatSocket" name="BlendTime 4" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Pose" full_role="Pose" id="f8cd5f07-8e8b-420d-a529-d275c4a44e20" type="AnimationPoseSocket" name="" />
+      </outputs>
+    </node>
+    <node id="cded76a2-af69-456c-a57c-a8246627b3f6" name="Floor" x="-897" y="2080" ZIndex="7" width="104" height="52" type="FloatFloorNode" full_type="FloatFloorNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter" full_role="Parameter" id="7dd6a2c9-bf03-454f-b989-fedf51af7764" type="FloatSocket" name="" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="286c74b4-625b-43e7-abb9-4f4ea1cd3905" type="IntegerSocket" name="" />
+      </outputs>
+    </node>
+    <node id="c01e3144-d645-4b9d-90e6-4e1e1803e974" name="Absolute" x="-1040" y="2080" ZIndex="50" width="104" height="52" type="FloatAbsNode" full_type="FloatAbsNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter" full_role="Parameter" id="7f2bdad8-4380-4d4e-bd4c-c0aa51fb62c0" type="FloatSocket" name="" default="0" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="c32fafba-28ff-4817-b380-170fdde89356" type="FloatSocket" name="" />
+      </outputs>
+    </node>
+  </nodes>
+  <links>
+    <link id="f9172d98-451d-4ae0-9468-17362a49ddb8" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c03df28c-15c8-4188-a333-de9b0313ea48" to_id="d0a41c43-61c0-4588-9135-5792af29a2af" begin_point_x="-1137" begin_point_y="2118" end_point_x="-46" end_point_y="-183" />
+    <link id="11f9454e-0176-4219-8030-568425cdba0b" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="e4ab5ce6-9c8b-40a8-ac3d-ba9df448d647" to_id="736ed6f8-7825-4f30-b033-262285677693" begin_point_x="46" begin_point_y="-183" end_point_x="1319" end_point_y="1143" />
+    <link id="95f7bcac-e735-409b-b3b9-5009505e9b68" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c03df28c-15c8-4188-a333-de9b0313ea48" to_id="dcec7166-2e12-4ee4-96f1-c55ac8f122b5" begin_point_x="-1137" begin_point_y="2118" end_point_x="-46" end_point_y="-79" />
+    <link id="d82198d3-9b18-40e2-b977-91bd82f09cda" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="9046b739-b3b6-454e-9a17-2d5fa74b27ad" to_id="7a816fd6-ab14-423f-8bc7-18c8f20c35de" begin_point_x="397" begin_point_y="-274" end_point_x="591" end_point_y="-209" />
+    <link id="86a6bead-820c-4456-b712-8bab991f2ff3" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="e4ab5ce6-9c8b-40a8-ac3d-ba9df448d647" to_id="3cc9e00c-b86c-4cb8-9cf3-38653e8ecc56" begin_point_x="46" begin_point_y="-183" end_point_x="279" end_point_y="-183" />
+    <link id="e360f69f-89e8-47c3-bc3e-ba3672c47c04" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="9930081f-cd42-42eb-ad06-0b5f8e3f1667" to_id="78060f24-e35a-4d24-abd0-1ac0414b167c" begin_point_x="46" begin_point_y="-79" end_point_x="279" end_point_y="-157" />
+    <link id="d6d291ea-9eab-4445-aec3-10c6420c65dd" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="5c5cc6c4-30bf-40ff-9820-5818ff4e309f" to_id="e8f7a9ea-2dc0-42f3-b234-63305e850115" begin_point_x="345" begin_point_y="-183" end_point_x="591" end_point_y="-183" />
+    <link id="648e3715-a7dc-484c-954d-ae95bba6e771" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="e4b08702-ee76-497d-bf85-1a6b0af9a071" to_id="4d4e77f0-f1d5-4a94-9d77-ef988e555a35" begin_point_x="2659" begin_point_y="-40" end_point_x="2788" end_point_y="-40" />
+    <link id="72824b65-5171-48bb-a974-e5f78a7855ea" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="eb0fdae8-27f5-46f2-bd46-9008ae509470" begin_point_x="-331" begin_point_y="2508" end_point_x="162" end_point_y="1104" />
+    <link id="a4d0eb54-c7ac-4480-bb80-764780df5776" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="b4f40212-57d3-45c7-ac05-5d62fb4388b5" begin_point_x="-331" begin_point_y="2508" end_point_x="162" end_point_y="870" />
+    <link id="742fbaea-3050-46cc-975d-1d028e134c34" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="1d37aed8-b6d8-445d-be2c-8a96ca6d1b30" begin_point_x="-331" begin_point_y="2508" end_point_x="162" end_point_y="636" />
+    <link id="1668967d-ca93-4865-9eb0-7e98b3dd9376" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="453bff28-94a9-427f-bd5f-c040c45008cf" begin_point_x="-331" begin_point_y="2508" end_point_x="175" end_point_y="2209" />
+    <link id="5d5faf2e-45e2-4b31-ad21-6c028d890e36" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="110f5216-2e99-4c11-9770-4c5c4e18b335" begin_point_x="-331" begin_point_y="2508" end_point_x="175" end_point_y="1988" />
+    <link id="f5db0346-3fe7-455d-9e95-ae60ddd68808" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="d6058026-58e7-46cf-8019-2165e169e7d9" begin_point_x="-331" begin_point_y="2508" end_point_x="175" end_point_y="1780" />
+    <link id="d6bb0aae-6eda-493d-bf39-20fe75a355c2" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="68db37b6-2f0a-49aa-9870-da675f4d974c" to_id="2ea45a89-5fbd-47dc-b253-9f81f458ca3c" begin_point_x="657" begin_point_y="-209" end_point_x="2502" end_point_y="-40" />
+    <link id="9f0c19a9-9682-4c7e-ae1e-5252aaf5128b" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f96644db-e8d3-48c4-ac39-9e8bcb381f58" to_id="990e2da4-638f-4b10-82b4-aaf47e4a71cb" begin_point_x="1164" begin_point_y="194" end_point_x="1345" end_point_y="194" />
+    <link id="84247b96-0282-457a-b9ba-0b6928485f96" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c92dd577-5a99-487e-8ece-ef1ba2488028" to_id="4b7703f6-49c4-472e-b724-3c329026531b" begin_point_x="1606" begin_point_y="194" end_point_x="1813" end_point_y="194" />
+    <link id="27b75845-c8ec-4042-bcd3-70a4ba337614" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="ddc6a14d-d630-43b1-8492-bb8d9ddb59e4" to_id="bc6db0f1-72e9-45aa-a565-58d5ce3b4190" begin_point_x="1514" begin_point_y="1143" end_point_x="1813" end_point_y="220" />
+    <link id="f4744025-6992-42bd-979a-a7575dd5ebe8" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="2cb3297b-0c65-4e89-af88-d36379ea245d" to_id="88c8e78d-d566-4c8f-b9a9-e05ba0d4480d" begin_point_x="1489" begin_point_y="3314" end_point_x="1813" end_point_y="272" />
+    <link id="a38c126e-be59-4f63-b082-01f45949fe41" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="83bc97ae-da7b-4bb8-ba71-c706f449e29e" begin_point_x="-331" begin_point_y="2508" end_point_x="175" end_point_y="3379" />
+    <link id="6e1e7e0a-dd66-441d-80cf-d46fa57b5f2a" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="1d49e5fc-3f61-4ed2-a55b-36977c80076a" begin_point_x="-331" begin_point_y="2508" end_point_x="175" end_point_y="3158" />
+    <link id="fee68c49-f618-434c-a32b-8c32eba28685" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="d4bfad3c-6add-42dc-9edd-acc9bd42c294" begin_point_x="-331" begin_point_y="2508" end_point_x="175" end_point_y="2937" />
+    <link id="c7836391-b8f2-47d4-9d6b-949215e9f606" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="48c6105a-4890-4259-a123-0bc7b12cdef2" begin_point_x="-331" begin_point_y="2508" end_point_x="162" end_point_y="4510" />
+    <link id="e217e23e-0fe9-4baf-8642-a6941b73e695" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="03aac43d-5c25-4974-908b-34b1c05bbd0b" begin_point_x="-331" begin_point_y="2508" end_point_x="162" end_point_y="4289" />
+    <link id="d8bee2c8-dc3a-4846-b5b6-b804351f3f09" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="126824a9-e4e7-4a06-902c-d625de0de300" begin_point_x="-331" begin_point_y="2508" end_point_x="162" end_point_y="4068" />
+    <link id="47bfa703-0c5b-408d-8bd2-e212689b19ae" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="e4ab5ce6-9c8b-40a8-ac3d-ba9df448d647" to_id="e75c9261-74fc-401c-b177-1f29644c4e42" begin_point_x="46" begin_point_y="-183" end_point_x="1293" end_point_y="3314" />
+    <link id="29711eb3-c787-485e-b15a-71783f405f35" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b75421fa-4caa-4650-a5f5-3840d0ad80dd" to_id="d8a256c9-4b91-466d-ad69-7e870a29c196" begin_point_x="2009" begin_point_y="194" end_point_x="2177" end_point_y="285" />
+    <link id="af58b3c2-ca6e-4c1a-95f7-0b882d2efbee" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="60f4a806-4ebf-438d-9258-a47781fbf337" to_id="2fa6b808-ea3e-4a26-8505-56344ea8106d" begin_point_x="1826" begin_point_y="-261" end_point_x="1904" end_point_y="-261" />
+    <link id="7c259650-0abb-41aa-9d6a-fcea9a797124" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="adc3d2e4-5e0d-45fe-9e62-8666b071890c" to_id="468a97a3-0979-47d6-aa71-7f9acd66e5f6" begin_point_x="2230" begin_point_y="-261" end_point_x="2502" end_point_y="12" />
+    <link id="7b09a7f0-0301-4786-b1ca-483b38db7e6d" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="adc3d2e4-5e0d-45fe-9e62-8666b071890c" to_id="a3a48e3b-38cf-49d0-8fd6-e706615bb1a7" begin_point_x="2230" begin_point_y="-261" end_point_x="2502" end_point_y="64" />
+    <link id="12f11226-57ee-4a0f-8bbe-de44a395748c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="fd84209b-c145-4559-9a17-6fd8a08a738e" to_id="b82de16d-9f8a-40b0-a50e-0265a641e83b" begin_point_x="1996" begin_point_y="-261" end_point_x="2073" end_point_y="-261" />
+    <link id="8d9f7cef-0a25-49c4-88a4-4c9b6187a428" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="3634caad-ae69-426d-8b3e-91bffe2755be" to_id="42614d00-5fa9-4fed-94d3-f7270790319d" begin_point_x="2360" begin_point_y="285" end_point_x="2502" end_point_y="-14" />
+    <link id="4f33ee0a-fa05-4076-9b57-2aaf5d812614" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="8055efa8-549a-4791-950d-61daedcace2b" begin_point_x="-331" begin_point_y="2365" end_point_x="162" end_point_y="1156" />
+    <link id="939cd87b-17e7-47b8-b1d3-882d573a4f04" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="1428bb3d-2925-480b-9eec-e7da391a733a" begin_point_x="-331" begin_point_y="2365" end_point_x="162" end_point_y="922" />
+    <link id="1cba61bd-cff1-429e-bb33-cd8a8c1b279d" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="fdf36385-dd95-4208-b9cc-9b06862fcf6e" begin_point_x="-331" begin_point_y="2365" end_point_x="162" end_point_y="688" />
+    <link id="a7246ae9-64fe-42a2-bb6f-28fc005f6aa8" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="39e7f6ab-306d-4ceb-bab6-b3d374e2cb66" begin_point_x="-331" begin_point_y="2365" end_point_x="175" end_point_y="2261" />
+    <link id="ad8bbb6c-1e95-4b81-b5b2-cc998ce1e963" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="b2d12c12-5189-446a-8cca-0bf516ead72b" begin_point_x="-331" begin_point_y="2365" end_point_x="175" end_point_y="2040" />
+    <link id="92683e4c-0264-42e5-9396-19b5ad489ed9" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="9cbd7df6-19b1-4207-a72d-2e6ae69358db" begin_point_x="-331" begin_point_y="2365" end_point_x="175" end_point_y="1832" />
+    <link id="4220391e-c1ab-4591-ad2d-39f096775add" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="b0c6f585-fcfd-4d65-bc3d-6dd17e638b0b" begin_point_x="-331" begin_point_y="2365" end_point_x="175" end_point_y="3431" />
+    <link id="e5cd6d68-0ebe-476a-bfc2-1becb5a00f2f" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="a40885b4-24dc-4953-8d8e-e45ecdff6a8e" begin_point_x="-331" begin_point_y="2365" end_point_x="175" end_point_y="3210" />
+    <link id="a5f18663-d173-47fb-a051-98980e8a90d1" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="cb444850-ebdc-4e29-bd68-dc66c9606e53" begin_point_x="-331" begin_point_y="2365" end_point_x="175" end_point_y="2989" />
+    <link id="f0c6f6eb-30ae-4408-8ec2-04e842a9a235" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="a59ce962-7a93-401b-bcd1-97c0520ec49e" begin_point_x="-331" begin_point_y="2365" end_point_x="162" end_point_y="4562" />
+    <link id="02876498-4f42-4cc9-a360-bec4c07d2e05" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="fcf9b8dc-a86f-4d73-bf0a-851288845f92" begin_point_x="-331" begin_point_y="2365" end_point_x="162" end_point_y="4341" />
+    <link id="8e9df365-8871-49de-a280-35a1aff1443c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="6c0d0b64-f2ad-462d-a445-1a80afbe53b1" begin_point_x="-331" begin_point_y="2365" end_point_x="162" end_point_y="4120" />
+    <link id="dd4d5904-db57-499d-88a1-20b1957444f3" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="836a4895-2f3a-482f-a5e1-edadfff09eac" to_id="0df3893c-d32e-4ebc-b213-06c60382bfa9" begin_point_x="-656" begin_point_y="2118" end_point_x="-592" end_point_y="2118" />
+    <link id="ee87462a-8d7a-4d83-897d-ba2149b21c38" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c6563848-d72d-40e9-928c-5cd5c46acda8" to_id="4535f8c1-7429-4b88-a133-fd4d736f726c" begin_point_x="-500" begin_point_y="2118" end_point_x="-436" end_point_y="2118" />
+    <link id="e2da7868-6925-47dc-87a6-d8284b868a7f" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="3c25e0e8-7791-49b4-90fb-d3fb9ed53404" to_id="68ef7cdd-0c8c-4b69-8c09-53deeed86d50" begin_point_x="891" begin_point_y="480" end_point_x="1319" end_point_y="1169" />
+    <link id="5e776552-4ae6-4698-9f9f-ac0664e418d1" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="66fdf0b4-20ff-4bd6-b7c9-a25d907ff8fe" to_id="c558fb1c-8637-4cdc-9ea1-67752fd45efd" begin_point_x="553" begin_point_y="155" end_point_x="721" end_point_y="506" />
+    <link id="a779888e-1248-43e8-be92-c25c7d4e3244" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="27d768ee-1a04-4389-8dcf-81d18b558f56" to_id="a23ae4be-affc-44ac-99c2-084576272fee" begin_point_x="553" begin_point_y="389" end_point_x="721" end_point_y="558" />
+    <link id="56a6547d-17c8-4dbe-aecf-1bba14224155" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="e13b6038-bb22-49ee-aa54-33c9da4e5490" to_id="3929a90b-16be-4272-a62d-d8953aa7c21b" begin_point_x="553" begin_point_y="610" end_point_x="721" end_point_y="610" />
+    <link id="fc0c08c5-940b-4cf2-a4cc-e0e9557a0e25" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="9d39bd23-aae6-4118-a44b-bdc033013302" to_id="e9e7d6b0-ff7a-487c-a8ee-644555bf42e0" begin_point_x="553" begin_point_y="844" end_point_x="721" end_point_y="662" />
+    <link id="3bc39745-4d5c-44d8-a098-dc988d9500d2" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f272b926-ee15-4703-a008-fa37168f942f" to_id="38612820-a9d3-41e2-aa6f-fa4eafe61708" begin_point_x="553" begin_point_y="1078" end_point_x="721" end_point_y="714" />
+    <link id="a8ec65c0-9853-4456-a413-5cd86782a11d" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="b0b1ea17-6986-432c-81c7-dad0d2fb8bbb" to_id="64a604b2-fb98-455a-abae-4b9e1b039d02" begin_point_x="566" begin_point_y="1312" end_point_x="773" end_point_y="1624" />
+    <link id="e94c1311-2a3a-46bf-9139-75e356a99370" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="59dedd8b-3439-4cca-912d-4a037e00d101" to_id="687de93c-469e-4d90-9f42-14de12aa71d7" begin_point_x="566" begin_point_y="1533" end_point_x="773" end_point_y="1676" />
+    <link id="66972246-a036-47b3-b078-a4d9318a2483" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="ece5df3b-cd9e-406e-a24d-8c90c20db665" to_id="b300b755-7795-45d9-aa49-bbfa9fb1889f" begin_point_x="566" begin_point_y="1754" end_point_x="773" end_point_y="1728" />
+    <link id="2027f248-3cf8-47d6-81da-c29094e8cb7f" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="d863d57b-143e-43be-972f-4b708968ff19" to_id="798d7ef2-b2c0-4f00-9f2d-2ebf0462d1ea" begin_point_x="566" begin_point_y="1962" end_point_x="773" end_point_y="1780" />
+    <link id="0fceace5-d589-4db2-a4cd-8e1fad708d70" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="601de35c-9f6c-4bc8-9240-1251bf5935bf" to_id="aaf8f817-678c-4442-a069-8073a332ccdc" begin_point_x="566" begin_point_y="2183" end_point_x="773" end_point_y="1832" />
+    <link id="71a19927-c2dc-41db-9c3e-f9fb1735e10c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="bb433036-26af-4979-a1c3-2fd1da744fdd" to_id="26512bbd-53ef-4375-b629-bd54b6a2ba27" begin_point_x="-279" begin_point_y="2118" end_point_x="773" end_point_y="1598" />
+    <link id="148f26d4-8885-45cf-b228-85f082899b4c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="bb433036-26af-4979-a1c3-2fd1da744fdd" to_id="392182a0-dfd1-41c8-8df3-4a89bf8c1767" begin_point_x="-279" begin_point_y="2118" end_point_x="721" end_point_y="480" />
+    <link id="04acfb45-ad0e-4295-8065-fcf80d98b6ce" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="dd7126d9-749e-4083-9d3b-8824b438e2b6" to_id="dc2440ec-86ee-4990-86cd-c82519d58026" begin_point_x="943" begin_point_y="1598" end_point_x="1319" end_point_y="1221" />
+    <link id="239633e5-30c8-435a-826d-e488410ee9e8" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="57619496-cdcd-44d9-b73f-f63a8728c80d" begin_point_x="-331" begin_point_y="2365" end_point_x="175" end_point_y="1611" />
+    <link id="cf554052-b554-49c8-a5be-91e92df7b03d" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="eb6846a1-ec3d-47e1-a835-5ccab49e3076" begin_point_x="-331" begin_point_y="2365" end_point_x="175" end_point_y="1390" />
+    <link id="df7e0a9a-ecf5-499e-b7cd-c77e47f4c64e" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="25b0110c-ee1b-4975-819a-3ac76ddb4dc7" begin_point_x="-331" begin_point_y="2365" end_point_x="162" end_point_y="467" />
+    <link id="f780ce74-2e1e-4e83-9f05-2078be5b9398" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="fa570f6a-aa8b-499e-b74c-583164a7c167" begin_point_x="-331" begin_point_y="2365" end_point_x="162" end_point_y="233" />
+    <link id="34f9dd0f-30ad-46f3-807f-5f040bfc6aa1" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="d4acfd49-4973-4d0a-8dbe-ed27f2361a4d" begin_point_x="-331" begin_point_y="2508" end_point_x="162" end_point_y="207" />
+    <link id="cb6ab3f8-b487-41cf-b414-f2aa26df37fc" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="4613200c-a0db-43eb-9e03-f058ed223d6a" begin_point_x="-331" begin_point_y="2508" end_point_x="162" end_point_y="441" />
+    <link id="dc5409a9-af5b-4d6e-bb03-77baebd24e9e" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="d927fa16-cb6c-4e3c-9615-97ef5cf3edb0" begin_point_x="-331" begin_point_y="2508" end_point_x="175" end_point_y="1338" />
+    <link id="33b3b774-60df-491f-9986-257e62e6f741" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="91adfedb-09a3-4299-bb02-3ee61da5f845" begin_point_x="-331" begin_point_y="2508" end_point_x="175" end_point_y="1559" />
+    <link id="cc97584c-a1a4-42e1-98a0-4be34fae97fa" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f3bb3490-c15a-44bd-a645-7f528660395c" to_id="6c40d449-2724-49a8-90ee-40e6339c5666" begin_point_x="566" begin_point_y="2469" end_point_x="760" end_point_y="2807" />
+    <link id="22b4ac6b-da41-4f3d-a152-b72800f2a73e" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="ec240426-12a4-4a65-9a52-3c12c084765d" to_id="9c26ec28-949e-4bce-ae4e-c80496de6e72" begin_point_x="566" begin_point_y="2690" end_point_x="760" end_point_y="2859" />
+    <link id="d5163dfb-bf52-4aca-b964-7689b099d2a7" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f46603f4-83be-493e-b6c0-3cf5186e8313" to_id="73a1e899-388f-4c03-a530-85e4c0b93e54" begin_point_x="566" begin_point_y="2911" end_point_x="760" end_point_y="2911" />
+    <link id="bd8b6702-0780-4baa-8579-d39b5b8bca99" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f359644c-e334-46ae-b9e6-079ab2d5fc27" to_id="3aa842cd-a4b2-40a6-b13d-7572c7b96fc7" begin_point_x="566" begin_point_y="3132" end_point_x="760" end_point_y="2963" />
+    <link id="7ccacdb5-7fe3-4c46-90d9-1d08db0b0016" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="feefeb77-b14e-4559-a284-811d26c0793d" to_id="48f5421b-7d4f-4d3f-97da-f1c52f7da99c" begin_point_x="566" begin_point_y="3353" end_point_x="760" end_point_y="3015" />
+    <link id="07811b2a-66de-4461-818f-57001eeb1099" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="bb433036-26af-4979-a1c3-2fd1da744fdd" to_id="4ddae8e0-fb24-48e9-bc86-ae029610acee" begin_point_x="-279" begin_point_y="2118" end_point_x="760" end_point_y="2781" />
+    <link id="130da0be-a689-41b6-aad1-bdfbee135e92" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="a9936731-dd1e-44f6-b428-1d0c4442767d" to_id="fe88b6fa-45a0-480b-a977-611dd13c2c0e" begin_point_x="930" begin_point_y="2781" end_point_x="1293" end_point_y="3340" />
+    <link id="b1656d80-eb5a-4f16-befa-9b7e193aec58" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c0dbc8d3-cdfc-4dbc-8ce6-d982c06ab1bd" to_id="9a736e18-74fc-4437-869a-49ee181fdac8" begin_point_x="553" begin_point_y="3600" end_point_x="747" end_point_y="3756" />
+    <link id="f76d208f-a01b-4959-9d14-0784525c00f4" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="878efae2-229b-4c26-aa13-3345e5f82b90" to_id="e4de70ee-93e1-4fd1-a9e7-1f3bd606d5da" begin_point_x="553" begin_point_y="3821" end_point_x="747" end_point_y="3808" />
+    <link id="40dbdf94-5faf-4255-9264-4214025c841c" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="d740877e-58de-4701-b263-951f525034e4" to_id="24cd85e9-32ae-4dc9-b670-c458cb7adf72" begin_point_x="566" begin_point_y="4042" end_point_x="747" end_point_y="3860" />
+    <link id="6227e852-f1d8-49dc-a630-2bce99ab6b23" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="e9774ee9-1767-4211-b696-b4232fea7fb9" to_id="7597edde-7996-444a-ad9b-c34caf8401b9" begin_point_x="566" begin_point_y="4263" end_point_x="747" end_point_y="3912" />
+    <link id="f1dd63db-6139-4374-a9a1-9ee3d90c774d" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c17d2fc4-3dbd-4a16-aec8-de36efe260c4" to_id="ecf03dec-fd1e-476f-b5c8-f5df6a9e209c" begin_point_x="566" begin_point_y="4484" end_point_x="747" end_point_y="3964" />
+    <link id="328b9d2e-573c-46a2-a882-12d809d51d71" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="bb433036-26af-4979-a1c3-2fd1da744fdd" to_id="15e313ca-df53-4085-84f4-9f764950d9f7" begin_point_x="-279" begin_point_y="2118" end_point_x="747" end_point_y="3730" />
+    <link id="ebccd538-fa68-4fb5-bf31-866168f0d177" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f8cd5f07-8e8b-420d-a529-d275c4a44e20" to_id="2611f7fd-1ac8-4fac-ac61-36ceab1814f2" begin_point_x="916" begin_point_y="3730" end_point_x="1293" end_point_y="3392" />
+    <link id="575b9d20-0509-4769-9891-09f401cf6e89" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="912084eb-ca07-4a02-a0bd-a8e4c06fd7e7" begin_point_x="-331" begin_point_y="2365" end_point_x="175" end_point_y="2546" />
+    <link id="1db59b94-6597-4cc7-8bdc-ccf6fbfc27a0" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="f12b820a-51bb-43e3-9eb3-6186b34a3ef3" begin_point_x="-331" begin_point_y="2365" end_point_x="175" end_point_y="2768" />
+    <link id="346e6db8-7c5b-49ee-a1a5-a5c1896fda03" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="5dc4944b-2c17-46ea-93dc-4a00129c342c" begin_point_x="-331" begin_point_y="2365" end_point_x="162" end_point_y="3678" />
+    <link id="c1559c30-bc95-4e95-82fb-016185dc9bec" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="f45c07bb-8cff-40c7-8712-e6d1053cf8c3" to_id="296091d7-ffa9-4549-8db2-054dee996f4b" begin_point_x="-331" begin_point_y="2365" end_point_x="162" end_point_y="3899" />
+    <link id="346911b4-c32b-4d86-901a-cbd1b88d3d56" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="ea4c30eb-2e59-4f2c-9a9d-7f1bb5a3969b" begin_point_x="-331" begin_point_y="2508" end_point_x="175" end_point_y="2599" />
+    <link id="6716d470-5abc-4602-b4e9-405d7f714515" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="be33a11e-5d11-4c1a-8536-ce6ab5513281" begin_point_x="-331" begin_point_y="2508" end_point_x="175" end_point_y="2495" />
+    <link id="6af57006-27a3-4d3d-8dc2-b50f0ce42e83" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="f9d76e7f-0b35-46fc-b64f-1cfd9e5e2466" begin_point_x="-331" begin_point_y="2508" end_point_x="175" end_point_y="2715" />
+    <link id="11037e9f-c7f7-4669-ba4c-d55a3316bef8" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="bc354674-5843-4351-964e-6865442fcb10" begin_point_x="-331" begin_point_y="2508" end_point_x="162" end_point_y="3626" />
+    <link id="1f7ea242-731d-4700-a392-6a335f5a72f0" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="56559325-7f9f-4eba-aacb-78daea613965" to_id="1b254a8c-8cb8-40a1-bead-1cdb52062660" begin_point_x="-331" begin_point_y="2508" end_point_x="162" end_point_y="3847" />
+    <link id="6b7c0a81-d79f-403d-8e9e-39a26bc7f9c3" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="286c74b4-625b-43e7-abb9-4f4ea1cd3905" to_id="d5c4a407-7d9b-40a8-80e8-3894811aaa2d" begin_point_x="-812" begin_point_y="2118" end_point_x="-748" end_point_y="2118" />
+    <link id="84ecd3f5-4e39-440d-9aba-a45a9590a348" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c03df28c-15c8-4188-a333-de9b0313ea48" to_id="7f2bdad8-4380-4d4e-bd4c-c0aa51fb62c0" begin_point_x="-1137" begin_point_y="2118" end_point_x="-1021" end_point_y="2118" />
+    <link id="7d9bfd95-a309-4eb6-a703-7ff85fbd3fe3" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="c32fafba-28ff-4817-b380-170fdde89356" to_id="7dd6a2c9-bf03-454f-b989-fedf51af7764" begin_point_x="-955" begin_point_y="2118" end_point_x="-878" end_point_y="2118" />
+    <link id="3685a657-6b7d-4279-82c6-7449d3cb899f" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="03e19999-61d4-4724-a74c-52e55d280b5e" to_id="807f6fd9-2e8d-4300-abb3-261f1d641ae5" begin_point_x="2022" begin_point_y="389" end_point_x="2177" end_point_y="311" />
+    <link id="b62340e8-25ae-488f-b89b-a9366b322e3a" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="7751b6a1-fc4f-43fb-9019-00e28b3e3748" to_id="a5992ec5-b382-4d95-8775-3e3abd58ef25" begin_point_x="-591" begin_point_y="38" end_point_x="2502" end_point_y="38" />
+  </links>
+  <properties>
+    <property id="38117946-bcda-4031-8fee-1c2b7ad7bcd6" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Virtual" />
+    <property id="3a21228c-a8c0-4215-9e1a-c102d7013897" name="Graph Type" full_type="Genome.DataModel.Property.FunctionGraphTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="AnimationGraph" />
+    <property id="330426b4-e427-41be-bf0b-8b89e0a0151c" name="Input Sockets" full_type="Genome.DataModel.Property.Sockets.SocketCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true">
+      <properties>
+        <property id="316c205e-aac8-4992-ae09-76ccb09512b6" name="In" full_type="Genome.DataModel.Property.Sockets.SocketTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="true" value="AnimationPoseSocket" />
+      </properties>
+    </property>
+    <property id="03d6c2a3-8cff-435e-89a1-11211fdda4d4" name="Output Sockets" full_type="Genome.DataModel.Property.Sockets.SocketCategoryProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="true" collapsed="false" selected="false" can_be_renamed="false" extendable="true">
+      <properties>
+        <property id="255b5bc6-9225-4529-a1f4-fd625d586640" name="Out" full_type="Genome.DataModel.Property.Sockets.SocketTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="true" value="AnimationPoseSocket" />
+      </properties>
+    </property>
+  </properties>
+</graph>

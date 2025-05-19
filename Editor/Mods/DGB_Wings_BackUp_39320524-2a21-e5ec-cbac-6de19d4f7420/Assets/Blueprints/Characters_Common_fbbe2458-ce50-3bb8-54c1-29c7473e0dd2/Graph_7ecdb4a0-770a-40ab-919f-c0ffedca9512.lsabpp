@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="7ecdb4a0-770a-40ab-919f-c0ffedca9512" can_be_deleted="false" type="ConditionRule">
+  <nodes>
+    <node id="8727a726-f95c-4037-bc8c-1890dfc3b7ef" name="BooleanResultNode" x="400" y="0" ZIndex="1" width="195" height="52" type="BooleanResultNode" full_type="BooleanResultNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Result" full_role="Result" id="70f54754-9cfa-42ac-b9d3-51f7fb1c80b0" type="BooleanSocket" name="Can Enter Transition" default="False" />
+      </inputs>
+      <outputs />
+    </node>
+    <node id="be494859-c274-48d1-9303-fdc66319a040" name="GetVariableNode" x="-507" y="65" ZIndex="3" width="182" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="4924634b-bffa-426c-b900-f0b31c9f6e72">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="0470a61c-6628-4c4a-901f-f274256a0c8f" type="ShortNameReferenceSocket" name="SPELL_Anticipation" />
+      </outputs>
+    </node>
+    <node id="acf054ff-48c5-40cf-945f-1d916f2335eb" name="GetVariableNode" x="-546" y="0" ZIndex="1" width="221" height="52" type="GetVariableNode" full_type="VariableNodeDefinition" Comment="" is_comment_pinned="false" variable_id="82be5108-1d1d-478a-9975-f526dfdb73dd">
+      <inputs />
+      <outputs>
+        <socket role="Result" full_role="Result" id="70239a8f-881b-4e37-a8b4-4a04761359be" type="BooleanSocket" name="SPELL_BCastShouldDash" />
+      </outputs>
+    </node>
+    <node id="d9eb4037-1aed-46a7-bdf3-4469ff631146" name="ShortNameReference == ShortNameReference" x="-299" y="65" ZIndex="4" width="299" height="78" type="ShortNameReferenceEqNode" full_type="ShortNameReferenceEqNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="ParameterA" full_role="ParameterA" id="dd5c6a6f-408b-41ef-87fe-f7cb7b9aca2a" type="ShortNameReferenceSocket" name="" default="00000000-0000-0000-0000-000000000000" />
+        <socket role="ParameterB" full_role="ParameterB" id="eeed786d-384b-4b5e-9736-bd0fcbd8cade" type="ShortNameReferenceSocket" name="" default="00000000-0000-0000-0000-000000000000" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="9a1824b4-c7f9-4966-a02a-4914dbb5c7ce" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="feb58774-08e8-43ea-a9a5-9b194fdab762" name="NOT" x="-104" y="0" ZIndex="2" width="104" height="52" type="BooleanNotNode" full_type="BooleanNotNode" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter" full_role="Parameter" id="c156f6b3-68e1-426d-b4f0-152b2cf93d1b" type="BooleanSocket" name="" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="4fdfb738-56fd-46c8-8800-a7360d0b4457" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="ffcbc47f-b931-408e-aa45-234a4e861d13" name="AND" x="104" y="0" ZIndex="5" width="104" height="104" type="BooleanAndNode" full_type="VariableInputNodeDefinition" Comment="" is_comment_pinned="false">
+      <inputs>
+        <socket role="Parameter 0" full_role="Parameter 0" id="6cf18c96-cd0d-4a9d-b66e-9f6dbfef30e8" type="BooleanSocket" name="" default="False" />
+        <socket role="Parameter 1" full_role="Parameter 1" id="21ceb8e7-5abf-4a52-b68f-53ea54a35e44" type="BooleanSocket" name="" default="False" />
+      </inputs>
+      <outputs>
+        <socket role="Result" full_role="Result" id="2613a68b-ce45-4b54-88ad-951282808ad4" type="BooleanSocket" name="" />
+      </outputs>
+    </node>
+    <node id="58867200-ada3-4096-8bd0-5599d62297c4" name="If not dashing and no antic is filled in, immediately skip to cast without blend" x="-624" y="-104" ZIndex="0" width="1001" height="312" type="CommentNode" full_type="CommentNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+    </node>
+  </nodes>
+  <links>
+    <link id="76f565cd-d991-4082-a36b-976e03080372" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="0470a61c-6628-4c4a-901f-f274256a0c8f" to_id="dd5c6a6f-408b-41ef-87fe-f7cb7b9aca2a" begin_point_x="-344" begin_point_y="103" end_point_x="-280" end_point_y="103" />
+    <link id="5f1b6ca6-c3f6-4f90-8440-b0f50fcc3ce4" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="70239a8f-881b-4e37-a8b4-4a04761359be" to_id="c156f6b3-68e1-426d-b4f0-152b2cf93d1b" begin_point_x="-344" begin_point_y="38" end_point_x="-85" end_point_y="38" />
+    <link id="5079ce39-b24d-4275-baff-b70c27697b08" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="4fdfb738-56fd-46c8-8800-a7360d0b4457" to_id="6cf18c96-cd0d-4a9d-b66e-9f6dbfef30e8" begin_point_x="-19" begin_point_y="38" end_point_x="123" end_point_y="38" />
+    <link id="1f79fb22-717a-4228-b576-bd5da49af94f" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="9a1824b4-c7f9-4966-a02a-4914dbb5c7ce" to_id="21ceb8e7-5abf-4a52-b68f-53ea54a35e44" begin_point_x="-19" begin_point_y="103" end_point_x="123" end_point_y="64" />
+    <link id="db7d5461-1304-45f3-b6bb-833c5f8c0253" type="GenomeLink" full_type="Genome.DataModel.CommonGraph.Links.GenomeLink, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="2613a68b-ce45-4b54-88ad-951282808ad4" to_id="70f54754-9cfa-42ac-b9d3-51f7fb1c80b0" begin_point_x="189" begin_point_y="38" end_point_x="419" end_point_y="38" />
+  </links>
+  <properties>
+    <property id="486a2865-e532-484f-8874-b61451c9969d" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="31485634-4740-4208-b29b-1f851f9fdeac" name="Blend Duration" full_type="Genome.DataModel.Property.FloatProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="0" />
+    <property id="b7294970-931f-42ab-b536-0f63b74b227f" name="Blend Type" full_type="Genome.DataModel.Property.BlendTypeProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="Linear" />
+  </properties>
+</graph>

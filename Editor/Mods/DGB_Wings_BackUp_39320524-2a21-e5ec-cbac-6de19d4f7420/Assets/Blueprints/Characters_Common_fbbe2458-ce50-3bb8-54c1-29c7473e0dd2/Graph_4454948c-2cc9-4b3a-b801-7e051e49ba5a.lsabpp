@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="4454948c-2cc9-4b3a-b801-7e051e49ba5a" can_be_deleted="false" type="StateMachine">
+  <nodes>
+    <node id="fba8b304-74bb-4aac-a96f-84364cfb1ad1" name="EntryState" x="-819" y="-299" ZIndex="0" width="91" height="52" type="EntryState" full_type="EntryState" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="71492e1a-266d-4e67-bbcb-21110821c48b" type="EntrySocket" name="" />
+    </node>
+    <node id="47b230b9-8291-4b80-bf12-49207ec76524" name="Flying" x="-585" y="-299" ZIndex="2" width="65" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="86d972af-d361-47c4-b0d6-87a00ad11937" on_enter_begin_event_name="" on_enter_finish_event_name="Thrown_Entered" on_exit_begin_event_name="Thrown_FlyingExit" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="77d07f5a-b394-4ee8-b1a0-c26eeec2f4f9" type="StateSocket" name="" />
+    </node>
+    <node id="de1c7e8b-6d3a-49c2-bd2b-8d174f1d9a46" name="Land" x="0" y="-13" ZIndex="0" width="65" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="127ee1bb-487a-43a4-8c30-2fa242294213" on_enter_begin_event_name="" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="Thrown_LandExit">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="d8f7176e-c215-4c45-a7fd-1835c46569d2" type="StateSocket" name="" />
+    </node>
+    <node id="c59ac1ed-2c4c-4ec7-b5d7-05a0c198b5ed" name="OnActionFinished" x="208" y="-299" ZIndex="3" width="130" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="c0113739-688b-44eb-a699-ecdbc8225170" on_enter_begin_event_name="OnActionFinished" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="13ad1a1e-a6eb-47fb-9c81-5a114b10e793" type="StateSocket" name="" />
+    </node>
+    <node id="5e777001-309a-4a98-ba6d-8484bdcc6e88" name="ragdoll" x="-585" y="-13" ZIndex="2" width="65" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="7cdcf432-4677-4e1f-942c-aa63d63c8680" on_enter_begin_event_name="IKTurnOff" on_enter_finish_event_name="Thrown_RagdollEntered" on_exit_begin_event_name="IKTurnOn" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="4c24a444-e56a-4823-9b1b-947f36b54120" type="StateSocket" name="" />
+    </node>
+    <node id="541b777e-b73a-446d-998c-fa0f55e4327a" name="ToPreviousState" x="221" y="13" ZIndex="1" width="117" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="52b6e2e7-a34b-4a7f-b0ac-42e794b1fe77" on_enter_begin_event_name="PreviousStateEntering" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="88c6b4c8-5475-461b-b49e-211d6fc4e749" type="StateSocket" name="" />
+    </node>
+  </nodes>
+  <links>
+    <link id="3faad9d1-c18a-417a-9897-7f5f11a39898" type="UnconditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.UnconditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="71492e1a-266d-4e67-bbcb-21110821c48b" to_id="77d07f5a-b394-4ee8-b1a0-c26eeec2f4f9" begin_point_x="-728" begin_point_y="-270" end_point_x="-585" end_point_y="-270" />
+    <link id="bb7f88c7-c71a-4471-beb0-e4039a0648c0" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="77d07f5a-b394-4ee8-b1a0-c26eeec2f4f9" to_id="d8f7176e-c215-4c45-a7fd-1835c46569d2" begin_point_x="-521" begin_point_y="-244" end_point_x="-1" end_point_y="-10" rule_id="11864519-0a10-4a6b-8bb5-b022021482d2">
+      <node id="11864519-0a10-4a6b-8bb5-b022021482d2" name="Flying to Land" x="-291" y="-113" ZIndex="9" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="874fe4be-87e5-4060-8d92-f8b6af755c86" blend_type="Linear" blend_duration="0.1">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="f5c78828-c6d4-4ca9-b8d8-cbbdeff84537" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="d8f7176e-c215-4c45-a7fd-1835c46569d2" to_id="13ad1a1e-a6eb-47fb-9c81-5a114b10e793" begin_point_x="67" begin_point_y="-11" end_point_x="210" end_point_y="-245" rule_id="62613c17-1190-4e21-9449-d8135a0a4a23">
+      <node id="62613c17-1190-4e21-9449-d8135a0a4a23" name="Land to OnActionFinished" x="150" y="-127" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="c78cef75-6213-404e-8ca9-978d2728060d" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="4e5be110-2b88-4fb7-99ed-468cdb995d4d" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="d8f7176e-c215-4c45-a7fd-1835c46569d2" to_id="4c24a444-e56a-4823-9b1b-947f36b54120" begin_point_x="0" begin_point_y="10" end_point_x="-520" end_point_y="10" rule_id="89174712-6ff5-4949-a1d7-e8ea91c16499">
+      <node id="89174712-6ff5-4949-a1d7-e8ea91c16499" name="Land to ragdoll" x="-276" y="-39" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="ed4ef5f3-1e40-4223-95fc-9976147a694d" blend_type="Linear" blend_duration="0">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="75ab8774-90c7-4158-b583-7b1861714895" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="4c24a444-e56a-4823-9b1b-947f36b54120" to_id="77d07f5a-b394-4ee8-b1a0-c26eeec2f4f9" begin_point_x="-549" begin_point_y="-13" end_point_x="-549" end_point_y="-247" rule_id="667310f9-24ab-4391-af04-3f312fc0a096">
+      <node id="667310f9-24ab-4391-af04-3f312fc0a096" name="ragdoll to Flying" x="-533" y="-146" ZIndex="3" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="5caf3b99-8f78-40e7-96c8-cb86dee521dc" blend_type="Linear" blend_duration="0.1">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="44945304-633f-4fa9-b6f4-2ade1b3295dd" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="d8f7176e-c215-4c45-a7fd-1835c46569d2" to_id="88c6b4c8-5475-461b-b49e-211d6fc4e749" begin_point_x="65" begin_point_y="29" end_point_x="221" end_point_y="29" rule_id="190f3693-5ab3-45e7-bc97-51070b2a97bb">
+      <node id="190f3693-5ab3-45e7-bc97-51070b2a97bb" name="Land to ToPreviousState" x="126" y="45" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="3d832c2b-bc11-4a2f-a3d6-024d4b4d8cf7" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="2f6f327d-e192-4081-b2d9-f422781a873b" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="77d07f5a-b394-4ee8-b1a0-c26eeec2f4f9" to_id="13ad1a1e-a6eb-47fb-9c81-5a114b10e793" begin_point_x="-520" begin_point_y="-270" end_point_x="208" end_point_y="-270" rule_id="29df0135-2103-42cb-a4d0-287268c0f076">
+      <node id="29df0135-2103-42cb-a4d0-287268c0f076" name="Flying to OnActionFinished" x="-172" y="-253" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="32aa920a-6187-4e90-824a-9aea89e6e6d9" blend_type="QuadraticOut" blend_duration="0.075">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+  </links>
+  <properties>
+    <property id="856b30ec-0c95-4fa5-b14c-8fd1bc1100aa" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="4d92c8dc-a3d5-4b06-8603-65076ca56acd" name="MaxTransitionsPerFrame" full_type="Genome.DataModel.Property.IntegerProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+    <property id="62419f17-aa5b-46f4-afa0-b743c8ba6190" name="ExitEvent" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="ASThrownComplete" />
+  </properties>
+</graph>

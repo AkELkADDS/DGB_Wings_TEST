@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph id="3322b97f-3820-496c-be35-74edbee26e75" can_be_deleted="false" type="StateMachine">
+  <nodes>
+    <node id="cb46b450-7d0b-41c0-820a-75a1d5a0a6d0" name="EntryState" x="-208" y="-208" ZIndex="11" width="91" height="52" type="EntryState" full_type="EntryState" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="059e2657-cc7a-4686-bad4-5ad957aa28db" type="EntrySocket" name="" />
+    </node>
+    <node id="8bd5a748-2012-439f-be88-cd6609cf3de5" name="Prepare" x="-208" y="-65" ZIndex="12" width="78" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="fe90256f-c6fa-46d2-9ca9-e626af40e56e" on_enter_begin_event_name="OnActionStarted" on_enter_finish_event_name="OnSpellPrepared" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="13fa87dc-f7ae-46fb-b269-cfddb9e19d4b" type="StateSocket" name="" />
+    </node>
+    <node id="db815eb8-6593-406a-a1d2-7464de9fa90a" name="Prepare Loop" x="793" y="-91" ZIndex="7" width="104" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="1d577409-cbc4-469f-9aa5-7ebde878fd12" on_enter_begin_event_name="" on_enter_finish_event_name="PrepareLoop_Entered" on_exit_begin_event_name="PrepareLoop_Exit" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="2a382f44-fe2d-4369-8237-52c01a31e24d" type="StateSocket" name="" />
+    </node>
+    <node id="8eea4a76-6b6d-45ed-aed8-4aae81ce2ad2" name="SpellCancel" x="-221" y="208" ZIndex="8" width="91" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="cfbc603e-24ca-48ff-b5ad-d37aa72d6409" on_enter_begin_event_name="SpellCancelBegin" on_enter_finish_event_name="SpellCancelEntered" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="e686f225-4a56-46a7-8744-afc2f2a78ad4" type="StateSocket" name="" />
+    </node>
+    <node id="367309e5-624a-4a48-9649-7bc2d706a558" name="CancelComplete" x="793" y="156" ZIndex="9" width="117" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="ed755b19-bcf9-4b31-9ce9-53233675ea95" on_enter_begin_event_name="PrepareCancelCompleteBegin" on_enter_finish_event_name="PrepareCancelCompleteFinish" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="ac043a91-f580-4a9f-b6e8-ee37cc211152" type="StateSocket" name="" />
+    </node>
+    <node id="3cba0cbf-f016-4368-9211-1742771c3d5e" name="Neutral_Transition" x="286" y="494" ZIndex="1" width="130" height="52" type="State" full_type="State" Comment="" is_comment_pinned="false" graph_id="11fb8d1d-9c3c-4b0f-8821-648a8589531f" on_enter_begin_event_name="" on_enter_finish_event_name="" on_exit_begin_event_name="" on_exit_finish_event_name="">
+      <inputs />
+      <outputs />
+      <socket role="Transition" full_role="Transition" id="e620d937-593d-4b74-b900-47ae098e9608" type="StateSocket" name="" />
+    </node>
+    <node id="dce67dbc-fd27-4e16-ad94-bd3861608f48" name="Neutral Transition to go from Spell Cancel to Idle_Still" x="-208" y="325" ZIndex="0" width="1066" height="351" type="CommentNode" full_type="CommentNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />
+    </node>
+    <node id="8e77c99a-2cce-4fd4-adfd-229959957118" name="Commentary" x="-195" y="364" ZIndex="1" width="291" height="302" type="NoteNode" full_type="NoteNode" Comment="" is_comment_pinned="false">
+      <inputs />
+      <outputs />{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;\red239\green239\blue239;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf2 \cf2\ql{\f2 {\ltrch Neutral Loop -&gt; Neutral Transition.}{\ltrch \line }{\ltrch If a character uses the Neutral System ( Ex : Elf Male ) then the SpellPrepareCanceled event will be delayed until after the neutral transition finishes in order to take the character from Neutral_Loop_Pose (end of the spell cancel ) to Idle_Pose before sending SpellAnimationFinish. This will make it so that the Neutral Transition can happen before the game requests ASUnSheath/ASSheath.}\li0\ri0\sa0\sb0\fi0\ql\par}
+}
+}</node>
+  </nodes>
+  <links>
+    <link id="d939da71-7ddd-4724-9cbc-948d689bbd43" type="UnconditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.UnconditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="059e2657-cc7a-4686-bad4-5ad957aa28db" to_id="13fa87dc-f7ae-46fb-b269-cfddb9e19d4b" begin_point_x="-172" begin_point_y="-156" end_point_x="-172" end_point_y="-65" />
+    <link id="594f6b4c-9de8-4e34-88b1-2c65cd87305e" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="13fa87dc-f7ae-46fb-b269-cfddb9e19d4b" to_id="2a382f44-fe2d-4369-8237-52c01a31e24d" begin_point_x="-130" begin_point_y="-49" end_point_x="793" end_point_y="-49" rule_id="417980f8-bd5f-4b68-b6db-304923ededcb">
+      <node id="417980f8-bd5f-4b68-b6db-304923ededcb" name="Prepare to Prepare Loop" x="315" y="-32" ZIndex="2" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="0a11144b-51a0-4360-aa37-bc4f6ca6e57b" blend_type="Linear" blend_duration="0.1">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="20a48407-e486-43de-89e0-782e5b16df22" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="13fa87dc-f7ae-46fb-b269-cfddb9e19d4b" to_id="e686f225-4a56-46a7-8744-afc2f2a78ad4" begin_point_x="-172" begin_point_y="-13" end_point_x="-172" end_point_y="208" rule_id="d6a73705-2243-4ae7-ab37-2cee88492bdf">
+      <node id="d6a73705-2243-4ae7-ab37-2cee88492bdf" name="Prepare to SpellCancel" x="-221" y="81" ZIndex="3" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="b64d1cd9-b03c-41d9-afd4-ad8a835c1e37" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="1b54e655-07b8-4860-b8cf-7be814ca44e4" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="2a382f44-fe2d-4369-8237-52c01a31e24d" to_id="e686f225-4a56-46a7-8744-afc2f2a78ad4" begin_point_x="792" begin_point_y="-41" end_point_x="-130" end_point_y="205" rule_id="a5e8cfb8-0e72-4907-9c0d-22b2636bcad8">
+      <node id="a5e8cfb8-0e72-4907-9c0d-22b2636bcad8" name="Prepare Loop to SpellCancel" x="305" y="33" ZIndex="10" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="e118779b-c118-46a2-b723-f879bbc4ed34" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="b1d9bfcf-3887-4e47-9808-be7949aab6da" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="e686f225-4a56-46a7-8744-afc2f2a78ad4" to_id="ac043a91-f580-4a9f-b6e8-ee37cc211152" begin_point_x="-130" begin_point_y="211" end_point_x="793" end_point_y="211" rule_id="884adfbc-29b9-44c0-8557-efa0ce72bbba">
+      <node id="884adfbc-29b9-44c0-8557-efa0ce72bbba" name="SpellCancel to CancelComplete" x="315" y="227" ZIndex="4" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="7cf3cb81-df88-420a-a3b2-5aa9dc36406c" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="458e5e6e-5eb0-4dad-8784-935105e048f1" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="e686f225-4a56-46a7-8744-afc2f2a78ad4" to_id="13fa87dc-f7ae-46fb-b269-cfddb9e19d4b" begin_point_x="-166" begin_point_y="208" end_point_x="-166" end_point_y="-13" rule_id="dee62944-8b0c-4480-8190-e06e71c50b0f">
+      <node id="dee62944-8b0c-4480-8190-e06e71c50b0f" name="SpellCancel to Prepare" x="-149" y="81" ZIndex="5" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="452531e8-0109-4ac0-a570-10430d91e548" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="1fe8c57c-a2cc-44f5-b280-bc29d920a9f8" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="2a382f44-fe2d-4369-8237-52c01a31e24d" to_id="13fa87dc-f7ae-46fb-b269-cfddb9e19d4b" begin_point_x="793" begin_point_y="-55" end_point_x="-130" end_point_y="-55" rule_id="2af1229c-4b4c-4635-9562-97ece9ce9b56">
+      <node id="2af1229c-4b4c-4635-9562-97ece9ce9b56" name="Prepare Loop to Prepare" x="315" y="-104" ZIndex="6" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="511c994f-ee0f-498f-ad54-5e26a0b3b4d1" blend_type="Linear" blend_duration="0.05">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="73c791e4-701a-4dfb-8dbe-edf0c2fc71bf" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="e686f225-4a56-46a7-8744-afc2f2a78ad4" to_id="e620d937-593d-4b74-b900-47ae098e9608" begin_point_x="-131" begin_point_y="262" end_point_x="284" end_point_y="496" rule_id="d76015ce-524a-4908-a817-4d1a036baffb">
+      <node id="d76015ce-524a-4908-a817-4d1a036baffb" name="SpellCancel to Neutral_Transition" x="43" y="391" ZIndex="2" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="a128dba1-048f-4b6e-b082-35e6669a8e18" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="b075dd4a-a0e6-48d6-9bb0-f32f43b37b4c" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="e620d937-593d-4b74-b900-47ae098e9608" to_id="ac043a91-f580-4a9f-b6e8-ee37cc211152" begin_point_x="417" begin_point_y="496" end_point_x="794" end_point_y="210" rule_id="a0fc998f-c55e-467f-af43-9dafb0df19e5">
+      <node id="a0fc998f-c55e-467f-af43-9dafb0df19e5" name="Neutral_Transition to CancelComplete" x="622" y="353" ZIndex="1" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="cd2d48cd-3779-4433-8db1-aa533d9506a8" blend_type="Linear" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="1bfa7a23-2cb8-4948-9d77-0f66502e204c" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="2a382f44-fe2d-4369-8237-52c01a31e24d" to_id="ac043a91-f580-4a9f-b6e8-ee37cc211152" begin_point_x="842" begin_point_y="-39" end_point_x="842" end_point_y="156" rule_id="41eb2e9b-3ff8-4920-8ce3-edcd5a8ce6f7">
+      <node id="41eb2e9b-3ff8-4920-8ce3-edcd5a8ce6f7" name="Prepare Loop to CancelComplete" x="792" y="42" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="39a8e0cc-1869-4931-9e80-857fa641701b" blend_type="QuadraticOut" blend_duration="0.25">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="f636aa09-4b26-49e5-8522-e7dfab914eac" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="13fa87dc-f7ae-46fb-b269-cfddb9e19d4b" to_id="ac043a91-f580-4a9f-b6e8-ee37cc211152" begin_point_x="-130" begin_point_y="-10" end_point_x="792" end_point_y="158" rule_id="a987ed77-b301-4e10-84e3-63904112d092">
+      <node id="a987ed77-b301-4e10-84e3-63904112d092" name="Prepare to CancelComplete" x="308" y="90" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="b6c3a4a9-54c1-4130-a0d9-f004e08c0904" blend_type="QuadraticOut" blend_duration="0.25">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="f57c2bfe-cd41-4bce-88e4-241afc292e44" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="e620d937-593d-4b74-b900-47ae098e9608" to_id="13fa87dc-f7ae-46fb-b269-cfddb9e19d4b" begin_point_x="288" begin_point_y="492" end_point_x="-127" end_point_y="-14" rule_id="4144ca49-afc6-4787-b0a1-97b250ae5d1c">
+      <node id="4144ca49-afc6-4787-b0a1-97b250ae5d1c" name="Neutral_Transition to Prepare" x="89" y="201" ZIndex="0" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="97cdfb1b-5064-46ec-b898-b4d68d1c1f2a" blend_type="QuadraticOut" blend_duration="0.2">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+    <link id="ec136519-4197-49a6-8f63-872424a74fc5" type="ConditionalTransition" full_type="Genome.DataModel.StateMachine.Transitions.ConditionalTransition, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" from_id="e620d937-593d-4b74-b900-47ae098e9608" to_id="ac043a91-f580-4a9f-b6e8-ee37cc211152" begin_point_x="417" begin_point_y="496" end_point_x="794" end_point_y="210" rule_id="ad908066-e507-4613-aefa-d44b5065714d">
+      <node id="ad908066-e507-4613-aefa-d44b5065714d" name="Neutral_Transition to CancelComplete" x="596" y="373" ZIndex="2" width="52" height="39" type="RuleState" full_type="RuleState" Comment="" is_comment_pinned="false" graph_id="1fcccf32-00f7-4b95-8c4e-a8099e9dba0f" blend_type="Linear" blend_duration="0">
+        <inputs />
+        <outputs />
+      </node>
+    </link>
+  </links>
+  <properties>
+    <property id="20a74c62-2766-491f-b679-19c500c0ff65" name="InheritanceState" full_type="Genome.DataModel.Property.EnumerationProperties.InheritanceStateProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="None" />
+    <property id="604b684e-b127-4425-81ce-ab9d538ac91f" name="MaxTransitionsPerFrame" full_type="Genome.DataModel.Property.IntegerProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="1" />
+    <property id="5049a5bf-e39b-4e68-a8bf-feb7dc809fc3" name="ExitEvent" full_type="Genome.DataModel.Property.StringProperty, Genome.DataModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" category="false" collapsed="false" selected="false" can_be_renamed="false" value="OnPrepareStateExit" />
+  </properties>
+</graph>
